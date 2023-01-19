@@ -16,3 +16,4 @@ Bibliotek opfylder NMEA 2000 obligatoriske funktioner og adfærd. Enheder, der b
 
 
 # Referencer og kilder
+https://github.com/ttlappalainen/NMEA2000
