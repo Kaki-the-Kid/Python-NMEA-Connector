@@ -1,2 +1,3 @@
-import * from NMEA2000_defs.py
+import NMEA2000_defs
+
 
