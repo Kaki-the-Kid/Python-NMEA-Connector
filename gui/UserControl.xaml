@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="nmea_connector.User_Controls.LimitedInputUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:nmea_connector.User_Controls" 
+             mc:Ignorable="d" 
+             d:DesignHeight="1400" d:DesignWidth="1400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding Title}" />
+        <Label Grid.Row="0" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ElementName=txtLimitedInput, Path=Text.Length}" />
+                <TextBlock Text="/" />
+                <TextBlock Text="{Binding MaxLength}" />
+            </StackPanel>
+        </Label>
+        <TextBox MaxLength="{Binding MaxLength}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Name="txtLimitedInput" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" />
+        <TextBox 
+            HorizontalAlignment="Left" 
+            Height="460" 
+            Margin="46,811.4,0,0" 
+            Grid.Row="1" 
+            Grid.Column="0"
+            TextWrapping="Wrap" 
+            Text="Insert NMEA sentences" 
+            VerticalAlignment="Top" 
+            Width="911" 
+            TextChanged="TextBox_TextChanged"/>
+        <Label Content="Commandline input" HorizontalAlignment="Left" Margin="46,767.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="235"/>
+        <ComboBox 
+            HorizontalAlignment="Left" 
+            Height="31" 
+            Margin="46,77.4,0,0" 
+            Grid.Row="1" 
+            VerticalAlignment="Top" 
+            Width="298" 
+            SelectionChanged="ComboBox_SelectionChanged"
+        >
+            <ComboBoxItem>Garmin g12</ComboBoxItem>
+            <ComboBoxItem>Garmin etrex summit</ComboBoxItem>
+            <ComboBoxItem>Garmin etrex Vista release 2.42</ComboBoxItem>
+            <ComboBoxItem>Garmin basic yellow etrex European version</ComboBoxItem>
+            <ComboBoxItem>Magellan GPS</ComboBoxItem>
+            <ComboBoxItem>Magellan 315</ComboBoxItem>
+            <ComboBoxItem>NavMan 3400 (SiRF chipset)</ComboBoxItem>
+            <ComboBoxItem>Earthmate (SiRF chipset)</ComboBoxItem>
+            <ComboBoxItem>Evermore GM-305</ComboBoxItem>
+            <ComboBoxItem>Sony</ComboBoxItem>
+            <ComboBoxItem>UBlox</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Insert test data" HorizontalAlignment="Left" Height="26" Margin="46,46.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="298"/>
+        <Button Content="Test command" HorizontalAlignment="Left" Height="53" Margin="1012,811.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="226" Click="Button_Click"/>
+        <Button Content="Run Command" HorizontalAlignment="Left" Margin="1012,910.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="226" Height="53" Click="Button_Click_1"/>
+    </Grid>
+</UserControl>

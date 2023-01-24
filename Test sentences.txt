@@ -1,0 +1,20 @@
+This application can send NMEA 0183 version 2.30 sentences through a Serial Device with default 4800 baud according to the NMEA specification. It may be
+needed to scroll down in the list of usable items, to find the desired Serial Device. This depends on the configuration of the computer
+The NMEA sentences that can be choosen to send is RMC. GGA. GU., GSA, VTG, ZDA and a custom-made
+Additional NMEA sentences will be added later
+GPS-Simulator can be used by technicians from RDN to simulate the NMEA output from the Mil GPS
+GGA example: $GPGGA, 123519.4807.038,N,01131.000,E. 1,08,0.9,20,M,47,M,.*47
+RMC example: $GPRMC.123519.A.4807.038,N,01131.000,E,022.4,084.4,230994,003.1,W,A *6A
+Gll example: $GPGLL.5601.7919,N, 1116.972,E,212436.39,A,A*6C
+GSA example: $GPGSA.A.3, 17, 15, 19,24,32, 10, 12.25,..,, 1.77, 1.00, 1.46*09
+VTG example: $GPVTG,36.4,T.36.4,M, 1.00,N, 1.85,K*4E
+ZDA example: $GPZDA.072727.68,02, 12,2019,00,00, *48
+Custom: Copy/Paste, or manually write, a NMEA-sentence in the box to be send
+The area that show the sentences that have been sent will be reset for every 50 repeatations to avoid overflow of the TextBlock
+If too many sentences are chosen and repetition period is too small compared to the baud rate, the sentences doesn't have time to be sent before a new
+update is called.This can confuse the serial device and the program can suddently stop.
+Magnetic course is set to the same as true course
+Some parametres of the NMEA entences are fixed That is for the moment Fixed Quality = 1 Number of satellites being tracked = 8: Horizontal dilution of
+position = 0; Altitude in meters =20; Height of geoid in meters = O; Magnetic Variation = 0; GSA sentence is  atwa¥S fixed
+
+In setup it is possible to change the baud rate from 4800 (default) to 9600 or 38400
