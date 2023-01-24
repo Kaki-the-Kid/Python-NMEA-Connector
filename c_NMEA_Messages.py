@@ -40,11 +40,15 @@ class NMEAMessage(object):
     def __repr__(self):
         return self.message
     
-        
-                
-            
-        
-        
-        
+    def GGAMessage(self):
+        return self.gga
     
+    def GGAMessage(self):
+        return self.gga
+        
+    def RMCMessage(self):
+        return self.rmc
+    
+    def VTGMessage(self):
+        return self.vtg
     
