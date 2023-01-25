@@ -10,31 +10,32 @@ class TEST_CASE():
 	#region Test_vars
 	msg = "PGN129039 AIS Class B Position"
 	N2kMsg       = "" #tN2kMsg 
-	MessageID    = [5,0] # uint8_t
+	MessageID    = [5, 0] # uint8_t
 	Repeat       = [N2kaisr_Final, N2kaisr_Final] # tN2kAISRepeat
 	AISTransceiverInformation    = [N2kaischannel_B_VDL_transmission,N2kaischannel_B_VDL_transmission] # tN2kAISTransceiverInformation
  
 	
-	UserID       = [7,0] # uint32_t
-	Latitude     = [-33.0,0]   # double
-	Longitude    = [151.0,0]  # double
-	Accuracy     = [true,true] # bool
-	RAIM         = [false,false]   # bool
-	Seconds      = [4,0]     # uint8_t
-	COG          = [0.1,0]   # double
-	SOG          = [2.,0]    # double
+	UserID       = [7, 0] # uint32_t
+	Latitude     = [-33.0, 0]   # double
+	Longitude    = [151.0, 0]  # double
+	Accuracy     = [True, True] # bool
+	RAIM         = [False,False]   # bool
+	Seconds      = [4, 0]     # uint8_t
+	COG          = [0.1, 0]   # double
+	SOG          = [2., 0]    # double
 	Heading      = [0.15, 0] #double
-	Unit         = [N2kaisunit_ClassB_CS,N2kaisunit_ClassB_CS] #tN2kAISUnit
-	Display      = [true,true] # bool
-	DSC          = [false,false] # bool
-	Band         = [false,false] # bool
-	Msg22        = [true,true] # bool
-	Mode         = [N2kaismode_Assigned,N2kaismode_Assigned] # tN2kAISMode 
-	State        = [true,true] # bool
+	Unit         = [N2kaisunit_ClassB_CS, N2kaisunit_ClassB_CS] #tN2kAISUnit
+	Display      = [True, True] # bool
+	DSC          = [False, False] # bool
+	Band         = [False, False] # bool
+	Msg22        = [True, True] # bool
+	Mode         = [N2kaismode_Assigned, N2kaismode_Assigned] # tN2kAISMode 
+	State        = [True, True] # bool
 	#endregion
 
 
-	def SetN2kAISClassBPosition(N2kMsg,
+	def SetN2kAISClassBPosition(
+     	N2kMsg,
 		MessageID[0],
 		Repeat[0],
 		UserID[0],
@@ -100,6 +101,7 @@ class TEST_CASE():
 		Msg22[0],
 		Mode[0],
 		State[0]):
+		return 0
 
 
 	def ParseN2kAISClassBPosition(N2kMsg,
@@ -121,6 +123,11 @@ class TEST_CASE():
 		Msg22[1],
 		Mode[1],
 		State[1]):
+		return 0
+
+
+	def TakeTheError():
+		return
 
 
 
@@ -144,11 +151,14 @@ class myTEST_CASE():
 	data_tx.SetStationID("AX12")
 	data_tx.SetStationName("StationName")
 	#endregion
+ 
+	def __init__(self, data_tx = "", data_rx = ""):
+		data_tx = tN2kMeteorlogicalStationData()
+     
 	
 	def SetN2kPGN130323(N2kMsg, data_tx):
-
-	tN2kMeteorlogicalStationData data_rx
-	ParseN2kPGN130323(N2kMsg, data_rx)
+		tN2kMeteorlogicalStationData = data_rx
+		ParseN2kPGN130323(N2kMsg = "", data_rx = "")
 
 
 
@@ -159,39 +169,47 @@ class TEST_CASE_AIS_AtoN():
 	tN2kMsg 							N2kMsg
 	tN2kAISAtoNReportData 				data_tx
 	
+ 
+	self.data.tx = tN2kAISAtoNReportData()
 	data_tx.MessageID                   = 5
 	data_tx.Repeat                      = N2kaisr_Final
 	data_tx.UserID                      = 7
 	data_tx.Longitude                   = -33.0
 	data_tx.Latitude                    = 151.0
-	data_tx.Accuracy                    = true
-	data_tx.RAIM                        = true
+	data_tx.Accuracy                    = True
+	data_tx.RAIM                        = True
 	data_tx.Seconds                     = 4
 	data_tx.Length                      =  52.5
 	data_tx.Beam                        = 21.5
 	data_tx.PositionReferenceStarboard  = 3.6
 	data_tx.PositionReferenceTrueNorth  = 7.2
 	data_tx.AtoNType                    = N2kAISAtoN_beacon_isolated_danger
-	data_tx.OffPositionIndicator        = true
-	data_tx.VirtualAtoNFlag             = true
-	data_tx.AssignedModeFlag            = true
+	data_tx.OffPositionIndicator        = True
+	data_tx.VirtualAtoNFlag             = True
+	data_tx.AssignedModeFlag            = True
 	data_tx.GNSSType                    = N2kGNSSt_Chayka
 	data_tx.AtoNStatus                  = 0x00
 	data_tx.AISTransceiverInformation   = N2kaischannel_B_VDL_transmission
 	data_tx.SetAtoNName("BINGBONG")
 	#endregion
+ 
+	def __init__(self, data_tx = "", data_rx = ""):
+		data_tx = tN2kAISAtoNReportData()
+
 
 	def SetN2kAISAtoNReport(N2kMsg, data_tx):
-		return
+		return 0
 
-	AtoNName_RX[34] #char array
-	tN2kAISAtoNReportData data_rx
-	ParseN2kAISAtoNReport(N2kMsg, data_rx)
+
+	AtoNName_RX = [34] #char array
+	tN2kAISAtoNReportData = self.data_rx
+	ParseN2kAISAtoNReport(N2kMsg = "", data_rx ="")
 
 
 
 
 class TEST_CASE_PGN(Direction):
+    #region Test_vars5
 	msg = "PGN130577 Direction Data"
 
 	DataMode          = [N2kDD025_Simulator,N2kDD025_Simulator] #tN2kDataMode
@@ -203,6 +221,8 @@ class TEST_CASE_PGN(Direction):
 	SpeedThroughWater = [10.0,0] #double
 	Set               = [0.15,0] #double
 	Drift             = [3.0,0]  #double
+	#endregion
+
 
 	def SetN2kDirectionData(
 		N2kMsg,
@@ -215,6 +235,7 @@ class TEST_CASE_PGN(Direction):
 		SpeedThroughWater[0],
 		Set[0],
 		Drift[0]):
+		return 0
 
 
 	def ParseN2kDirectionData(
@@ -228,6 +249,7 @@ class TEST_CASE_PGN(Direction):
 		SpeedThroughWater[1],
 		Set[1],
 		Drift[1]):
+		return 0
 
 
 
@@ -268,7 +290,9 @@ class TEST_CASE_PGB127233_MOB():
 		SOG[0],
 		MMSI[0],
 		MOBEmitterBatteryStatus[0]):
-	 
+		return 0
+
+
 	def ParseN2kMOBNotification(
 		N2kMsg,
 		SID[1],
@@ -285,6 +309,7 @@ class TEST_CASE_PGB127233_MOB():
 		SOG[1],
 		MMSI[1],
 		MOBEmitterBatteryStatus[1]):
+		return 0
 
 
 
@@ -331,6 +356,7 @@ class TEST_CASE_PGN127237_HeadingTrackControl():
 		RateOfTurnOrder[0],
 		OffTrackLimit[0],
 		VesselHeading[0]):
+		return 0
 
 
 	def ParseN2kHeadingTrackControl(N2kMsg,
@@ -351,6 +377,7 @@ class TEST_CASE_PGN127237_HeadingTrackControl():
 		RateOfTurnOrder[1],
 		OffTrackLimit[1],
 		VesselHeading[1]):
+		return 0
 
 
 
@@ -364,7 +391,7 @@ class TEST_CASE_PGN_R_WP_Info():
 	Database = 2  #uint16_t
 	Route = 3  #uint16_t
 	NavDirectiont =  N2kdir_reverse  #tN2kNavigationDirection
-	SupplementaryData = true  #bool
+	SupplementaryData = True  #bool
 	RouteName = "test route"  #const char*
 	#endregion
 
@@ -375,23 +402,26 @@ class TEST_CASE_PGN_R_WP_Info():
 
 
 
+
 class TEST_CASE_PGN_AIS_safety_broadcast():
 	#region Test_vars
 	msg = "PGN129802 AIS Safety Related Broadcast Message"
 	N2kMsg                    = ""  #tN2kMsg 
 	MessageID                 = [27, 27]  #uint8_t 
-	Repeat                    = [N2kaisr_First, N2kaisr_First]  #tN2kAISRepeat 
+	Repeat                    = [self.N2kaisr_First, self.N2kaisr_First]  #tN2kAISRepeat 
 	SourceID                  = [2, 2]  #uint32_t 
-	AISTransceiverInformation = [N2kaischannel_B_VDL_transmission, N2kaischannel_B_VDL_transmission]  #tN2kAISTransceiverInformation 
+	AISTransceiverInformation = [self.N2kaischannel_B_VDL_transmission, self.N2kaischannel_B_VDL_transmission]  #tN2kAISTransceiverInformation 
 	SafetyRelatedText_TX      = "MOB"  #const char * 
 	buflen                    = 36  #size_t 
 	SafetyRelatedText_RX[buflen]  #char 
 	#endregion
 
-	SetN2kAISSafetyRelatedBroadcastMsg(N2kMsg, MessageID[0], Repeat[0], SourceID[0], AISTransceiverInformation[0], (char*)SafetyRelatedText_TX):
+	def SetN2kAISSafetyRelatedBroadcastMsg(N2kMsg, MessageID[0], Repeat[0], SourceID[0], AISTransceiverInformation[0], SafetyRelatedText_TX):
+		return 0
 	
 	
-	ParseN2kAISSafetyRelatedBroadcastMsg(N2kMsg, MessageID[1], Repeat[1], SourceID[1], AISTransceiverInformation[1], SafetyRelatedText_RX, buflen)  #
+	def ParseN2kAISSafetyRelatedBroadcastMsg(N2kMsg, MessageID[1], Repeat[1], SourceID[1], AISTransceiverInformation[1], SafetyRelatedText_RX, buflen):
+		return 0
 
 
 
@@ -406,9 +436,13 @@ class Test_case_GVTG():
 	SpeedOverGroundKmh       = [0.4, 0.4]  #double
 	#endregion
 
-	SetN2kPGN129026(N2kMsg, CourseOverGroundTrue[0], CourseOverGroundMagnetic[0], SpeedOverGroundKnots[0], SpeedOverGroundKmh[0]):
+	def SetN2kPGN129026(N2kMsg, CourseOverGroundTrue[0], CourseOverGroundMagnetic[0], SpeedOverGroundKnots[0], SpeedOverGroundKmh[0]):
+		return 0
 
-	ParseN2kPGN129026(N2kMsg, CourseOverGroundTrue[1], CourseOverGroundMagnetic[1], SpeedOverGroundKnots[1], SpeedOverGroundKmh[1]):
+
+	def ParseN2kPGN129026(N2kMsg, CourseOverGroundTrue[1], CourseOverGroundMagnetic[1], SpeedOverGroundKnots[1], SpeedOverGroundKmh[1]):
+		return 0
+
      
     #list test_msg = []
 	'''	msg_sequence = list(
@@ -419,104 +453,105 @@ class Test_case_GVTG():
                    		SpeedOverGroundKnots, 
                      	SpeedOverGroundKmh)'''
  
-    test_msg_sequence = list()
+	test_msg_sequence = list()
     
 	
- '''
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -002, APRMC, -0002,2,3. N, 92220.232, E, 1273.9,15.5,211015 ,, * 17)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50 )
-	$ GPVTG, 15.5, T 2, 7, 9, 5, 2, 3, 9, 9, 2, 3, 9, 2, 3 N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T , 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -00.000,00, A, 21444,902, N, 21444,902, E, 1273.9,15.5.211015 ,, * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2 , N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5. M, 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -00000,00, A, 21444,902, N, 21444,902, E, 1273,9,15,5,211015 ,, * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50
-	$ GPVTG, 15,5, T ,,, MP. K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPRMC, -00000.00, A, 21444.902, N, 21444.901, * 21444.9105 E, 9121, * 17)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T 1, 27, T 1,. , K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPRMC, -00000.00, A, 21444.902, N, 21444.907, 9,125, 9,127, E, 9127, 9,125. * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, T , 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -00000,00, A, 21444,902, N, 9120,4, 91204, N, 9121,4, 9121,4, 91204, , * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,,, MP. K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPRMC, -00000.00, A, 21444.902, N, 21444.901, * 21444.9105 E, 9121, * 17)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T 1, 27, T 1,. , K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPRMC, -00000.00, A, 21444.902, N, 21444.907, 9,125, 9,127, E, 9127, 9,125. * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, T , 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -00000,00, A, 21444,902, N, 9120,4, 91204, N, 9121,4, 9121,4, 91204, , * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
+	test_msg_sequence.append(N2kMsg)
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-002,APRMC,-0002,2,3. N,92220.232,E,1273.9,15.5,211015 ,,* 17")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T 2,7,9,5,2,3,9,9,2,3,9,2,3 N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T ,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-00.000,00,A,21444,902,N,21444,902,E,1273.9,15.5.211015 ,,* 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2 ,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5. M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000,00,A,21444,902,N,21444,902,E,1273,9,15,5,211015 ,,* 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,,MP. K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000.00,A,21444.902,N,21444.901,* 21444.9105 E,9121,* 17")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T 1,27,T 1,. ,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000.00,A,21444.902,N,21444.907,9,125,9,127,E,9127,9,125. * 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,T ,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000,00,A,21444,902,N,9120,4,91204,N,9121,4,9121,4,91204,,* 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,,MP. K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000.00,A,21444.902,N,21444.901,* 21444.9105 E,9121,* 17")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T 1,27,T 1,. ,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000.00,A,21444.902,N,21444.907,9,125,9,127,E,9127,9,125. * 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,T ,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000,00,A,21444,902,N,9120,4,91204,N,9121,4,9121,4,91204,,* 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
 
 	#Initialiser buffere
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -002, APRMC, -002,2,3 N, 92220.232, E, 1273.9,15.5,211015 ,, * 17)
-	$ GPVTG, 15.5, T ,, M, 1273.9, K, 2359.2, N * 50)
-	$ GPVTG, 15.5, T 2, 7, 9, 5, 2, 3, 9, 9, 2, 3, 9, 2, 3 N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T , 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -00.000,00, A, 21444,902, N, 21444,902, E, 1273.9,15.5.211015 ,, * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2 , N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5. M, 1273,9, K, 2359,2, N * 50)
-	$ GPRMC, -00000,00, A, 21444,902, N, 21444,902, E, 1273,9,15,5,211015 ,, * 17)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,,, MP. K, 2359,2, N * 50)
-	$ GPVTG, 15,5, T ,, M, 1273,9, K, 2359,2, N * 50)
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-002,APRMC,-002,2,3 N,92220.232,E,1273.9,15.5,211015 ,,* 17")
+	test_msg_sequence.append("GPVTG,15.5,T,,M,1273.9,K,2359.2,N * 50")
+	test_msg_sequence.append("GPVTG,15.5,T 2,7,9,5,2,3,9,9,2,3,9,2,3 N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T ,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-00.000,00,A,21444,902,N,21444,902,E,1273.9,15.5.211015 ,,* 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2 ,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5. M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPRMC,-00000,00,A,21444,902,N,21444,902,E,1273,9,15,5,211015 ,,* 17")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,,MP. K,2359,2,N * 50")
+	test_msg_sequence.append("GPVTG,15,5,T,,M,1273,9,K,2359,2,N * 50")
+	
+
 	'''
+	This application can send NMEA 0183 version 2.30 sentences through a Serial Device with default 4800 baud according to the NMEA specification. It may be
+	needed to scroll down in the list of usable items, to find the desired Serial Device. This depends on the configuration of the computer
+	The NMEA sentences that can be choosen to send is RMC. GGA. GU., GSA, VTG, ZDA and a custom-made
+	Additional NMEA sentences will be added later
+	GPS-Simulator can be used by technicians from RDN to simulate the NMEA output from the Mil GPS
+	'''
+ 
+	# GGA example: 
+	test_msg_sequence.append("GPGGA,123519.4807.038,N,01131.000,E. 1,08,0.9,20,M,47,M,.*47")
+	# RMC example: 
+	test_msg_sequence.append("$GPRMC.123519.A.4807.038,N,01131.000,E,022.4,084.4,230994,003.1,W,A *6A")
+	# Gll example: 
+	test_msg_sequence.append("$GPGLL.5601.7919,N,1116.972,E,212436.39,A,A*6C")
+	# GSA example: 
+	test_msg_sequence.append("$GPGSA.A.3,17,15,19,24,32,10,12.25,..,,1.77,1.00,1.46*09")
+	# VTG example: 
+	test_msg_sequence.append("$GPVTG,36.4,T.36.4,M,1.00,N,1.85,K*4E")
+	# ZDA example: 
+	test_msg_sequence.append("$GPZDA.072727.68,02,12,2019,00,00,*48")
 
-'''
-This application can send NMEA 0183 version 2.30 sentences through a Serial Device with default 4800 baud according to the NMEA specification. It may be
-needed to scroll down in the list of usable items, to find the desired Serial Device. This depends on the configuration of the computer
-The NMEA sentences that can be choosen to send is RMC. GGA. GU., GSA, VTG, ZDA and a custom-made
-Additional NMEA sentences will be added later
-GPS-Simulator can be used by technicians from RDN to simulate the NMEA output from the Mil GPS
-'''
-# GGA example: 
-# $GPGGA, 123519.4807.038,N,01131.000,E. 1,08,0.9,20,M,47,M,.*47
-# RMC example: 
-# $GPRMC.123519.A.4807.038,N,01131.000,E,022.4,084.4,230994,003.1,W,A *6A
-# Gll example: 
-# $GPGLL.5601.7919,N, 1116.972,E,212436.39,A,A*6C
-# GSA example: 
-# $GPGSA.A.3, 17, 15, 19,24,32, 10, 12.25,..,, 1.77, 1.00, 1.46*09
-# VTG example: 
-# $GPVTG,36.4,T.36.4,M, 1.00,N, 1.85,K*4E
-# ZDA example: 
-# $GPZDA.072727.68,02, 12,2019,00,00, *48
+	''' 
+	Custom: Copy/Paste, or manually write, a NMEA-sentence in the box to be send
+	The area that show the sentences that have been sent will be reset for every 50 repeatations to avoid overflow of the TextBlock
+	If too many sentences are chosen and repetition period is too small compared to the baud rate, the sentences doesn't have time to be sent before a new
+	update is called.This can confuse the serial device and the program can suddently stop.
+	Magnetic course is set to the same as True course
+	Some parametres of the NMEA entences are fixed That is for the moment Fixed Quality = 1 Number of satellites being tracked = 8: Horizontal dilution of
+	position = 0; Altitude in meters =20; Height of geoid in meters = O; Magnetic Variation = 0; GSA sentence is  atwa¥S fixed
 
-''' 
-Custom: Copy/Paste, or manually write, a NMEA-sentence in the box to be send
-The area that show the sentences that have been sent will be reset for every 50 repeatations to avoid overflow of the TextBlock
-If too many sentences are chosen and repetition period is too small compared to the baud rate, the sentences doesn't have time to be sent before a new
-update is called.This can confuse the serial device and the program can suddently stop.
-Magnetic course is set to the same as true course
-Some parametres of the NMEA entences are fixed That is for the moment Fixed Quality = 1 Number of satellites being tracked = 8: Horizontal dilution of
-position = 0; Altitude in meters =20; Height of geoid in meters = O; Magnetic Variation = 0; GSA sentence is  atwa¥S fixed
-
-In setup it is possible to change the baud rate from 4800 (default) to 9600 or 38400
-'''
+	In setup it is possible to change the baud rate from 4800 (default) to 9600 or 38400
+	'''
