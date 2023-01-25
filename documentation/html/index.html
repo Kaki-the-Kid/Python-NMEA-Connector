@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: NMEA Controller</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">NMEA Controller </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Resume</h1>
+<p>Jeg ønsker, at lave en løsning som gør at man kan læse NMEA beskeder på computer <br  />
+</p>
+<p>&copy; copyright 2019-2020 Karsten 'Kaki' Reitan Sørensen<br  />
+ version 1.00-development</p>
+<ul>
+<li><a class="el" href="nmea_commands.html#nmea_commands">NMEA kommandoer</a></li>
+<li><a class="el" href="todo.html">Todo-liste</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="project_goals"></a>
+Mål med projektet</h1>
+<h4>TCP/IP forbindelse</h4>
+<h4>SoftAP funktionen</h4>
+<h4>HTML side</h4>
+<h4>Håndtering af GET request</h4>
+<ul>
+<li>Tænde og slukke lysdiode på IO pin</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="projecct_structure"></a>
+Projekt struktur</h1>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>udfyld den korrekte struktur</dd></dl>
+<p>Eksempel på struktur</p><ul>
+<li>Source Files<ul>
+<li>main.c</li>
+<li>MCC Generated Files<ul>
+<li>device_config.c</li>
+<li>eusart1.c</li>
+<li>eusart2.c</li>
+<li>interrupt_manager.c</li>
+<li>mcc.c</li>
+<li>pin_manager.c</li>
+<li>tmr2.c</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="file_structure"></a>
+Fil struktur</h1>
+<ul>
+<li><em>build</em><br  />
+ FIler genereret af compiler</li>
+<li><em>datablade</em><br  />
+ Datablade for den anvendte PIC kreds, ESP01 og andre mere eller mindre relevante dokumenter<br  />
+ <em>ESP01</em> - <br  />
+ <em>MRF89XAM8A</em> - mappe til fremtidig udvidelse til LORA modul</li>
+<li><em>debug</em><br  />
+ Filer genereret af compiler</li>
+<li><em>dist</em><br  />
+ Filer generet af compiler</li>
+<li><em>docs</em><br  />
+ <em><a class="el" href="mainpage_8dox.html">mainpage.dox</a></em> bliver brugt af Doxygen til at generere forsiden på projektet</li>
+<li><em>doxygen</em><br  />
+ Indeholder den overordnede dokumentation af projektet i HTML version. Genreret med Doxygen</li>
+<li><em>mcc_generated_files</em><br  />
+ Filer genereret af CodeConfigurator</li>
+<li><em>nbproject</em><br  />
+ Filer genereret af compiler</li>
+<li><em>powerpoints</em><br  />
+ Mappe lavet til at holde produceret undervisnings materiale</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="SQLite3_tools"></a>
+SQLite3</h1>
+<p>SQLite is a small, fast, and embeddable open source file system-based SQL database. It doesn't have a separate server component like traditional databases. Rather, it reads and writes data directly in disk files. A SQLite database is integrated with the application that accesses the database. The SQLite database file format is cross-platform and can be copied between 32-bit and 64-bit file systems. Due to the serverless architecture, developers don't need to install SQLite before using it. All SQLite transactions are fully ACID compliant; that means all queries and changes are Atomic, Consistent, Isolated, and Durable.</p>
+<p>SQLite kildekode er offentlig og fri til brug hvilken som helst formål - kommercielt og privat.</p>
+<p>Fordi den er meget letvægt i sin opbygning bliver SQLite anvendt intensivt i embedded software, som TV, mobiltelefoner oma. Det sikrer en serverfri enhed. SQLite is recommended for mobile-based applications. Reading and writing operations in SQLite database are extremely fast, almost 35% faster than any traditional databases. SQLite reduces application cost because content can be accessed and updated by using concise SQL queries instead of lengthy procedural queries. To connect SQLite, no additional database drivers, or ODBC configuration are required. Developers just have to download the library and add the data file in their application.</p>
+<ul>
+<li>DB Browser for SQLite<br  />
+ Som Database er brug SQLite3 og her er værktøj som meget ligner det vi kender MSSQL og MySQL.<br  />
+ Webside: <a href="https://sqlitebrowser.org/">https://sqlitebrowser.org/</a></li>
+<li>Using SQLite in a C# Application<br  />
+ Webside som indeholder præcis information omkring implementeringen af SQLite3 i Visual Studio projekt.<br  />
+ Webside: <a href="https://www.codeguru.com/csharp/.net/net_data/using-sqlite-in-a-c-application.html">https://www.codeguru.com/csharp/.net/net_data/using-sqlite-in-a-c-application.html</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="doxygen_tools"></a>
+Doxygen</h1>
+<ul>
+<li>Doxygen v1.8.17<br  />
+ Kan implementeres som plugin i MPLabs / NetBeans IDE.<br  />
+ Fordi jeg har skrevet størstedelen af kommentarer på dansk skal DoxyWizard instilles til <em>Windows-1252</em> formattering af teksten. I IDE kan man bruge UTF-8 som normalt.<br  />
+ Doxýgen dokumentation: <a href="https://http://www.doxygen.nl/index.html">https://http://www.doxygen.nl/index.html</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="project_other_text"></a>
+Kilder, inspiration og læring</h1>
+<ul>
+<li>Deepblue: UART | Serial Communication With PIC Microcontrollers Tutorial<br  />
+ Side som indeholder et væld af information om seriel kommunikation.<br  />
+ Webside: <a href="https://deepbluembedded.com/uart-pic-microcontroller-tutorial/">https://deepbluembedded.com/uart-pic-microcontroller-tutorial/</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="project_license"></a>
+Licens</h1>
+<p>This program is free software; you can redistribute it and/or modify<br  />
+ it under the terms of the GNU General Public License as published by<br  />
+ the Free Software Foundation; either version 2 of the License, or<br  />
+ (at your option) any later version.</p>
+<p>This program is distributed in the hope that it will be useful,<br  />
+ but WITHOUT ANY WARRANTY; without even the implied warranty of<br  />
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<br  />
+ GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License<br  />
+ along with this program; if not, write to the Free Software<br  />
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA. </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

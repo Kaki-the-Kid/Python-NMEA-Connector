@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Kildefilen C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/nmealib-0.5.3/nmealib/include/nmea/tok.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('tok_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tok.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tok_8h.html">Hop til denne fils dokumentation.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * NMEA library</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * URL: http://nmea.sourceforge.net</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Author: Tim (xtimor@gmail.com)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licence: http://www.gnu.org/licenses/lgpl.html</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * $Id: tok.h 4 2007-08-27 13:11:03Z xtimor $</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __NMEA_TOK_H__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __NMEA_TOK_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nmealib-0_85_83_2nmealib_2include_2nmea_2config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="tok_8h.html#a491bbef68453dad32534e24305be12b9">nmea_calc_crc</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buff, <span class="keywordtype">int</span> buff_sz);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="tok_8h.html#ab1b42ca0be2755a84ebcfc8aba9093d3">nmea_atoi</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> str_sz, <span class="keywordtype">int</span> radix);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">double</span>  <a class="code" href="tok_8h.html#a63cdfe106360095f8e41463ae1249367">nmea_atof</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> str_sz);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="tok_8h.html#abf9ff76d95b50da70b11376831282257">nmea_printf</a>(<span class="keywordtype">char</span> *buff, <span class="keywordtype">int</span> buff_sz, <span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="tok_8h.html#ac7d041f9ea538fed03507968f4c44a44">nmea_scanf</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buff, <span class="keywordtype">int</span> buff_sz, <span class="keyword">const</span> <span class="keywordtype">char</span> *format, ...);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __NMEA_TOK_H__ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="anmealib-0_85_83_2nmealib_2include_2nmea_2config_8h_html"><div class="ttname"><a href="nmealib-0_85_83_2nmealib_2include_2nmea_2config_8h.html">config.h</a></div></div>
+<div class="ttc" id="atok_8h_html_a63cdfe106360095f8e41463ae1249367"><div class="ttname"><a href="tok_8h.html#a63cdfe106360095f8e41463ae1249367">nmea_atof</a></div><div class="ttdeci">double nmea_atof(const char *str, int str_sz)</div><div class="ttdoc">Convert string to fraction number.</div><div class="ttdef"><b>Definition:</b> <a href="tok_8c_source.html#l00063">tok.c:63</a></div></div>
+<div class="ttc" id="atok_8h_html_a491bbef68453dad32534e24305be12b9"><div class="ttname"><a href="tok_8h.html#a491bbef68453dad32534e24305be12b9">nmea_calc_crc</a></div><div class="ttdeci">int nmea_calc_crc(const char *buff, int buff_sz)</div><div class="ttdoc">Calculate control sum of binary buffer.</div><div class="ttdef"><b>Definition:</b> <a href="tok_8c_source.html#l00030">tok.c:30</a></div></div>
+<div class="ttc" id="atok_8h_html_abf9ff76d95b50da70b11376831282257"><div class="ttname"><a href="tok_8h.html#abf9ff76d95b50da70b11376831282257">nmea_printf</a></div><div class="ttdeci">int nmea_printf(char *buff, int buff_sz, const char *format,...)</div><div class="ttdoc">Formating string (like standart printf) with CRC tail (*CRC)</div><div class="ttdef"><b>Definition:</b> <a href="tok_8c_source.html#l00082">tok.c:82</a></div></div>
+<div class="ttc" id="atok_8h_html_ab1b42ca0be2755a84ebcfc8aba9093d3"><div class="ttname"><a href="tok_8h.html#ab1b42ca0be2755a84ebcfc8aba9093d3">nmea_atoi</a></div><div class="ttdeci">int nmea_atoi(const char *str, int str_sz, int radix)</div><div class="ttdoc">Convert string to number.</div><div class="ttdef"><b>Definition:</b> <a href="tok_8c_source.html#l00044">tok.c:44</a></div></div>
+<div class="ttc" id="atok_8h_html_ac7d041f9ea538fed03507968f4c44a44"><div class="ttname"><a href="tok_8h.html#ac7d041f9ea538fed03507968f4c44a44">nmea_scanf</a></div><div class="ttdeci">int nmea_scanf(const char *buff, int buff_sz, const char *format,...)</div><div class="ttdoc">Analyse string (specificate for NMEA sentences)</div><div class="ttdef"><b>Definition:</b> <a href="tok_8c_source.html#l00117">tok.c:117</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_734c1a9bcf946aa19cb1e292de045596.html">nmealib-0.5.3</a></li><li class="navelem"><a class="el" href="dir_5f4316b47fe927d7809378d88831d150.html">nmealib</a></li><li class="navelem"><a class="el" href="dir_57c4df8b677f2620782fe25e79571cbe.html">include</a></li><li class="navelem"><a class="el" href="dir_58ab831d6ad4e0b1e6f6a4c57fe777f8.html">nmea</a></li><li class="navelem"><a class="el" href="tok_8h.html">tok.h</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

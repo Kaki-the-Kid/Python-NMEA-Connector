@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Kildefilen C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/VirtualGPSJet/vgps/upkit/PosTab.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_pos_tab_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">PosTab.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_pos_tab_8h.html">Hop til denne fils dokumentation.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// CPosTab.h : interface of the CPosTab class</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dev_manager_8h.html">DevManager.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_c_pos_tab.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_pos_tab.html">CPosTab</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    : <span class="keyword">public</span> CDialogImpl&lt;CPosTab&gt;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    , <span class="keyword">public</span> <a class="code" href="class_dev_handler.html">DevHandler</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_c_pos_tab.html#a94389ddf6678f2936494e4afc755d777a52534e4cbeeee8128eece11c9cbe18e0">   14</a></span>&#160;    <span class="keyword">enum</span> { <a class="code" href="class_c_pos_tab.html#a94389ddf6678f2936494e4afc755d777a52534e4cbeeee8128eece11c9cbe18e0">IDD</a> = <a class="code" href="upkit_2resource_8h.html#a943dac385e2798d38b5cc7ad7d2d6b3e">IDD_POSTAB</a> };</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    BEGIN_MSG_MAP(<a class="code" href="class_c_main_dlg.html">CMainDlg</a>)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        MESSAGE_HANDLER(WM_INITDIALOG, <a class="code" href="class_c_pos_tab.html#a9cadbaa098d3b777eba0f53171ecd419">OnInitDialog</a>)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        MESSAGE_HANDLER(WM_CLOSE, <a class="code" href="class_c_pos_tab.html#ae1fb49bc5a6f6412c8b5f2445060332a">OnClose</a>)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        COMMAND_HANDLER(<a class="code" href="upkit_2resource_8h.html#acfb35c4efbc593430638b09db17f2870">IDC_BUTTON1</a>, BN_CLICKED, <a class="code" href="class_c_pos_tab.html#ae7c4fcc3aaab7e29bf9bc7f5a06f750d">OnBnClickedButton1</a>)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    END_MSG_MAP()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    LRESULT <a class="code" href="class_c_pos_tab.html#a9cadbaa098d3b777eba0f53171ecd419">OnInitDialog</a>(UINT <span class="comment">/*uMsg*/</span>, WPARAM <span class="comment">/*wParam*/</span>, LPARAM <span class="comment">/*lParam*/</span>, BOOL&amp; <span class="comment">/*bHandled*/</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    LRESULT <a class="code" href="class_c_pos_tab.html#ae1fb49bc5a6f6412c8b5f2445060332a">OnClose</a>(UINT <span class="comment">/*uMsg*/</span>, WPARAM <span class="comment">/*wParam*/</span>, LPARAM <span class="comment">/*lParam*/</span>, BOOL&amp; <span class="comment">/*bHandled*/</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    LRESULT <a class="code" href="class_c_pos_tab.html#ae7c4fcc3aaab7e29bf9bc7f5a06f750d">OnBnClickedButton1</a>(WORD <span class="comment">/*wNotifyCode*/</span>, WORD <span class="comment">/*wID*/</span>, HWND <span class="comment">/*hWndCtl*/</span>, BOOL&amp; <span class="comment">/*bHandled*/</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;protected:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    virtual <span class="keywordtype">void</span> <a class="code" href="class_c_pos_tab.html#a0fab4f9696821da00cee80b4c3ad74bb">onDevChange</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_c_pos_tab_html_ae7c4fcc3aaab7e29bf9bc7f5a06f750d"><div class="ttname"><a href="class_c_pos_tab.html#ae7c4fcc3aaab7e29bf9bc7f5a06f750d">CPosTab::OnBnClickedButton1</a></div><div class="ttdeci">LRESULT OnBnClickedButton1(WORD, WORD, HWND, BOOL &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_pos_tab_8cpp_source.html#l00023">PosTab.cpp:23</a></div></div>
+<div class="ttc" id="aclass_c_pos_tab_html_a94389ddf6678f2936494e4afc755d777a52534e4cbeeee8128eece11c9cbe18e0"><div class="ttname"><a href="class_c_pos_tab.html#a94389ddf6678f2936494e4afc755d777a52534e4cbeeee8128eece11c9cbe18e0">CPosTab::IDD</a></div><div class="ttdeci">@ IDD</div><div class="ttdef"><b>Definition:</b> <a href="_pos_tab_8h_source.html#l00014">PosTab.h:14</a></div></div>
+<div class="ttc" id="aupkit_2resource_8h_html_a943dac385e2798d38b5cc7ad7d2d6b3e"><div class="ttname"><a href="upkit_2resource_8h.html#a943dac385e2798d38b5cc7ad7d2d6b3e">IDD_POSTAB</a></div><div class="ttdeci">#define IDD_POSTAB</div><div class="ttdef"><b>Definition:</b> <a href="upkit_2resource_8h_source.html#l00008">resource.h:8</a></div></div>
+<div class="ttc" id="aclass_c_main_dlg_html"><div class="ttname"><a href="class_c_main_dlg.html">CMainDlg</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_dlg_8h_source.html#l00009">MainDlg.h:9</a></div></div>
+<div class="ttc" id="aclass_c_pos_tab_html_ae1fb49bc5a6f6412c8b5f2445060332a"><div class="ttname"><a href="class_c_pos_tab.html#ae1fb49bc5a6f6412c8b5f2445060332a">CPosTab::OnClose</a></div><div class="ttdeci">LRESULT OnClose(UINT, WPARAM, LPARAM, BOOL &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_pos_tab_8cpp_source.html#l00018">PosTab.cpp:18</a></div></div>
+<div class="ttc" id="aclass_dev_handler_html"><div class="ttname"><a href="class_dev_handler.html">DevHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="_dev_manager_8h_source.html#l00065">DevManager.h:65</a></div></div>
+<div class="ttc" id="aupkit_2resource_8h_html_acfb35c4efbc593430638b09db17f2870"><div class="ttname"><a href="upkit_2resource_8h.html#acfb35c4efbc593430638b09db17f2870">IDC_BUTTON1</a></div><div class="ttdeci">#define IDC_BUTTON1</div><div class="ttdef"><b>Definition:</b> <a href="upkit_2resource_8h_source.html#l00017">resource.h:17</a></div></div>
+<div class="ttc" id="aclass_c_pos_tab_html_a0fab4f9696821da00cee80b4c3ad74bb"><div class="ttname"><a href="class_c_pos_tab.html#a0fab4f9696821da00cee80b4c3ad74bb">CPosTab::onDevChange</a></div><div class="ttdeci">virtual void onDevChange()</div><div class="ttdef"><b>Definition:</b> <a href="_pos_tab_8cpp_source.html#l00078">PosTab.cpp:78</a></div></div>
+<div class="ttc" id="aclass_c_pos_tab_html_a9cadbaa098d3b777eba0f53171ecd419"><div class="ttname"><a href="class_c_pos_tab.html#a9cadbaa098d3b777eba0f53171ecd419">CPosTab::OnInitDialog</a></div><div class="ttdeci">LRESULT OnInitDialog(UINT, WPARAM, LPARAM, BOOL &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="_pos_tab_8cpp_source.html#l00013">PosTab.cpp:13</a></div></div>
+<div class="ttc" id="aclass_c_pos_tab_html"><div class="ttname"><a href="class_c_pos_tab.html">CPosTab</a></div><div class="ttdef"><b>Definition:</b> <a href="_pos_tab_8h_source.html#l00009">PosTab.h:9</a></div></div>
+<div class="ttc" id="a_dev_manager_8h_html"><div class="ttname"><a href="_dev_manager_8h.html">DevManager.h</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_c22b8d49b1f1c98d0ac9235bda304932.html">VirtualGPSJet</a></li><li class="navelem"><a class="el" href="dir_2c3aaa771705721e4fea6012ccab2af7.html">vgps</a></li><li class="navelem"><a class="el" href="dir_39fb43888a14b643db3221abb72152e7.html">upkit</a></li><li class="navelem"><a class="el" href="_pos_tab_8h.html">PosTab.h</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/VirtualGPSJet/vgps/driver/vgd.c filreference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('vgd_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">#Defines</a> &#124;
+<a href="#func-members">Funktioner</a>  </div>
+  <div class="headertitle">
+<div class="title">vgd.c filreference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;serhw.h&gt;</code><br />
+<code>#include &lt;hw16550.h&gt;</code><br />
+<code>#include &lt;nmea/tools.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_virtual_g_p_s_jet_2vgps_2driver_2config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="vgd_8h_source.html">vgd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pdd_8h_source.html">pdd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mdd_8h_source.html">mdd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
+</div>
+<p><a href="vgd_8c_source.html">Hop til denne fils kildekode.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+#Defines</h2></td></tr>
+<tr class="memitem:aae69ec77087987eb6c6b8ef6b4179baf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#aae69ec77087987eb6c6b8ef6b4179baf">VGD_BEG_OP</a>(phead)&#160;&#160;&#160;EnterCriticalSection(&amp;(((<a class="el" href="vgd_8h.html#a01bb5fc2540ab1c1f8fb97433591ab4c">PVGD_INFO</a>)phead)-&gt;allow_mutex))</td></tr>
+<tr class="separator:aae69ec77087987eb6c6b8ef6b4179baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080784c7e0973a78095b7da8d116fb43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a080784c7e0973a78095b7da8d116fb43">VGD_END_OP</a>(phead)&#160;&#160;&#160;LeaveCriticalSection(&amp;(((<a class="el" href="vgd_8h.html#a01bb5fc2540ab1c1f8fb97433591ab4c">PVGD_INFO</a>)phead)-&gt;allow_mutex))</td></tr>
+<tr class="separator:a080784c7e0973a78095b7da8d116fb43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktioner</h2></td></tr>
+<tr class="memitem:aae562410cc755f5f02d6bbbd575d7b5c"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#aae562410cc755f5f02d6bbbd575d7b5c">VGD_SetByteSize</a> (PVOID pHead, ULONG ByteSize)</td></tr>
+<tr class="separator:aae562410cc755f5f02d6bbbd575d7b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77aed1802a180ccd4963331481cf3f7d"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a77aed1802a180ccd4963331481cf3f7d">VGD_SetStopBits</a> (PVOID pHead, ULONG StopBits)</td></tr>
+<tr class="separator:a77aed1802a180ccd4963331481cf3f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ff7fd5194f1f85f954bd3c9500c1c0"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a77ff7fd5194f1f85f954bd3c9500c1c0">VGD_SetParity</a> (PVOID pHead, ULONG Parity)</td></tr>
+<tr class="separator:a77ff7fd5194f1f85f954bd3c9500c1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5496cdc49333efd2af7d7d1989ed6e78"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a5496cdc49333efd2af7d7d1989ed6e78">VGD_GenCycle</a> (PVOID pHead)</td></tr>
+<tr class="separator:a5496cdc49333efd2af7d7d1989ed6e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f13e86ff0a99c201021ae12cb32a5d"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a12f13e86ff0a99c201021ae12cb32a5d">VGD_StartTimerThread</a> (PVOID pHead)</td></tr>
+<tr class="separator:a12f13e86ff0a99c201021ae12cb32a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1dc45abec72d89e2872d4324e6010bf"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#aa1dc45abec72d89e2872d4324e6010bf">VGD_StopTimerThread</a> (PVOID pHead)</td></tr>
+<tr class="separator:aa1dc45abec72d89e2872d4324e6010bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8bf915386344af2f05fee067aa8997"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a7e8bf915386344af2f05fee067aa8997">VGD_PushTapFile</a> (PUCHAR pRxBuffer, ULONG Bufflen)</td></tr>
+<tr class="separator:a7e8bf915386344af2f05fee067aa8997"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9aac5c7827d7ce0d12d81d5d507b04a"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#ae9aac5c7827d7ce0d12d81d5d507b04a">SL_Init</a> (ULONG Identifier, PVOID pHead, PVOID pMddHead)</td></tr>
+<tr class="separator:ae9aac5c7827d7ce0d12d81d5d507b04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dcb3e6f94fb6c577956bf9d7cee4bf8"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a2dcb3e6f94fb6c577956bf9d7cee4bf8">SL_PostInit</a> (PVOID pHead)</td></tr>
+<tr class="separator:a2dcb3e6f94fb6c577956bf9d7cee4bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58ab64d74bd3cb24cbbb8d6cb33fe93"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#ad58ab64d74bd3cb24cbbb8d6cb33fe93">SL_Open</a> (PVOID pHead)</td></tr>
+<tr class="separator:ad58ab64d74bd3cb24cbbb8d6cb33fe93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4637f3fe5580e7483e82d393cdcfa1d1"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a4637f3fe5580e7483e82d393cdcfa1d1">SL_Close</a> (PVOID pHead)</td></tr>
+<tr class="separator:a4637f3fe5580e7483e82d393cdcfa1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670a3e171514c124df2cadb5c069ce8e"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a670a3e171514c124df2cadb5c069ce8e">SL_Deinit</a> (PVOID pHead)</td></tr>
+<tr class="separator:a670a3e171514c124df2cadb5c069ce8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2aaac4db4ee054f855e30a47efb7dbf"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#ae2aaac4db4ee054f855e30a47efb7dbf">SL_ClearDTR</a> (PVOID pHead)</td></tr>
+<tr class="separator:ae2aaac4db4ee054f855e30a47efb7dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d93951525bed2d787a2c8648108ad3"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#aa3d93951525bed2d787a2c8648108ad3">SL_SetDTR</a> (PVOID pHead)</td></tr>
+<tr class="separator:aa3d93951525bed2d787a2c8648108ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4ca8717a85f8a32e196e91fba06d49"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a2b4ca8717a85f8a32e196e91fba06d49">SL_ClearRTS</a> (PVOID pHead)</td></tr>
+<tr class="separator:a2b4ca8717a85f8a32e196e91fba06d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d01996bb54f3d919a24403b812f805"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a28d01996bb54f3d919a24403b812f805">SL_SetRTS</a> (PVOID pHead)</td></tr>
+<tr class="separator:a28d01996bb54f3d919a24403b812f805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56697cafe94654bef8b52774237c864f"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a56697cafe94654bef8b52774237c864f">SL_ClearBreak</a> (PVOID pHead)</td></tr>
+<tr class="separator:a56697cafe94654bef8b52774237c864f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f5fa3aa36cb449a1156cef0baa833d1"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a1f5fa3aa36cb449a1156cef0baa833d1">SL_SetBreak</a> (PVOID pHead)</td></tr>
+<tr class="separator:a1f5fa3aa36cb449a1156cef0baa833d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e170e0f69f5329bed3dab8635f4285f"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a8e170e0f69f5329bed3dab8635f4285f">SL_SetBaudRate</a> (PVOID pHead, ULONG BaudRate)</td></tr>
+<tr class="separator:a8e170e0f69f5329bed3dab8635f4285f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ad6d6715f2ffe9069660cf95d0910a"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a85ad6d6715f2ffe9069660cf95d0910a">SL_GetRxBufferSize</a> (PVOID pHead)</td></tr>
+<tr class="separator:a85ad6d6715f2ffe9069660cf95d0910a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed81e2a057466937568f2f74f52ee1f"><td class="memItemLeft" align="right" valign="top">INTERRUPT_TYPE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a3ed81e2a057466937568f2f74f52ee1f">SL_GetInterruptType</a> (PVOID pHead)</td></tr>
+<tr class="separator:a3ed81e2a057466937568f2f74f52ee1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d52d92d4604c42090edd1c6d694a86"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a87d52d92d4604c42090edd1c6d694a86">SL_RxIntr</a> (PVOID pHead, PUCHAR pRxBuffer, ULONG *pBufflen)</td></tr>
+<tr class="separator:a87d52d92d4604c42090edd1c6d694a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07343c3423bb270fc82409e00c11fe75"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a07343c3423bb270fc82409e00c11fe75">SL_TxIntrEx</a> (PVOID pHead, PUCHAR pTxBuffer, ULONG *pBufflen)</td></tr>
+<tr class="separator:a07343c3423bb270fc82409e00c11fe75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a639db53d6ea41a5b73ff336a02040"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#ad6a639db53d6ea41a5b73ff336a02040">SL_LineIntr</a> (PVOID pHead)</td></tr>
+<tr class="separator:ad6a639db53d6ea41a5b73ff336a02040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d22a2f6c25f9d96071032daa02efff9"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a1d22a2f6c25f9d96071032daa02efff9">VGD_OtherIntr</a> (PVOID pHead)</td></tr>
+<tr class="separator:a1d22a2f6c25f9d96071032daa02efff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b1822ce112a85a77c8949f78444466"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a56b1822ce112a85a77c8949f78444466">SL_ModemIntr</a> (PVOID pHead)</td></tr>
+<tr class="separator:a56b1822ce112a85a77c8949f78444466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6cd3fb902a0e7f48810705a24754cf4"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#af6cd3fb902a0e7f48810705a24754cf4">SL_GetStatus</a> (PVOID pHead, LPCOMSTAT lpStat)</td></tr>
+<tr class="separator:af6cd3fb902a0e7f48810705a24754cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be92f7f38bea7c320a72ea123802120"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a3be92f7f38bea7c320a72ea123802120">SL_Reset</a> (PVOID pHead)</td></tr>
+<tr class="separator:a3be92f7f38bea7c320a72ea123802120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa9559212ec5346dd01c87b7233a8c6"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#adfa9559212ec5346dd01c87b7233a8c6">SL_GetModemStatus</a> (PVOID pHead, PULONG pModemStatus)</td></tr>
+<tr class="separator:adfa9559212ec5346dd01c87b7233a8c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8677382a48e11b2afd2c5175a20e08b0"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a8677382a48e11b2afd2c5175a20e08b0">SL_PurgeComm</a> (PVOID pHead, DWORD fdwAction)</td></tr>
+<tr class="separator:a8677382a48e11b2afd2c5175a20e08b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b32102dd68d91313ab0dcdc909edf9"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#ad7b32102dd68d91313ab0dcdc909edf9">SL_XmitComChar</a> (PVOID pHead, UCHAR ComChar)</td></tr>
+<tr class="separator:ad7b32102dd68d91313ab0dcdc909edf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a148df9b708aa2f615976b78ffa5d0b59"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a148df9b708aa2f615976b78ffa5d0b59">SL_PowerOff</a> (PVOID pHead)</td></tr>
+<tr class="separator:a148df9b708aa2f615976b78ffa5d0b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb9ba4f5466651cdfbe6b58b162eb8b"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a9bb9ba4f5466651cdfbe6b58b162eb8b">SL_PowerOn</a> (PVOID pHead)</td></tr>
+<tr class="separator:a9bb9ba4f5466651cdfbe6b58b162eb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ab16c898d456777dc4de2f13e0e6c9"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a48ab16c898d456777dc4de2f13e0e6c9">SL_SetDCB</a> (PVOID pHead, LPDCB lpDCB)</td></tr>
+<tr class="separator:a48ab16c898d456777dc4de2f13e0e6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177ecc59b3657e4ae3d34211689cc7c7"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#a177ecc59b3657e4ae3d34211689cc7c7">SL_SetCommTimeouts</a> (PVOID pHead, LPCOMMTIMEOUTS lpCommTimeouts)</td></tr>
+<tr class="separator:a177ecc59b3657e4ae3d34211689cc7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ddf4f3df4051e7144b14be50f2ea84"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vgd_8c.html#ad5ddf4f3df4051e7144b14be50f2ea84">SL_Ioctl</a> (PVOID pHead, DWORD dwCode, PBYTE pBufIn, DWORD dwLenIn, PBYTE pBufOut, DWORD dwLenOut, PDWORD pdwActualOut)</td></tr>
+<tr class="separator:ad5ddf4f3df4051e7144b14be50f2ea84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">#Define-dokumentation</h2>
+<a id="aae69ec77087987eb6c6b8ef6b4179baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae69ec77087987eb6c6b8ef6b4179baf">&#9670;&nbsp;</a></span>VGD_BEG_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VGD_BEG_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">phead</td><td>)</td>
+          <td>&#160;&#160;&#160;EnterCriticalSection(&amp;(((<a class="el" href="vgd_8h.html#a01bb5fc2540ab1c1f8fb97433591ab4c">PVGD_INFO</a>)phead)-&gt;allow_mutex))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00029">29</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a080784c7e0973a78095b7da8d116fb43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080784c7e0973a78095b7da8d116fb43">&#9670;&nbsp;</a></span>VGD_END_OP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VGD_END_OP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">phead</td><td>)</td>
+          <td>&#160;&#160;&#160;LeaveCriticalSection(&amp;(((<a class="el" href="vgd_8h.html#a01bb5fc2540ab1c1f8fb97433591ab4c">PVGD_INFO</a>)phead)-&gt;allow_mutex))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00031">31</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Funktions-dokumentation</h2>
+<a id="a56697cafe94654bef8b52774237c864f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56697cafe94654bef8b52774237c864f">&#9670;&nbsp;</a></span>SL_ClearBreak()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_ClearBreak </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00284">284</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="ae2aaac4db4ee054f855e30a47efb7dbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2aaac4db4ee054f855e30a47efb7dbf">&#9670;&nbsp;</a></span>SL_ClearDTR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_ClearDTR </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00256">256</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a2b4ca8717a85f8a32e196e91fba06d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4ca8717a85f8a32e196e91fba06d49">&#9670;&nbsp;</a></span>SL_ClearRTS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_ClearRTS </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00270">270</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a4637f3fe5580e7483e82d393cdcfa1d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4637f3fe5580e7483e82d393cdcfa1d1">&#9670;&nbsp;</a></span>SL_Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_Close </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00219">219</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a670a3e171514c124df2cadb5c069ce8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670a3e171514c124df2cadb5c069ce8e">&#9670;&nbsp;</a></span>SL_Deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_Deinit </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00235">235</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a3ed81e2a057466937568f2f74f52ee1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed81e2a057466937568f2f74f52ee1f">&#9670;&nbsp;</a></span>SL_GetInterruptType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">INTERRUPT_TYPE SL_GetInterruptType </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00370">370</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="adfa9559212ec5346dd01c87b7233a8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa9559212ec5346dd01c87b7233a8c6">&#9670;&nbsp;</a></span>SL_GetModemStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_GetModemStatus </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PULONG&#160;</td>
+          <td class="paramname"><em>pModemStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00504">504</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a85ad6d6715f2ffe9069660cf95d0910a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ad6d6715f2ffe9069660cf95d0910a">&#9670;&nbsp;</a></span>SL_GetRxBufferSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG SL_GetRxBufferSize </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00364">364</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="af6cd3fb902a0e7f48810705a24754cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6cd3fb902a0e7f48810705a24754cf4">&#9670;&nbsp;</a></span>SL_GetStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG SL_GetStatus </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCOMSTAT&#160;</td>
+          <td class="paramname"><em>lpStat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00486">486</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="ae9aac5c7827d7ce0d12d81d5d507b04a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9aac5c7827d7ce0d12d81d5d507b04a">&#9670;&nbsp;</a></span>SL_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_Init </td>
+          <td>(</td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>Identifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pMddHead</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00159">159</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="ad5ddf4f3df4051e7144b14be50f2ea84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ddf4f3df4051e7144b14be50f2ea84">&#9670;&nbsp;</a></span>SL_Ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_Ioctl </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PBYTE&#160;</td>
+          <td class="paramname"><em>pBufIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwLenIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PBYTE&#160;</td>
+          <td class="paramname"><em>pBufOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwLenOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PDWORD&#160;</td>
+          <td class="paramname"><em>pdwActualOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00613">613</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="ad6a639db53d6ea41a5b73ff336a02040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6a639db53d6ea41a5b73ff336a02040">&#9670;&nbsp;</a></span>SL_LineIntr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_LineIntr </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00453">453</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a56b1822ce112a85a77c8949f78444466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b1822ce112a85a77c8949f78444466">&#9670;&nbsp;</a></span>SL_ModemIntr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_ModemIntr </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00474">474</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="ad58ab64d74bd3cb24cbbb8d6cb33fe93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58ab64d74bd3cb24cbbb8d6cb33fe93">&#9670;&nbsp;</a></span>SL_Open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_Open </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00202">202</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a2dcb3e6f94fb6c577956bf9d7cee4bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dcb3e6f94fb6c577956bf9d7cee4bf8">&#9670;&nbsp;</a></span>SL_PostInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_PostInit </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00191">191</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a148df9b708aa2f615976b78ffa5d0b59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148df9b708aa2f615976b78ffa5d0b59">&#9670;&nbsp;</a></span>SL_PowerOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_PowerOff </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00552">552</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a9bb9ba4f5466651cdfbe6b58b162eb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb9ba4f5466651cdfbe6b58b162eb8b">&#9670;&nbsp;</a></span>SL_PowerOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_PowerOn </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00562">562</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a8677382a48e11b2afd2c5175a20e08b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8677382a48e11b2afd2c5175a20e08b0">&#9670;&nbsp;</a></span>SL_PurgeComm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_PurgeComm </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>fdwAction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00518">518</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a3be92f7f38bea7c320a72ea123802120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be92f7f38bea7c320a72ea123802120">&#9670;&nbsp;</a></span>SL_Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_Reset </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00492">492</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a87d52d92d4604c42090edd1c6d694a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d52d92d4604c42090edd1c6d694a86">&#9670;&nbsp;</a></span>SL_RxIntr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG SL_RxIntr </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PUCHAR&#160;</td>
+          <td class="paramname"><em>pRxBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG *&#160;</td>
+          <td class="paramname"><em>pBufflen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00385">385</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a8e170e0f69f5329bed3dab8635f4285f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e170e0f69f5329bed3dab8635f4285f">&#9670;&nbsp;</a></span>SL_SetBaudRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_SetBaudRate </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>BaudRate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00298">298</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a1f5fa3aa36cb449a1156cef0baa833d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f5fa3aa36cb449a1156cef0baa833d1">&#9670;&nbsp;</a></span>SL_SetBreak()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_SetBreak </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00291">291</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a177ecc59b3657e4ae3d34211689cc7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177ecc59b3657e4ae3d34211689cc7c7">&#9670;&nbsp;</a></span>SL_SetCommTimeouts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG SL_SetCommTimeouts </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCOMMTIMEOUTS&#160;</td>
+          <td class="paramname"><em>lpCommTimeouts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00590">590</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a48ab16c898d456777dc4de2f13e0e6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ab16c898d456777dc4de2f13e0e6c9">&#9670;&nbsp;</a></span>SL_SetDCB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_SetDCB </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPDCB&#160;</td>
+          <td class="paramname"><em>lpDCB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00574">574</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="aa3d93951525bed2d787a2c8648108ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d93951525bed2d787a2c8648108ad3">&#9670;&nbsp;</a></span>SL_SetDTR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_SetDTR </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00263">263</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a28d01996bb54f3d919a24403b812f805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d01996bb54f3d919a24403b812f805">&#9670;&nbsp;</a></span>SL_SetRTS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_SetRTS </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00277">277</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a07343c3423bb270fc82409e00c11fe75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07343c3423bb270fc82409e00c11fe75">&#9670;&nbsp;</a></span>SL_TxIntrEx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SL_TxIntrEx </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PUCHAR&#160;</td>
+          <td class="paramname"><em>pTxBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG *&#160;</td>
+          <td class="paramname"><em>pBufflen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00439">439</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="ad7b32102dd68d91313ab0dcdc909edf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b32102dd68d91313ab0dcdc909edf9">&#9670;&nbsp;</a></span>SL_XmitComChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL SL_XmitComChar </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UCHAR&#160;</td>
+          <td class="paramname"><em>ComChar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00538">538</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a5496cdc49333efd2af7d7d1989ed6e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5496cdc49333efd2af7d7d1989ed6e78">&#9670;&nbsp;</a></span>VGD_GenCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID VGD_GenCycle </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00035">35</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a1d22a2f6c25f9d96071032daa02efff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d22a2f6c25f9d96071032daa02efff9">&#9670;&nbsp;</a></span>VGD_OtherIntr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID VGD_OtherIntr </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00465">465</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a7e8bf915386344af2f05fee067aa8997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8bf915386344af2f05fee067aa8997">&#9670;&nbsp;</a></span>VGD_PushTapFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL VGD_PushTapFile </td>
+          <td>(</td>
+          <td class="paramtype">PUCHAR&#160;</td>
+          <td class="paramname"><em>pRxBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>Bufflen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00139">139</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="aae562410cc755f5f02d6bbbd575d7b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae562410cc755f5f02d6bbbd575d7b5c">&#9670;&nbsp;</a></span>VGD_SetByteSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL VGD_SetByteSize </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>ByteSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00316">316</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a77ff7fd5194f1f85f954bd3c9500c1c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ff7fd5194f1f85f954bd3c9500c1c0">&#9670;&nbsp;</a></span>VGD_SetParity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL VGD_SetParity </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>Parity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00332">332</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a77aed1802a180ccd4963331481cf3f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77aed1802a180ccd4963331481cf3f7d">&#9670;&nbsp;</a></span>VGD_SetStopBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL VGD_SetStopBits </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>StopBits</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00348">348</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="a12f13e86ff0a99c201021ae12cb32a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f13e86ff0a99c201021ae12cb32a5d">&#9670;&nbsp;</a></span>VGD_StartTimerThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL VGD_StartTimerThread </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00067">67</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+<a id="aa1dc45abec72d89e2872d4324e6010bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1dc45abec72d89e2872d4324e6010bf">&#9670;&nbsp;</a></span>VGD_StopTimerThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID VGD_StopTimerThread </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="vgd_8c_source.html#l00106">106</a> i filen <a class="el" href="vgd_8c_source.html">vgd.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_c22b8d49b1f1c98d0ac9235bda304932.html">VirtualGPSJet</a></li><li class="navelem"><a class="el" href="dir_2c3aaa771705721e4fea6012ccab2af7.html">vgps</a></li><li class="navelem"><a class="el" href="dir_40f91d97fa4123f6c16a088b2a559b8e.html">driver</a></li><li class="navelem"><a class="el" href="vgd_8c.html">vgd.c</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

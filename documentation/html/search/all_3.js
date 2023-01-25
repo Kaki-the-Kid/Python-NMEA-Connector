@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['boston_49',['Boston',['../_l_i_c_e_n_s_e_8_t_x_t.html#a3dac873712fa6d5ecb3e1250dc3da8c2',1,'LICENSE.TXT']]],
+  ['brandgarmin_50',['BrandGarmin',['../class_n_m_e_a__connector_1_1brands_1_1_brand_garmin.html',1,'NMEA_connector::brands']]],
+  ['brandgarmin_2ecs_51',['BrandGarmin.cs',['../_brand_garmin_8cs.html',1,'']]],
+  ['brandgeneric_52',['BrandGeneric',['../class_n_m_e_a__connector_1_1brands_1_1_brand_generic.html',1,'NMEA_connector::brands']]],
+  ['brandgeneric_2ecs_53',['BrandGeneric.cs',['../_brand_generic_8cs.html',1,'']]],
+  ['brandmagellan_54',['BrandMagellan',['../class_n_m_e_a__connector_1_1brands_1_1_brand_magellan.html',1,'NMEA_connector::brands']]],
+  ['brandmagellan_2ecs_55',['BrandMagellan.cs',['../_brand_magellan_8cs.html',1,'']]],
+  ['brandmagnavox_56',['BrandMagnavox',['../class_n_m_e_a__connector_1_1brands_1_1_brand_magnavox.html',1,'NMEA_connector::brands']]],
+  ['brandmagnavox_2ecs_57',['BrandMagnavox.cs',['../_brand_magnavox_8cs.html',1,'']]],
+  ['brandmotorola_58',['BrandMotorola',['../class_n_m_e_a__connector_1_1brands_1_1_brand_motorola.html',1,'NMEA_connector::brands']]],
+  ['brandmotorola_2ecs_59',['BrandMotorola.cs',['../_brand_motorola_8cs.html',1,'']]],
+  ['brandpilotgps_60',['BrandPilotGPS',['../class_n_m_e_a__connector_1_1brands_1_1_brand_pilot_g_p_s.html',1,'NMEA_connector::brands']]],
+  ['brandpilotgps_2ecs_61',['BrandPilotGPS.cs',['../_brand_pilot_g_p_s_8cs.html',1,'']]],
+  ['brandrockwell_62',['BrandRockwell',['../class_n_m_e_a__connector_1_1brands_1_1_brand_rockwell.html',1,'NMEA_connector::brands']]],
+  ['brandrockwell_2ecs_63',['BrandRockwell.cs',['../_brand_rockwell_8cs.html',1,'']]],
+  ['brandsirf_64',['BrandSiRf',['../class_n_m_e_a__connector_1_1brands_1_1_brand_si_rf.html',1,'NMEA_connector::brands']]],
+  ['brandsirf_2ecs_65',['BrandSiRF.cs',['../_brand_si_r_f_8cs.html',1,'']]],
+  ['brandsony_66',['BrandSony',['../class_n_m_e_a__connector_1_1brands_1_1_brand_sony.html',1,'NMEA_connector::brands']]],
+  ['brandsony_2ecs_67',['BrandSony.cs',['../_brand_sony_8cs.html',1,'']]],
+  ['brandstarlink_68',['BrandStarlink',['../class_n_m_e_a__connector_1_1brands_1_1_brand_starlink.html',1,'NMEA_connector::brands']]],
+  ['brandstarlink_2ecs_69',['BrandStarlink.cs',['../_brand_starlink_8cs.html',1,'']]],
+  ['break_5fchar_70',['BREAK_CHAR',['../mdd_8h.html#a584fad596a0a807ca2594c062880b2ec',1,'mdd.h']]],
+  ['buff_5fsize_71',['buff_size',['../struct__nmea_p_a_r_s_e_r.html#afe338de2eae4d6bbfa57228753fbd2b6',1,'_nmeaPARSER']]],
+  ['buff_5fuse_72',['buff_use',['../struct__nmea_p_a_r_s_e_r.html#a8aec4ec4997bca1a1c3f6ff26377def2',1,'_nmeaPARSER']]],
+  ['buffer_73',['buffer',['../struct__nmea_p_a_r_s_e_r.html#a6628206689c876bc0b5e99556fa2dc0a',1,'_nmeaPARSER']]]
+];

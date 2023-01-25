@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/nmealib-0.5.3/nmealib/src/generate.c filreference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('generate_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktioner</a>  </div>
+  <div class="headertitle">
+<div class="title">generate.c filreference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="tok_8h_source.html">nmea/tok.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sentence_8h_source.html">nmea/sentence.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generate_8h_source.html">nmea/generate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="units_8h_source.html">nmea/units.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div>
+<p><a href="generate_8c_source.html">Hop til denne fils kildekode.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktioner</h2></td></tr>
+<tr class="memitem:acb6fc5649ca92bb23d9ac93d0ce0a560"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#acb6fc5649ca92bb23d9ac93d0ce0a560">nmea_gen_GPGGA</a> (char *buff, int buff_sz, <a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *pack)</td></tr>
+<tr class="separator:acb6fc5649ca92bb23d9ac93d0ce0a560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b54f77bfc5a89c6dfd4772e08a510cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#a5b54f77bfc5a89c6dfd4772e08a510cd">nmea_gen_GPGSA</a> (char *buff, int buff_sz, <a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *pack)</td></tr>
+<tr class="separator:a5b54f77bfc5a89c6dfd4772e08a510cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a46f36ab17a22b26df9bf74fa42ca2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#ab1a46f36ab17a22b26df9bf74fa42ca2">nmea_gen_GPGSV</a> (char *buff, int buff_sz, <a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *pack)</td></tr>
+<tr class="separator:ab1a46f36ab17a22b26df9bf74fa42ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c19865e9027de86cbd27dbf4b2fe0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#af2c19865e9027de86cbd27dbf4b2fe0f">nmea_gen_GPRMC</a> (char *buff, int buff_sz, <a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *pack)</td></tr>
+<tr class="separator:af2c19865e9027de86cbd27dbf4b2fe0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac800d3654668767cb6020980c5ffc6b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#ac800d3654668767cb6020980c5ffc6b2">nmea_gen_GPVTG</a> (char *buff, int buff_sz, <a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *pack)</td></tr>
+<tr class="separator:ac800d3654668767cb6020980c5ffc6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca037f64e7b77d8bfa33210faa029e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#a1ca037f64e7b77d8bfa33210faa029e0">nmea_info2GPGGA</a> (const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info, <a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *pack)</td></tr>
+<tr class="separator:a1ca037f64e7b77d8bfa33210faa029e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa970819878fba01602c9b21530804791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#aa970819878fba01602c9b21530804791">nmea_info2GPGSA</a> (const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info, <a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *pack)</td></tr>
+<tr class="separator:aa970819878fba01602c9b21530804791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8b7f6788c9b95bbe066b169e81ea66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#aef8b7f6788c9b95bbe066b169e81ea66">nmea_gsv_npack</a> (int sat_count)</td></tr>
+<tr class="separator:aef8b7f6788c9b95bbe066b169e81ea66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5c39fe3fcc5d39b5bf5449375c7677"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#add5c39fe3fcc5d39b5bf5449375c7677">nmea_info2GPGSV</a> (const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info, <a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *pack, int pack_idx)</td></tr>
+<tr class="separator:add5c39fe3fcc5d39b5bf5449375c7677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60f623bd267918eb13eb366f87db86f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#ad60f623bd267918eb13eb366f87db86f">nmea_info2GPRMC</a> (const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info, <a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *pack)</td></tr>
+<tr class="separator:ad60f623bd267918eb13eb366f87db86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de1d9ebb78f9b28581576a7b966e0c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#a2de1d9ebb78f9b28581576a7b966e0c7">nmea_info2GPVTG</a> (const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info, <a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *pack)</td></tr>
+<tr class="separator:a2de1d9ebb78f9b28581576a7b966e0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bf54db85cfcf402b9e1276943aadd8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="generate_8c.html#ae3bf54db85cfcf402b9e1276943aadd8">nmea_generate</a> (char *buff, int buff_sz, const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info, int generate_mask)</td></tr>
+<tr class="separator:ae3bf54db85cfcf402b9e1276943aadd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funktions-dokumentation</h2>
+<a id="acb6fc5649ca92bb23d9ac93d0ce0a560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb6fc5649ca92bb23d9ac93d0ce0a560">&#9670;&nbsp;</a></span>nmea_gen_GPGGA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_gen_GPGGA </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00020">20</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="a5b54f77bfc5a89c6dfd4772e08a510cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b54f77bfc5a89c6dfd4772e08a510cd">&#9670;&nbsp;</a></span>nmea_gen_GPGSA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_gen_GPGSA </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00030">30</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="ab1a46f36ab17a22b26df9bf74fa42ca2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a46f36ab17a22b26df9bf74fa42ca2">&#9670;&nbsp;</a></span>nmea_gen_GPGSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_gen_GPGSV </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00040">40</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="af2c19865e9027de86cbd27dbf4b2fe0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c19865e9027de86cbd27dbf4b2fe0f">&#9670;&nbsp;</a></span>nmea_gen_GPRMC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_gen_GPRMC </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00055">55</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="ac800d3654668767cb6020980c5ffc6b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac800d3654668767cb6020980c5ffc6b2">&#9670;&nbsp;</a></span>nmea_gen_GPVTG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_gen_GPVTG </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00066">66</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="ae3bf54db85cfcf402b9e1276943aadd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3bf54db85cfcf402b9e1276943aadd8">&#9670;&nbsp;</a></span>nmea_generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_generate </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>generate_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00167">167</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="aef8b7f6788c9b95bbe066b169e81ea66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8b7f6788c9b95bbe066b169e81ea66">&#9670;&nbsp;</a></span>nmea_gsv_npack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_gsv_npack </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sat_count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00109">109</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="a1ca037f64e7b77d8bfa33210faa029e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca037f64e7b77d8bfa33210faa029e0">&#9670;&nbsp;</a></span>nmea_info2GPGGA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_info2GPGGA </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00076">76</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="aa970819878fba01602c9b21530804791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa970819878fba01602c9b21530804791">&#9670;&nbsp;</a></span>nmea_info2GPGSA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_info2GPGSA </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00091">91</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="add5c39fe3fcc5d39b5bf5449375c7677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add5c39fe3fcc5d39b5bf5449375c7677">&#9670;&nbsp;</a></span>nmea_info2GPGSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_info2GPGSV </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pack_idx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00119">119</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="ad60f623bd267918eb13eb366f87db86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad60f623bd267918eb13eb366f87db86f">&#9670;&nbsp;</a></span>nmea_info2GPRMC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_info2GPRMC </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00140">140</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+<a id="a2de1d9ebb78f9b28581576a7b966e0c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de1d9ebb78f9b28581576a7b966e0c7">&#9670;&nbsp;</a></span>nmea_info2GPVTG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_info2GPVTG </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="generate_8c_source.html#l00157">157</a> i filen <a class="el" href="generate_8c_source.html">generate.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_734c1a9bcf946aa19cb1e292de045596.html">nmealib-0.5.3</a></li><li class="navelem"><a class="el" href="dir_5f4316b47fe927d7809378d88831d150.html">nmealib</a></li><li class="navelem"><a class="el" href="dir_e416eeec2c962966112f34ae69d51c63.html">src</a></li><li class="navelem"><a class="el" href="generate_8c.html">generate.c</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

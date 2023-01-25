@@ -1,0 +1,69 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*, body {
+    background-color: #f8f9fa;
+    color: #333333;
+    position: relative;
+}
+
+.jumbotron h1,
+.jumbotron p{
+    background-color: transparent;
+}
+
+.toc {
+    position: fixed;
+    left: 85px;
+    padding-top: 20px;
+    display: inline-block;
+}
+
+#to-toc {
+    position: fixed;
+    bottom: 20px;
+    right: 400px;
+}
+
+#to-toc-icon {
+    background-image: url('../img/25282.png');
+    width: 50px;
+    height: 50px;
+    background-size: 50px;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-feature-settings: normal;
+    font-stretch: condensed;
+}
+
+pre {
+    background-color: navajowhite;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.sidebar {
+    width: 10%;
+}
+
+.sidebar-right {
+    width: 10%;
+}
+
+.contents {
+    max-width: 800px;
+    left: calc((50%-800px)/2);
+    margin-top: 20px;
+}
+
+.nmea-toc .nav-link {
+    display: inline;
+}
+
+.contents p {
+    text-align: justify;
+}

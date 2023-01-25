@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Hardware til NMEA0183 og NMEA2000</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('hardware.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Hardware til NMEA0183 og NMEA2000 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="nmea_sections"></a>
+NMEA index</h1>
+<ul>
+<li><a class="el" href="hardware.html#hardware_intro">NMEA Hardware introduktion</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="hardware_intro"></a>
+NMEA Hardware introduktion</h1>
+<hr  />
+<h1><a class="anchor" id="nmea0183_hardware"></a>
+NMEA0183 Hardware</h1>
+<p>NMEA 0183 is a combined electrical and data specification for communication between marine electronics such as echo sounder, sonars, anemometer, gyrocompass, autopilot, GPS receivers and many other types of instruments. It has been defined by, and is controlled by, the National Marine Electronics Association. It replaces the earlier NMEA 0180 and NMEA 0182 standards.[1] In marine applications, it is slowly being phased out in favor of the newer NMEA 2000 standard.</p>
+<p>The electrical standard that is used is EIA-422, although most hardware with NMEA-0183 outputs are also able to drive a single EIA-232 port. Although the standard calls for isolated inputs and outputs, there are various series of hardware that do not adhere to this requirement.</p>
+<div class="image">
+<img src="4wire_rs422_fig1.gif" alt=""/>
+</div>
+<p>The NMEA 0183 standard uses a simple ASCII, serial communications protocol that defines how data are transmitted in a "sentence" from one "talker" to multiple "listeners" at a time. Through the use of intermediate expanders, a talker can have a unidirectional conversation with a nearly unlimited number of listeners, and using multiplexers, multiple sensors can talk to a single computer port.</p>
+<p>At the application layer, the standard also defines the contents of each sentence (message) type, so that all listeners can parse messages accurately.</p>
+<p>The new standard, NMEA 2000, accommodates several talkers at a higher baud rate, without using a central hub, or round-robin packet buffering.</p>
+<p>The NMEA standard is proprietary and sells for at least US$250 (except for members of the NMEA) as of November 2017.[2] However, much of it has been reverse-engineered from public sources.[3][4]</p>
+<hr  />
+<h1><a class="anchor" id="nmea2000_hardware"></a>
+NMEA2000 Hardware</h1>
+<div class="image">
+<img src="NMEA2000_Modified_motor_yacht.jpg" alt="" width="75%"/>
+</div>
+<p>NMEA 2000 Protocol Stack Details:</p><ul>
+<li>Fast Packet support</li>
+<li>PGN List Group functions</li>
+<li>Complex Data Request</li>
+<li>Product Informatin support</li>
+<li>MISRA C compliant</li>
+<li>ANSI C source code</li>
+<li>Use with or without an RTOS</li>
+<li>Use with 8, 16, 32, or 64-bit CPU</li>
+<li><a href="http://www.simmasoftware.com/nmea-2000-users-manual.pdf" target="_blank">ssNMEA2000 reference manual</a></li>
+</ul>
+<h4>NMEA 2000</h4>
+<p>This article is intended to give engineers a brief overview of the NMEA 2000 protocol. For details on the specification itself, please visit the International Marine Electronics Association (NMEA).</p>
+<p>NMEA 2000 is a replacement for the NMEA 0183 network which has been used in the marine industry on pleasure craft, tankers, submarines, yachts, and cargo ships for the past 20 years. Today NMEA 2000 is used as the standard communications bus for marine equipement.</p>
+<h4>NMEA 2000 Overview</h4>
+<p>NMEA 2000 is a high level communications protocol, which operates on a Controller Area Network (CAN) bus. NMEA 2000 specifies exactly how information (e.g. engine RPM) is exchanged between electronic control units (ECUs) on a network.</p>
+<p>It defines the data's priority, size, scaling, and offset. For example, NMEA 2000 specifies engine RPM to have a default priority of 3, to have a size of 16-bits, a resolution of 0.125 rpm/bit, and an offset of 0.</p>
+<p>The standard goes on to define many other aspects, including message timeouts, how large messages are fragmented and reassembled, the network speed, the physical layer, and how applications acquire network addresses.</p>
+<h4>NMEA 2000 Datalink</h4>
+<p>NMEA 2000 uses a simple datalink layer to communicate information. Altogether there are six subfields which are encoded into the 29-bit CAN identifier, they are shown below and are: Priority, Extended Data Page, Data Page, Protocol Format, Protocol Specific, and Source Address.</p>
+<p>P EDP DP PF PS SA 3 bits 1 bit 1 bit 8 bits 8 bits 8 bits P is the priority of the message, EDP and DP make up 4 different pages with one page being reserved for ISO 15765-3. PF and PS define the parameter group number and destination address, and SA is the source address of the controller application. For details about this encoding, refer to NMEA 2000-21.</p>
+<h4>NMEA 2000 Messages</h4>
+<p>At the heart of NMEA 2000 is the Parameter Group Number (PGN), which is a unique number assigned to every NMEA 2000 message. The PGN serves to identify the message and its data. Although sometimes a message will contain a single parameter (e.g. VIN), typically the PGN will contain a group of parameters. In the standard there is a total of 8,672 PGNs.</p>
+<p>For an example message, take PGN 61,444. It identifies the "Electronic Engine Controller 1" message. Per the specification, "EEC1" has seven different parameters embedded in the data field of the message. Engine RPM is one of those seven parameters.</p>
+<h4>NMEA 2000 Message Sizes</h4>
+<p>NMEA 2000 has three different allowed message sizes, they are: 3 bytes, 8 bytes, and variable length. There is only one message which is three bytes in length, and that is the request message (PGN 59,904).</p>
+<p>The majority of messages in NMEA 2000 are 8 bytes in length. This allows for a more efficient use of the network bandwidth by maximizing the amount of data on the network by reducing the number of messages.</p>
+<p>Variable length messages are messages with a length from 9 to 1,785 bytes. These messages are too large to fit in a single CAN data frame and must be fragmented by the transmitter and reassembled by the receiver. This process is defined by NMEA 2000's transport protocol which is specified by IS 11783-3 and J1939-21.</p>
+<p>The transport protocol layer defines two different types of message fragmentation: BAM and CM. There are several differences between those two types, the main difference being the destination address. A BAM uses a global destination address and is therefore sent to all CAs, while a CM is destination specific. Due to the addressing scheme, only a single BAM can be transmitted simultaneously, while multiple CMs using different destination addresses may be simultaneously transmitted.</p>
+<p>Another difference between BAMs and CMs is the time is takes to send a messages. With a BAM, data packets must be spaced at least 50 ms apart and no more than 200 ms. With a CM, data frames may be sent as quickly as possible.</p>
+<h4>NMEA 2000 Physical Layers</h4>
+<p>Currently there is a single 250 Kbps physical layers defined by the NMEA 2000 main document. NMEA 2000 specifies a shielded twisted pair of wires with a maximum backbone length of 100 meters and maximum stub length of 6 meter. The physical layer uses a four pin connector, with power and ground, and allows for up to 50 CAN nodes.</p>
+<h4>NMEA 2000 CAN Parameters</h4>
+<p>NMEA 2000 specifies a network data rate of 250 Kbps with a minimum period of 3.98 us and a maximum period of 4.02 us. The CAN bus sample point setting has a minimum value of 85% and maximum value of 90%. CAN peripherals also allow for synchronous jump width (SJW) settings as 'large as possible'. The SJW value dictates how much time can be added or subtracted to the node's CAN clock for syncronization purposes.</p>
+<h4>NMEA 2000 NAME Field</h4>
+<p>Every ECU, or CA (controller application) on a NMEA 2000 network has a unique NAME. The NAME is 64 bits wide and is made up of the following fields: Arbitrary Address Capable, Industry Group, Vehicle System Instance, Vehicle System, Reserved Bit, Function, Function instance, ECU Instance, Manufacturer Code, and Identity Number. The NAME field gives each CA a unique identity. Nodes on the network use the NAME field to distinguish between each other. The NAME field is also essential to Network Management as it establishes node priority. The NAME translates to a number; the lowest numeric values have the highest priority when claiming addresses.</p>
+<p>An ECU may contain multiple CAs and NAME fields.</p>
+<h4>NMEA 2000 Address Claiming</h4>
+<p>In NMEA 2000 CAs, or electronic control units, on the vehicle network bus must claim a unique source address to enable communication. Addresses 0 to 128 are pre-assigned and CAs which use these addresses are allowed to communicate immediately after power up. In anticipation of future devices and functions, however, NMEA 2000 includes a method for dynamically assigning addresses. New devices must announce an address for themselves by transmitting an address claim message.</p>
+<p>Sending an Address Claim message the new (non-addressed) device sends out an Address Claim PGN indicating the address it is assuming. All devices on the network compare this newly claimed address with their internal address tables. If the address is already in use by a device with a higher priority (determined by the NAME), the higher priority device indicates the conflict by sending out a Address Claim message. The lower priority device immediately stops using the address and must claim a new one.</p>
+<h4>About NMEA</h4>
+<p>NMEA is the International Marine Electronics Association, that represents NMEA's evolution from a national to an international marine electronics standards and education association. The mission of the National Marine Electronics Association is to be a worldwide, self-sustaining organization committed to enhancing the technology and safety of electronics used in marine applications.</p>
+<h4>NMEA 2000 Specifications</h4>
+<ul>
+<li>NMEA 2000-Main: Parent Document</li>
+<li>NMEA 2000-Main: Physical Layer</li>
+<li>ISO 11783-3: Data Link Layer</li>
+<li>ISO 11783-5: Network Management</li>
+<li>NMEA 2000-Appendix A: Application Layer</li>
+<li>NMEA 2000-Appendix C: Certification Criteria</li>
+<li>ISO 11898: Controller Area Network</li>
+</ul>
+<h1><a class="anchor" id="nmea_sources"></a>
+Kilder</h1>
+<ul>
+<li>NMEA Reference Manual<br  />
+ Webside: <a href="https://www.sparkfun.com/datasheets/GPS/NMEA%20Reference%20Manual-Rev2.1-Dec07.pdf">https://www.sparkfun.com/datasheets/GPS/NMEA%20Reference%20Manual-Rev2.1-Dec07.pdf</a></li>
+<li>GPS World - What Exactly Is GPS NMEA Data?<br  />
+ Webside: <a href="https://www.gpsworld.com/what-exactly-is-gps-nmea-data/">https://www.gpsworld.com/what-exactly-is-gps-nmea-data/</a></li>
+<li>VisualGPS LLC.<br  />
+ Webside: <a href="http://www.visualgps.net/">http://www.visualgps.net/</a></li>
+<li>Wiki: NMEA 0183<br  />
+ Webside: <a href="https://en.wikipedia.org/wiki/NMEA_0183">https://en.wikipedia.org/wiki/NMEA_0183</a></li>
+<li>Wiki: NMEA 2000<br  />
+ Webside: <a href="https://en.wikipedia.org/wiki/NMEA_2000">https://en.wikipedia.org/wiki/NMEA_2000</a></li>
+<li>Wiki: Serial port<br  />
+ Webside: <a href="https://en.wikipedia.org/wiki/Serial_port">https://en.wikipedia.org/wiki/Serial_port</a></li>
+<li>NMEA library - Sourceforge<br  />
+ Webside <hr  />
+</li>
+</ul>
+<h1><a class="anchor" id="rs_422_bus"></a>
+RS-422 Bus</h1>
+<ul>
+<li>EIA-422 Bus Description<br  />
+ <a href="http://www.interfacebus.com/Design_Connector_RS422.html">http://www.interfacebus.com/Design_Connector_RS422.html</a></li>
+<li>RS232 to RS422<br  />
+ <a href="https://allpinouts.org/pinouts/cables/converter/rs232-to-rs422/">https://allpinouts.org/pinouts/cables/converter/rs232-to-rs422/</a></li>
+<li>Wikipedia: RS-422<br  />
+ <a href="https://en.wikipedia.org/wiki/RS-422">https://en.wikipedia.org/wiki/RS-422</a></li>
+<li>USB to RS422 Serial Converter Cable<br  />
+ <a href="https://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_USB_RS422_CABLES.pdf">https://www.ftdichip.com/Support/Documents/DataSheets/Cables/DS_USB_RS422_CABLES.pdf</a></li>
+<li>RS-Online Line transceivers<br  />
+ <a href="https://dk.rs-online.com/web/c/halvledere/interface-icer/line-transceivere/?searchTerm=max485&redirect-relevancy-data=636F3D3226696E3D4931384E4B6E6F776E41734D504E266C753D6461266D6D3D6D61746368616C6C7061727469616C26706D3D5E5B5C707B4C7D5C707B4E647D2D2C2F255C2E5D2B2426706F3D313326736E3D592673723D2673743D4B4559574F52445F53494E474C455F414C5048415F4E554D455249432677633D424F5448267573743D6D6178343835267374613D6D617834383526&r=f&searchHistory=%7B%22enabled%22:true%7D&sort-by=P_breakPrice1&sort-order=asc&pn=1">https://dk.rs-online.com/web/c/halvledere/interface-icer/line-transceivere/?searchTerm=max485&amp;redirect-relevancy-data=636F3D3226696E3D4931384E4B6E6F776E41734D504E266C753D6461266D6D3D6D61746368616C6C7061727469616C26706D3D5E5B5C707B4C7D5C707B4E647D2D2C2F255C2E5D2B2426706F3D313326736E3D592673723D2673743D4B4559574F52445F53494E474C455F414C5048415F4E554D455249432677633D424F5448267573743D6D6178343835267374613D6D617834383526&amp;r=f&amp;searchHistory=%7B%22enabled%22:true%7D&amp;sort-by=P_breakPrice1&amp;sort-order=asc&amp;pn=1</a></li>
+<li>MC3486N, Linjemodtager, EIA/TIA-422-B, EIA/TIA-423-B, RS-422, RS-423, V.10, V.11 Quad-RX, 10Mbit/s Differentiel 5 V, 16<br  />
+ <a href="https://dk.rs-online.com/web/p/line-receivere/6608782/">https://dk.rs-online.com/web/p/line-receivere/6608782/</a></li>
+<li>RS232 serial to USB converter cable schematic<br  />
+ <a href="https://allpinouts.org/pinouts/cables/converter/rs232-serial-to-usb-converter-cable-schematic/">https://allpinouts.org/pinouts/cables/converter/rs232-serial-to-usb-converter-cable-schematic/</a></li>
+<li>USB-COM422-PLUS2<br  />
+ <a href="http://www.farnell.com/datasheets/1915282.pdf">http://www.farnell.com/datasheets/1915282.pdf</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="other_sources"></a>
+Andre kilder af interesse</h1>
+<ul>
+<li>GPS Exchange Format</li>
+<li>TransducerML<br  />
+ WikiPedia: <a href="https://en.wikipedia.org/wiki/GPS_Exchange_Format">https://en.wikipedia.org/wiki/GPS_Exchange_Format</a></li>
+<li>IEEE 1451<br  />
+ WikiPedia: <a href="https://en.wikipedia.org/wiki/TransducerML">https://en.wikipedia.org/wiki/TransducerML</a></li>
+<li>IEC 61162<br  />
+ WikiPedia: <a href="https://en.wikipedia.org/wiki/IEEE_1451">https://en.wikipedia.org/wiki/IEEE_1451</a></li>
+<li>NMEA 2000<br  />
+ WikiPedia: <a href="https://en.wikipedia.org/wiki/NMEA_2000">https://en.wikipedia.org/wiki/NMEA_2000</a></li>
+<li>NMEA OneNet<br  />
+ WikiPedia: <a href="https://en.wikipedia.org/wiki/NMEA_OneNet">https://en.wikipedia.org/wiki/NMEA_OneNet</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Information om NMEA protokollen</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('nmea_commands.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">NMEA kommandoer </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="nmea_sections"></a>
+NMEA index</h1>
+<ul>
+<li><a class="el" href="nmea_commands.html#nmea_port">NMEA port</a></li>
+<li><a class="el" href="nmea_commands.html#nmea_protcols">NMEA0183 og NMEA2000 protokoller - datapakker</a></li>
+<li><a class="el" href="nmea_commands.html#nmea_0183">NMEA 0183</a></li>
+<li><a class="el" href="nmea_commands.html">NMEA kommandoer</a></li>
+<li><a class="el" href="hardware.html#nmea_sources">Kilder</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="nmea_port"></a>
+NMEA port</h1>
+<p>NMEA - National Marine Electronics Association, er det amerikanske standardiseringsorgan for navigationsudstyr som sonar og GPS-systemer. NMEA har eksisteret længe før GPS. I følge NMEAs webside, blev organisationen formet i 1957 af en gruppe electronik forhandlere for at lave en bedre kommunikations model sammen med deres producenter.</p>
+<p>I dag efter indførsel af GPS, er NMEA et standard dataformat som bliver understøttet af alle GPS producenter. Formålet med NMEA er at give brugeren muligheden for at mikse hardware og software. NMEA-formatteret GPS data gør livet nemmere for software udviklere med at skrive software for en bred varietet af GPS modtager istedet for at skulle skrive special interface for hver GPS modtager. F.eks. accepterer VisualGPS software (free) NMEA-formatteret data fra enhver GPS modtager og kan vise det grafisk. Uden en standard som NMEA, ville det være være tidskrævende og omkostningsindtensiv at skrive og vedligeholde software.</p>
+<p>Det kan være en lille smule forvirende omkring NMEA er at der ret mange typer “NMEA” beskeder. Så på samme måde som der er alle former for GPS modtagere med forskellige egenskaber, er der mange forskellige typer af NMEA beskder kommandoer med forskellige egenskaber. Der udover kan NMEA data transmitioner over forskellige types af grænseflader som: RS-232, USB, Bluetooth, Wi-Fi, UHF og mange andre.</p>
+<h1><a class="anchor" id="nmea_protcols"></a>
+NMEA0183 og NMEA2000 protokoller - datapakker</h1>
+<p>Information passerer over netværk i segmenter. Hver Datasegmentet bæres i en struktur, der kaldes en pakke . De transport protokoller TCP /IP oprette pakken, og derefter videregive det på Internet Protocol , som tilføjer en header på forsiden, der omfatter den destination IP-adresse. Når du opretter pakken, transport -protokollen tilføjer sin egen overskrift. Dette omfatter det portnummer , som vil få data til en proces, der kører på destinationscomputeren . To transportprotokoller tjener som alternativer : . Transmission Control Protocol eller TCP og User Datagram Protocol - eller UDP</p>
+<h1><a class="anchor" id="nmea_0183"></a>
+NMEA 0183</h1>
+<p>De fleste GPS modtagere kan modtage standarden som er kaldet: 0183 version 2. Den standard dikterer en hastighed på 4800 b/s. Nogle modtagere kan også forstå ældre standarder. The oldest standard was 0180 efterfulgt af 0182 which transferred data at 1200 b/s. DEr er også nogle modtagere som forstår tidligere version af 0183 kaldet version 1.5. Nogle Garmin enheder og andre mærker kan sættes til 9600 for NMEA output eller endnu hurtigere, men bør kun bruges hvis man har fastslået at 4800 virker ok og så kan du prøve at sætte den hurtigere. Opsætning så hutigt som muligt giver måske en forbedring af programmers reaktion.</p>
+<p>NMEA 0183 definerer et sprog i hvilken geolokalisering systemer uddata. Udgangen skal fortolkes tilbage i geografiske data ved en visning program. Optagelsen enheden og beskueren kommunikerer via netværk ved hjælp portnummer 10110 . Som kommunikation med NMEA -kompatible enheder tendens til at være interaktiv, er forbindelser etableres sædvanligvis på TCP port 10110 , ikke på UDP-port . UDP etablerer ikke en session.</p>
+<h1><a class="anchor" id="nmea_commands"></a>
+NMEA kommandoer</h1>
+<p>NMEA består af sætninger, det første ord, kaldet data typen, definerer fortolkningen af resten af sætningen. Hver data type har sin egen unikke fortolkning defineret i NMEA standarden.</p>
+<p>GGA sætningen (vist nedenunder) shows an example that provides essential fix data. Other sentences may repeat some of the same information but will also supply new data. Whatever device or program that reads the data can watch for the data sentence that it is interested in and simply ignore other sentences that is doesn't care about. In the NMEA standard there are no commands to indicate that the gps should do something different. Instead each receiver just sends all of the data and expects much of it to be ignored. Some receivers have commands inside the unit that can select a subset of all the sentences or, in some cases, even the individual sentences to send. There is no way to indicate anything back to the unit as to whether the sentence is being read correctly or to request a re-send of some data you didn't get. Instead the receiving unit just checks the checksum and ignores the data if the checksum is bad figuring the data will be sent again sometime later.</p>
+<p>Der er flere sentences in the NMEA standard for all kinds of devices that may be used in a Maritimt miljø. Nogen af dem som relatrer sig til gps modtagere er vist nedenfor: (alle beskeder starter med GP)</p>
+<pre>   
+        AAM - Waypoint Arrival Alarm
+        ALM - Almanac data
+        APA - Auto Pilot A sentence
+        APB - Auto Pilot B sentence
+        BOD - Bearing Origin to Destination
+        BWC - Bearing using Great Circle route
+        DTM - Datum being used.
+        GGA - Fix information</pre><pre>        GLL - Lat/Lon data
+        GRS - GPS Range Residuals
+        GSA - Overall Satellite data
+        GST - GPS Pseudorange Noise Statistics
+        GSV - Detailed Satellite data
+        MSK - send control for a beacon receiver
+        MSS - Beacon receiver status information.
+        RMA - recommended Loran data
+        RMB - recommended navigation data for gps
+        RMC - recommended minimum data for gps
+        RTE - route message
+        TRF - Transit Fix Data
+        STN - Multiple Data ID
+        VBW - dual Ground / Water Spped
+        VTG - Vector track an Speed over the Ground
+        WCV - Waypoint closure velocity (Velocity Made Good)
+        WPL - Waypoint Location information
+        XTC - cross track error
+        XTE - measured cross track error
+        ZTG - Zulu (UTC) time and time to go (to destination)
+        ZDA - Date and Time
+</pre><p> <br  />
+</p>
+<p>Nogle GPS modtagere med specielle egenskaber giver følgende specielle beskeder.</p>
+<pre>        
+        HCHDG - Compass output
+        PSLIB - Remote Control for a DGPS receiver
+</pre><p> <br  />
+</p>
+<p>In addition some GPS receivers can mimic Loran-C receivers by outputing the LC prefix in some of their messages so that they can be used to interface to equipment that is expecting this prefix instead of the GP one.</p>
+<p>The last version 2 iteration of the NMEA standard was 2.3. It added a mode indicator to several sentences which is used to indicate the kind of fix the receiver currently has. This indication is part of the signal integrity information needed by the FAA. The value can be A=autonomous, D=differential, E=Estimated, N=not valid, S=Simulator. Sometimes there can be a null value as well. Only the A and D values will correspond to an Active and reliable Sentence. This mode character has been added to the RMC, RMB, VTG, and GLL, sentences and optionally some others including the BWC and XTE sentences.</p>
+<p>Hvis du forbinder en GPS enhed til en anden enhed, herunder et computer program, er det nødvendigt at den modtagende enhed bliver alle de sætninger som den behøver. Hvis den mangler en sætninger, som ikke bliver sendt fra din GPS er ret sandsynligt at forbindelsen til den enhed fejler. Her er et Link for det nødvendige for nogle typiske programmer. Sætningen sendt af nogle typiske modtagere inkluderer:</p>
+<hr  />
+ <h1><a class="anchor" id="software_compatibility"></a>
+Software Kompatibilitet</h1>
+<p>NMEA 0183 is supported by various navigation and mapping software. Notable applications include:</p>
+<ul>
+<li>
+<a href="/wiki/DeLorme" title="DeLorme">DeLorme</a> Street Atlas </li>
+<li>
+<a href="/wiki/Environmental_Systems_Research_Institute" class="mw-redirect" title="Environmental Systems Research Institute">ESRI</a> </li>
+<li>
+<a href="/wiki/Google_Earth" title="Google Earth">Google Earth</a> </li>
+<li>
+<a href="/wiki/Google_Maps" title="Google Maps">Google Maps</a> Mobile Edition<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup> </li>
+<li>
+<a href="/wiki/Gpsd" title="Gpsd">gpsd</a> - <a href="/wiki/Unix" title="Unix">Unix</a> GPS Daemon </li>
+<li>
+<a href="/wiki/JOSM" title="JOSM">JOSM</a> - OpenStreetMap Map Editor </li>
+<li>
+<a href="/w/index.php?title=MapKing&amp;action=edit&amp;redlink=1" class="new" title="MapKing (page does not exist)">MapKing</a> </li>
+<li>
+<a href="/wiki/Microsoft_MapPoint" title="Microsoft MapPoint">Microsoft MapPoint</a> </li>
+<li>
+<a href="/wiki/Microsoft_Streets_%26_Trips" title="Microsoft Streets &amp;amp; Trips">Microsoft Streets &amp; Trips</a> </li>
+<li>
+<a href="/wiki/NetStumbler" title="NetStumbler">NetStumbler</a> </li>
+<li>
+<a href="/wiki/OpenCPN" title="OpenCPN">OpenCPN</a> - Open source navigation software </li>
+<li>
+<a href="/wiki/OpenBSD" title="OpenBSD">OpenBSD</a>'s <a href="/wiki/Hw.sensors" title="Hw.sensors">hw.sensors</a> framework with the <code>nmea(4)</code> <a href="/wiki/Pseudo-device" class="mw-redirect" title="Pseudo-device">pseudo-device</a> driver<sup id="cite_ref-openbsd§nmea_6-0" class="reference"><a href="#cite_note-openbsd§nmea-6">[6]</a></sup> </li>
+<li>
+<a href="/wiki/OpenNTPD" title="OpenNTPD">OpenNTPD</a> through sysctl <a href="/wiki/Hw.sensors#timedelta" title="Hw.sensors">hw.sensors §&#160;timedelta</a> API </li>
+<li>
+<a href="/wiki/Rand_McNally" title="Rand McNally">Rand McNally</a> StreetFinder </li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="nmea_sources"></a>
+Kilder</h1>
+<ul>
+<li>NMEA data<br  />
+ Denne kilde er brugt intensivt i løsning, som det også kan ses af kildekoden. Webside: <a href="https://www.gpsinformation.org/dale/nmea.htm">https://www.gpsinformation.org/dale/nmea.htm</a></li>
+<li>NMEA Reference Manual<br  />
+ Webside: <a href="https://www.sparkfun.com/datasheets/GPS/NMEA%20Reference%20Manual-Rev2.1-Dec07.pdf">https://www.sparkfun.com/datasheets/GPS/NMEA%20Reference%20Manual-Rev2.1-Dec07.pdf</a></li>
+<li>GPS World - What Exactly Is GPS NMEA Data?<br  />
+ Webside: <a href="https://www.gpsworld.com/what-exactly-is-gps-nmea-data/">https://www.gpsworld.com/what-exactly-is-gps-nmea-data/</a></li>
+<li>VisualGPS LLC.<br  />
+ Webside: <a href="http://www.visualgps.net/">http://www.visualgps.net/</a></li>
+<li>Wiki: NMEA 0183<br  />
+ Webside: <a href="https://en.wikipedia.org/wiki/NMEA_0183">https://en.wikipedia.org/wiki/NMEA_0183</a></li>
+<li>Wiki: NMEA 2000<br  />
+ Webside: <a href="https://en.wikipedia.org/wiki/NMEA_2000">https://en.wikipedia.org/wiki/NMEA_2000</a></li>
+<li>Wiki: Serial port<br  />
+ Webside: <a href="https://en.wikipedia.org/wiki/Serial_port">https://en.wikipedia.org/wiki/Serial_port</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="index.html">NMEA Controller</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

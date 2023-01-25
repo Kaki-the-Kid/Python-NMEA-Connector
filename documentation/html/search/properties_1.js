@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['gpsagecorrection_1598',['GPSAgeCorrection',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#aca8b4275f22950d4c0e70134cc657bd1',1,'NMEA_connector::StructGPSData']]],
+  ['gpsantennaaltitudemf_1599',['GPSAntennaAltitudemf',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#af0a048599ad661e2b76c1eeb3f1d95fa',1,'NMEA_connector::StructGPSData']]],
+  ['gpsantennealtitude_1600',['GPSAntenneAltitude',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a5761187acd2ad7e5f155eef4fadde403',1,'NMEA_connector::StructGPSData']]],
+  ['gpsdata_1601',['GPSData',['../class_n_m_e_a__connector_1_1_consol_ui.html#ac41f8982efc9a41527b7e66c4857ecb5',1,'NMEA_connector::ConsolUi']]],
+  ['gpsgeoidalseparation_1602',['GPSGeoidalSeparation',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a44e0040f1b5d8f25d4a7d115265e8f0f',1,'NMEA_connector::StructGPSData']]],
+  ['gpsgeoidalseparationmf_1603',['GPSGeoidalSeparationmf',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a65e3ce396dabdd7d93473a6bcd691962',1,'NMEA_connector::StructGPSData']]],
+  ['gpshdop_1604',['GPSHdop',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a454ccfd2efe1e9b9409a4123e44dfd19',1,'NMEA_connector::StructGPSData']]],
+  ['gpslastchecksum_1605',['GPSLastChecksum',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a0c0befaf9f9823570aea400572e1938b',1,'NMEA_connector::StructGPSData']]],
+  ['gpslatitudedegree_1606',['GPSLatitudeDegree',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a6cf22faddb2678dd6129ba01c1ccbdb1',1,'NMEA_connector::StructGPSData']]],
+  ['gpslatitudedirection_1607',['GPSLatitudeDirection',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a43ace9629379381e2e8c67f16ac75e66',1,'NMEA_connector::StructGPSData']]],
+  ['gpslatitudemins_1608',['GPSLatitudeMins',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a4be26c96256c96d35af2bf33340fbfdc',1,'NMEA_connector::StructGPSData']]],
+  ['gpslatitudestring_1609',['GPSLatitudeString',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a6c5e7f9fc85d4b5fe2d5ee2ff5e4faf2',1,'NMEA_connector::StructGPSData']]],
+  ['gpslongitudedegree_1610',['GPSLongitudeDegree',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a1859267b15cf0ce3739fb7f7b54f5310',1,'NMEA_connector::StructGPSData']]],
+  ['gpslongitudedirection_1611',['GPSLongitudeDirection',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a2213652ee92ef8c117b4b1923666b876',1,'NMEA_connector::StructGPSData']]],
+  ['gpslongitudemins_1612',['GPSLongitudeMins',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#af76b6f6e212bc9f85a0add1680d41dfc',1,'NMEA_connector::StructGPSData']]],
+  ['gpslongitudestring_1613',['GPSLongitudeString',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a9d8e8d4cb6ac998fd499c3fffacc2b65',1,'NMEA_connector::StructGPSData']]],
+  ['gpsnumbersatelites_1614',['GPSNumberSatelites',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#ae71bbcd01749b120fc157fe6075e104a',1,'NMEA_connector::StructGPSData']]],
+  ['gpsquality_1615',['GPSQuality',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#acb8fe666be1831ddd8480d9b37b0d43b',1,'NMEA_connector::StructGPSData']]],
+  ['gpsqualitytext_1616',['GPSQualityText',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#abec3134f66b643d92d8947f9a257a595',1,'NMEA_connector::StructGPSData']]],
+  ['gpsstationid_1617',['GPSStationId',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#a00eba488b94d68a382854e5eaac6e720',1,'NMEA_connector::StructGPSData']]],
+  ['gpstimestamp_1618',['GPSTimestamp',['../struct_n_m_e_a__connector_1_1_struct_g_p_s_data.html#ac88c30a47fd1af78bc7015891192b873',1,'NMEA_connector::StructGPSData']]]
+];

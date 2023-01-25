@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Kildefilen C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/nmealib-0.5.3/nmealib/include/nmea/generator.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('generator_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">generator.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="generator_8h.html">Hop til denne fils dokumentation.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * NMEA library</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * URL: http://nmea.sourceforge.net</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Author: Tim (xtimor@gmail.com)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Licence: http://www.gnu.org/licenses/lgpl.html</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * $Id: generator.h 4 2007-08-27 13:11:03Z xtimor $</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef __NMEA_GENERATOR_H__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define __NMEA_GENERATOR_H__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="info_8h.html">info.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * high level</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaae">   26</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaae">nmeaGENTYPE</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea500b18a973bf79716fce983b3a99bbad">   28</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea500b18a973bf79716fce983b3a99bbad">NMEA_GEN_NOISE</a> = 0,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea05918beacd57dd16aaa78c791b017bd2">   29</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea05918beacd57dd16aaa78c791b017bd2">NMEA_GEN_STATIC</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b">   30</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b">NMEA_GEN_ROTATE</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea8dfce78728d76933685832e39f19a282">   32</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea8dfce78728d76933685832e39f19a282">NMEA_GEN_SAT_STATIC</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea1772618edfd1ca5729400c490b9cc7b8">   33</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea1772618edfd1ca5729400c490b9cc7b8">NMEA_GEN_SAT_ROTATE</a>,</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaeab40ee266f83e49e24773ac757cccadee">   34</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaeab40ee266f83e49e24773ac757cccadee">NMEA_GEN_POS_RANDMOVE</a>,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaeafe77075bafa94c957316249677b29407">   36</a></span>&#160;    <a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaeafe77075bafa94c957316249677b29407">NMEA_GEN_LAST</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> * <a class="code" href="generator_8h.html#a53732566bbeb110b2b7c5be6c55e61f5">nmea_create_generator</a>(<span class="keywordtype">int</span> type, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span>    <a class="code" href="generator_8h.html#aaa818e6dfeb36b7597493aa6707162fb">nmea_destroy_generator</a>(<span class="keyword">struct</span> <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *gen);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="generator_8h.html#a55a1b088ad4e2f2a71971f8777a00ad3">nmea_generate_from</a>(</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">char</span> *buff, <span class="keywordtype">int</span> buff_sz,    <span class="comment">/* buffer */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info,             <span class="comment">/* source info */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">struct</span> <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *gen, <span class="comment">/* generator */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">int</span> generate_mask           <span class="comment">/* mask of sentence`s (e.g. GPGGA | GPGSA) */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        );</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> * low level</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="generator_8h.html#a2425acb61b423402388b3c27a977c028">   53</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="generator_8h.html#a2425acb61b423402388b3c27a977c028">nmeaNMEA_GEN_INIT</a>)(<span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *gen, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="generator_8h.html#a788951265c6e7f0c0b327e0a916041e6">   54</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="generator_8h.html#a788951265c6e7f0c0b327e0a916041e6">nmeaNMEA_GEN_LOOP</a>)(<span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *gen, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="generator_8h.html#a06ac939b16022fc094864d8764fa3f40">   55</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="generator_8h.html#a06ac939b16022fc094864d8764fa3f40">nmeaNMEA_GEN_RESET</a>)(<span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *gen, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="generator_8h.html#a98a405dbe2b00af303e4ec6de8ffbb85">   56</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="generator_8h.html#a98a405dbe2b00af303e4ec6de8ffbb85">nmeaNMEA_GEN_DESTROY</a>)(<span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *gen);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">   58</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a24e4774cdca4e728e586714e33c75a74">   60</a></span>&#160;    <span class="keywordtype">void</span>                *<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a24e4774cdca4e728e586714e33c75a74">gen_data</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#adb7ee652c46ae610f8f76feb1c1aa211">   61</a></span>&#160;    <a class="code" href="generator_8h.html#a2425acb61b423402388b3c27a977c028">nmeaNMEA_GEN_INIT</a>    <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#adb7ee652c46ae610f8f76feb1c1aa211">init_call</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a5d02b12715b2613237b99a989c659bf5">   62</a></span>&#160;    <a class="code" href="generator_8h.html#a788951265c6e7f0c0b327e0a916041e6">nmeaNMEA_GEN_LOOP</a>    <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a5d02b12715b2613237b99a989c659bf5">loop_call</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a7a116693b0e5ebb76ab728862c6a113b">   63</a></span>&#160;    <a class="code" href="generator_8h.html#a06ac939b16022fc094864d8764fa3f40">nmeaNMEA_GEN_RESET</a>   <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a7a116693b0e5ebb76ab728862c6a113b">reset_call</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a2c1789e09648512c15d0be97de46bb41">   64</a></span>&#160;    <a class="code" href="generator_8h.html#a98a405dbe2b00af303e4ec6de8ffbb85">nmeaNMEA_GEN_DESTROY</a> <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a2c1789e09648512c15d0be97de46bb41">destroy_call</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#acbc652fb2dc5a3639c292715052753aa">   65</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a> *<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html#acbc652fb2dc5a3639c292715052753aa">next</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;} <a class="code" href="generator_8h.html#a7fdd5e079647c74bef980fd0cfa26f04">nmeaGENERATOR</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="generator_8h.html#a18b8f0dd2ca50e83878dbf5db1cfc3d4">nmea_gen_init</a>(<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *gen, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="generator_8h.html#ac76908716bec3ee35d931d27c2ef8737">nmea_gen_loop</a>(<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *gen, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">int</span>     <a class="code" href="generator_8h.html#af02a69d12ff12a3d51a0d3270a679628">nmea_gen_reset</a>(<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *gen, <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> *info);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span>    <a class="code" href="generator_8h.html#a56f62dcd92c0325a23936afaa0382636">nmea_gen_destroy</a>(<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *gen);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span>    <a class="code" href="generator_8h.html#a1ef7731f41d200b0701a7add93c5fb84">nmea_gen_add</a>(<a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *to, <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *gen);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef  __cplusplus</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __NMEA_GENERATOR_H__ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="agenerator_8h_html_a788951265c6e7f0c0b327e0a916041e6"><div class="ttname"><a href="generator_8h.html#a788951265c6e7f0c0b327e0a916041e6">nmeaNMEA_GEN_LOOP</a></div><div class="ttdeci">int(* nmeaNMEA_GEN_LOOP)(struct _nmeaGENERATOR *gen, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00054">generator.h:54</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html_a7a116693b0e5ebb76ab728862c6a113b"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a7a116693b0e5ebb76ab728862c6a113b">_nmeaGENERATOR::reset_call</a></div><div class="ttdeci">nmeaNMEA_GEN_RESET reset_call</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00063">generator.h:63</a></div></div>
+<div class="ttc" id="ainfo_8h_html"><div class="ttname"><a href="info_8h.html">info.h</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaea500b18a973bf79716fce983b3a99bbad"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea500b18a973bf79716fce983b3a99bbad">NMEA_GEN_NOISE</a></div><div class="ttdeci">@ NMEA_GEN_NOISE</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00028">generator.h:28</a></div></div>
+<div class="ttc" id="agenerator_8h_html_af02a69d12ff12a3d51a0d3270a679628"><div class="ttname"><a href="generator_8h.html#af02a69d12ff12a3d51a0d3270a679628">nmea_gen_reset</a></div><div class="ttdeci">int nmea_gen_reset(nmeaGENERATOR *gen, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00069">generator.c:69</a></div></div>
+<div class="ttc" id="agenerator_8h_html_ac76908716bec3ee35d931d27c2ef8737"><div class="ttname"><a href="generator_8h.html#ac76908716bec3ee35d931d27c2ef8737">nmea_gen_loop</a></div><div class="ttdeci">int nmea_gen_loop(nmeaGENERATOR *gen, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00056">generator.c:56</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html_a2c1789e09648512c15d0be97de46bb41"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a2c1789e09648512c15d0be97de46bb41">_nmeaGENERATOR::destroy_call</a></div><div class="ttdeci">nmeaNMEA_GEN_DESTROY destroy_call</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00064">generator.h:64</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaea1772618edfd1ca5729400c490b9cc7b8"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea1772618edfd1ca5729400c490b9cc7b8">NMEA_GEN_SAT_ROTATE</a></div><div class="ttdeci">@ NMEA_GEN_SAT_ROTATE</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00033">generator.h:33</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a1ef7731f41d200b0701a7add93c5fb84"><div class="ttname"><a href="generator_8h.html#a1ef7731f41d200b0701a7add93c5fb84">nmea_gen_add</a></div><div class="ttdeci">void nmea_gen_add(nmeaGENERATOR *to, nmeaGENERATOR *gen)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00093">generator.c:93</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a06ac939b16022fc094864d8764fa3f40"><div class="ttname"><a href="generator_8h.html#a06ac939b16022fc094864d8764fa3f40">nmeaNMEA_GEN_RESET</a></div><div class="ttdeci">int(* nmeaNMEA_GEN_RESET)(struct _nmeaGENERATOR *gen, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00055">generator.h:55</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a98a405dbe2b00af303e4ec6de8ffbb85"><div class="ttname"><a href="generator_8h.html#a98a405dbe2b00af303e4ec6de8ffbb85">nmeaNMEA_GEN_DESTROY</a></div><div class="ttdeci">int(* nmeaNMEA_GEN_DESTROY)(struct _nmeaGENERATOR *gen)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00056">generator.h:56</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a55a1b088ad4e2f2a71971f8777a00ad3"><div class="ttname"><a href="generator_8h.html#a55a1b088ad4e2f2a71971f8777a00ad3">nmea_generate_from</a></div><div class="ttdeci">int nmea_generate_from(char *buff, int buff_sz, nmeaINFO *info, struct _nmeaGENERATOR *gen, int generate_mask)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00101">generator.c:101</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b">NMEA_GEN_ROTATE</a></div><div class="ttdeci">@ NMEA_GEN_ROTATE</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00030">generator.h:30</a></div></div>
+<div class="ttc" id="agenerator_8h_html_aaa818e6dfeb36b7597493aa6707162fb"><div class="ttname"><a href="generator_8h.html#aaa818e6dfeb36b7597493aa6707162fb">nmea_destroy_generator</a></div><div class="ttdeci">void nmea_destroy_generator(struct _nmeaGENERATOR *gen)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00392">generator.c:392</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html_adb7ee652c46ae610f8f76feb1c1aa211"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html#adb7ee652c46ae610f8f76feb1c1aa211">_nmeaGENERATOR::init_call</a></div><div class="ttdeci">nmeaNMEA_GEN_INIT init_call</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00061">generator.h:61</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaea8dfce78728d76933685832e39f19a282"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea8dfce78728d76933685832e39f19a282">NMEA_GEN_SAT_STATIC</a></div><div class="ttdeci">@ NMEA_GEN_SAT_STATIC</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00032">generator.h:32</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaeafe77075bafa94c957316249677b29407"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaeafe77075bafa94c957316249677b29407">NMEA_GEN_LAST</a></div><div class="ttdeci">@ NMEA_GEN_LAST</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00036">generator.h:36</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a53732566bbeb110b2b7c5be6c55e61f5"><div class="ttname"><a href="generator_8h.html#a53732566bbeb110b2b7c5be6c55e61f5">nmea_create_generator</a></div><div class="ttdeci">struct _nmeaGENERATOR * nmea_create_generator(int type, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00382">generator.c:382</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a></div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00058">generator.h:58</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a18b8f0dd2ca50e83878dbf5db1cfc3d4"><div class="ttname"><a href="generator_8h.html#a18b8f0dd2ca50e83878dbf5db1cfc3d4">nmea_gen_init</a></div><div class="ttdeci">int nmea_gen_init(nmeaGENERATOR *gen, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00035">generator.c:35</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7fdd5e079647c74bef980fd0cfa26f04"><div class="ttname"><a href="generator_8h.html#a7fdd5e079647c74bef980fd0cfa26f04">nmeaGENERATOR</a></div><div class="ttdeci">struct _nmeaGENERATOR nmeaGENERATOR</div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html_a24e4774cdca4e728e586714e33c75a74"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a24e4774cdca4e728e586714e33c75a74">_nmeaGENERATOR::gen_data</a></div><div class="ttdeci">void * gen_data</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00060">generator.h:60</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaae"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaae">nmeaGENTYPE</a></div><div class="ttdeci">nmeaGENTYPE</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00026">generator.h:26</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaeab40ee266f83e49e24773ac757cccadee"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaeab40ee266f83e49e24773ac757cccadee">NMEA_GEN_POS_RANDMOVE</a></div><div class="ttdeci">@ NMEA_GEN_POS_RANDMOVE</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00034">generator.h:34</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html_a5d02b12715b2613237b99a989c659bf5"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html#a5d02b12715b2613237b99a989c659bf5">_nmeaGENERATOR::loop_call</a></div><div class="ttdeci">nmeaNMEA_GEN_LOOP loop_call</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00062">generator.h:62</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaea05918beacd57dd16aaa78c791b017bd2"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea05918beacd57dd16aaa78c791b017bd2">NMEA_GEN_STATIC</a></div><div class="ttdeci">@ NMEA_GEN_STATIC</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00029">generator.h:29</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html_acbc652fb2dc5a3639c292715052753aa"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html#acbc652fb2dc5a3639c292715052753aa">_nmeaGENERATOR::next</a></div><div class="ttdeci">struct _nmeaGENERATOR * next</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00065">generator.h:65</a></div></div>
+<div class="ttc" id="astruct__nmea_i_n_f_o_html"><div class="ttname"><a href="struct__nmea_i_n_f_o.html">_nmeaINFO</a></div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00082">info.h:82</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a56f62dcd92c0325a23936afaa0382636"><div class="ttname"><a href="generator_8h.html#a56f62dcd92c0325a23936afaa0382636">nmea_gen_destroy</a></div><div class="ttdeci">void nmea_gen_destroy(nmeaGENERATOR *gen)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00079">generator.c:79</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a2425acb61b423402388b3c27a977c028"><div class="ttname"><a href="generator_8h.html#a2425acb61b423402388b3c27a977c028">nmeaNMEA_GEN_INIT</a></div><div class="ttdeci">int(* nmeaNMEA_GEN_INIT)(struct _nmeaGENERATOR *gen, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00053">generator.h:53</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_734c1a9bcf946aa19cb1e292de045596.html">nmealib-0.5.3</a></li><li class="navelem"><a class="el" href="dir_5f4316b47fe927d7809378d88831d150.html">nmealib</a></li><li class="navelem"><a class="el" href="dir_57c4df8b677f2620782fe25e79571cbe.html">include</a></li><li class="navelem"><a class="el" href="dir_58ab831d6ad4e0b1e6f6a4c57fe777f8.html">nmea</a></li><li class="navelem"><a class="el" href="generator_8h.html">generator.h</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

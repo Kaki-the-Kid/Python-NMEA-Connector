@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/nmealib-0.5.3/nmealib/src/parse.c filreference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('parse_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktioner</a>  </div>
+  <div class="headertitle">
+<div class="title">parse.c filreference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="tok_8h_source.html">nmea/tok.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="parse_8h_source.html">nmea/parse.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="context_8h_source.html">nmea/context.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gmath_8h_source.html">nmea/gmath.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="units_8h_source.html">nmea/units.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+</div>
+<p><a href="parse_8c_source.html">Hop til denne fils kildekode.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktioner</h2></td></tr>
+<tr class="memitem:a0e5dd57a5a1bad5f5607ccd5d692e1d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a0e5dd57a5a1bad5f5607ccd5d692e1d7">_nmea_parse_time</a> (const char *buff, int buff_sz, <a class="el" href="time_8h.html#abb714c98cdf21e99316ad8587c0aa57e">nmeaTIME</a> *res)</td></tr>
+<tr class="separator:a0e5dd57a5a1bad5f5607ccd5d692e1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590359c05e203e15949a4f124cddc440"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a590359c05e203e15949a4f124cddc440">nmea_pack_type</a> (const char *buff, int buff_sz)</td></tr>
+<tr class="memdesc:a590359c05e203e15949a4f124cddc440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define packet type by header (nmeaPACKTYPE).  <a href="parse_8c.html#a590359c05e203e15949a4f124cddc440">Mere...</a><br /></td></tr>
+<tr class="separator:a590359c05e203e15949a4f124cddc440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4162407bbe2dba413393d30912e9eb23"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a4162407bbe2dba413393d30912e9eb23">nmea_find_tail</a> (const char *buff, int buff_sz, int *res_crc)</td></tr>
+<tr class="memdesc:a4162407bbe2dba413393d30912e9eb23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find tail of packet ("\r\n") in buffer and check control sum (CRC).  <a href="parse_8c.html#a4162407bbe2dba413393d30912e9eb23">Mere...</a><br /></td></tr>
+<tr class="separator:a4162407bbe2dba413393d30912e9eb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e4609178c53927d0f2eab74b644e70b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a6e4609178c53927d0f2eab74b644e70b">nmea_parse_GPGGA</a> (const char *buff, int buff_sz, <a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *pack)</td></tr>
+<tr class="memdesc:a6e4609178c53927d0f2eab74b644e70b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse GGA packet from buffer.  <a href="parse_8c.html#a6e4609178c53927d0f2eab74b644e70b">Mere...</a><br /></td></tr>
+<tr class="separator:a6e4609178c53927d0f2eab74b644e70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb1a41e14966640d2b2276bb74d3a6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#abcb1a41e14966640d2b2276bb74d3a6d">nmea_parse_GPGSA</a> (const char *buff, int buff_sz, <a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *pack)</td></tr>
+<tr class="memdesc:abcb1a41e14966640d2b2276bb74d3a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse GSA packet from buffer.  <a href="parse_8c.html#abcb1a41e14966640d2b2276bb74d3a6d">Mere...</a><br /></td></tr>
+<tr class="separator:abcb1a41e14966640d2b2276bb74d3a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08e7ce629f9d81ac957ce37c11ee78a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#af08e7ce629f9d81ac957ce37c11ee78a">nmea_parse_GPGSV</a> (const char *buff, int buff_sz, <a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *pack)</td></tr>
+<tr class="memdesc:af08e7ce629f9d81ac957ce37c11ee78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse GSV packet from buffer.  <a href="parse_8c.html#af08e7ce629f9d81ac957ce37c11ee78a">Mere...</a><br /></td></tr>
+<tr class="separator:af08e7ce629f9d81ac957ce37c11ee78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6de57f955e6d0310346f02063372c58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#ae6de57f955e6d0310346f02063372c58">nmea_parse_GPRMC</a> (const char *buff, int buff_sz, <a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *pack)</td></tr>
+<tr class="memdesc:ae6de57f955e6d0310346f02063372c58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse RMC packet from buffer.  <a href="parse_8c.html#ae6de57f955e6d0310346f02063372c58">Mere...</a><br /></td></tr>
+<tr class="separator:ae6de57f955e6d0310346f02063372c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b74864c42fa79177c91c3208a00ca1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a50b74864c42fa79177c91c3208a00ca1">nmea_parse_GPVTG</a> (const char *buff, int buff_sz, <a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *pack)</td></tr>
+<tr class="memdesc:a50b74864c42fa79177c91c3208a00ca1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse VTG packet from buffer.  <a href="parse_8c.html#a50b74864c42fa79177c91c3208a00ca1">Mere...</a><br /></td></tr>
+<tr class="separator:a50b74864c42fa79177c91c3208a00ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391065b5f3ee694e7f0206fc7f74283f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a391065b5f3ee694e7f0206fc7f74283f">nmea_GPGGA2info</a> (<a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *pack, <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info)</td></tr>
+<tr class="memdesc:a391065b5f3ee694e7f0206fc7f74283f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill nmeaINFO structure by GGA packet data.  <a href="parse_8c.html#a391065b5f3ee694e7f0206fc7f74283f">Mere...</a><br /></td></tr>
+<tr class="separator:a391065b5f3ee694e7f0206fc7f74283f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f5c610acc25fbd316882998b0ec109"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#af2f5c610acc25fbd316882998b0ec109">nmea_GPGSA2info</a> (<a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *pack, <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info)</td></tr>
+<tr class="memdesc:af2f5c610acc25fbd316882998b0ec109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill nmeaINFO structure by GSA packet data.  <a href="parse_8c.html#af2f5c610acc25fbd316882998b0ec109">Mere...</a><br /></td></tr>
+<tr class="separator:af2f5c610acc25fbd316882998b0ec109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7b745e1a3707727f47421cc505f753"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#abf7b745e1a3707727f47421cc505f753">nmea_GPGSV2info</a> (<a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *pack, <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info)</td></tr>
+<tr class="memdesc:abf7b745e1a3707727f47421cc505f753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill nmeaINFO structure by GSV packet data.  <a href="parse_8c.html#abf7b745e1a3707727f47421cc505f753">Mere...</a><br /></td></tr>
+<tr class="separator:abf7b745e1a3707727f47421cc505f753"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fe1f6ecbc9e66bc4f5c1a7180902249"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#a4fe1f6ecbc9e66bc4f5c1a7180902249">nmea_GPRMC2info</a> (<a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *pack, <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info)</td></tr>
+<tr class="memdesc:a4fe1f6ecbc9e66bc4f5c1a7180902249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill nmeaINFO structure by RMC packet data.  <a href="parse_8c.html#a4fe1f6ecbc9e66bc4f5c1a7180902249">Mere...</a><br /></td></tr>
+<tr class="separator:a4fe1f6ecbc9e66bc4f5c1a7180902249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad469fa27954c855a7e5ccef2a8e56044"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parse_8c.html#ad469fa27954c855a7e5ccef2a8e56044">nmea_GPVTG2info</a> (<a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *pack, <a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *info)</td></tr>
+<tr class="memdesc:ad469fa27954c855a7e5ccef2a8e56044"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill nmeaINFO structure by VTG packet data.  <a href="parse_8c.html#ad469fa27954c855a7e5ccef2a8e56044">Mere...</a><br /></td></tr>
+<tr class="separator:ad469fa27954c855a7e5ccef2a8e56044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funktions-dokumentation</h2>
+<a id="a0e5dd57a5a1bad5f5607ccd5d692e1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e5dd57a5a1bad5f5607ccd5d692e1d7">&#9670;&nbsp;</a></span>_nmea_parse_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int _nmea_parse_time </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="time_8h.html#abb714c98cdf21e99316ad8587c0aa57e">nmeaTIME</a> *&#160;</td>
+          <td class="paramname"><em>res</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00066">66</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="a4162407bbe2dba413393d30912e9eb23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4162407bbe2dba413393d30912e9eb23">&#9670;&nbsp;</a></span>nmea_find_tail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_find_tail </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>res_crc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find tail of packet ("\r\n") in buffer and check control sum (CRC). </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packets buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+    <tr><td class="paramname">res_crc</td><td>a integer pointer for return CRC of packet (must be defined). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>Number of bytes to packet tail. </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00135">135</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="a391065b5f3ee694e7f0206fc7f74283f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391065b5f3ee694e7f0206fc7f74283f">&#9670;&nbsp;</a></span>nmea_GPGGA2info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_GPGGA2info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill nmeaINFO structure by GGA packet data. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pack</td><td>a pointer of packet structure. </td></tr>
+    <tr><td class="paramname">info</td><td>a pointer of summary information structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00375">375</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="af2f5c610acc25fbd316882998b0ec109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f5c610acc25fbd316882998b0ec109">&#9670;&nbsp;</a></span>nmea_GPGSA2info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_GPGSA2info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill nmeaINFO structure by GSA packet data. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pack</td><td>a pointer of packet structure. </td></tr>
+    <tr><td class="paramname">info</td><td>a pointer of summary information structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00396">396</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="abf7b745e1a3707727f47421cc505f753"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf7b745e1a3707727f47421cc505f753">&#9670;&nbsp;</a></span>nmea_GPGSV2info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_GPGSV2info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill nmeaINFO structure by GSV packet data. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pack</td><td>a pointer of packet structure. </td></tr>
+    <tr><td class="paramname">info</td><td>a pointer of summary information structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00428">428</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="a4fe1f6ecbc9e66bc4f5c1a7180902249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe1f6ecbc9e66bc4f5c1a7180902249">&#9670;&nbsp;</a></span>nmea_GPRMC2info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_GPRMC2info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill nmeaINFO structure by RMC packet data. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pack</td><td>a pointer of packet structure. </td></tr>
+    <tr><td class="paramname">info</td><td>a pointer of summary information structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00463">463</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="ad469fa27954c855a7e5ccef2a8e56044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad469fa27954c855a7e5ccef2a8e56044">&#9670;&nbsp;</a></span>nmea_GPVTG2info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> nmea_GPVTG2info </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="info_8h.html#a9951025ac55025f037fa3aa327afb0e2">nmeaINFO</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill nmeaINFO structure by VTG packet data. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pack</td><td>a pointer of packet structure. </td></tr>
+    <tr><td class="paramname">info</td><td>a pointer of summary information structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00493">493</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="a590359c05e203e15949a4f124cddc440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590359c05e203e15949a4f124cddc440">&#9670;&nbsp;</a></span>nmea_pack_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_pack_type </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define packet type by header (nmeaPACKTYPE). </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packet buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>The defined packet type </dd></dl>
+<dl class="section see"><dt>Se også</dt><dd><a class="el" href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23da">nmeaPACKTYPE</a> </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00100">100</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="a6e4609178c53927d0f2eab74b644e70b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e4609178c53927d0f2eab74b644e70b">&#9670;&nbsp;</a></span>nmea_parse_GPGGA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_parse_GPGGA </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#a0788380021dcf996501b0719839eda82">nmeaGPGGA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse GGA packet from buffer. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packet buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+    <tr><td class="paramname">pack</td><td>a pointer of packet which will filled by function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>1 (true) - if parsed successfully or 0 (false) - if fail. </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00186">186</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="abcb1a41e14966640d2b2276bb74d3a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb1a41e14966640d2b2276bb74d3a6d">&#9670;&nbsp;</a></span>nmea_parse_GPGSA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_parse_GPGSA </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#affff9b92c5d6525a6bbc7b734b2fa385">nmeaGPGSA</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse GSA packet from buffer. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packet buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+    <tr><td class="paramname">pack</td><td>a pointer of packet which will filled by function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>1 (true) - if parsed successfully or 0 (false) - if fail. </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00223">223</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="af08e7ce629f9d81ac957ce37c11ee78a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08e7ce629f9d81ac957ce37c11ee78a">&#9670;&nbsp;</a></span>nmea_parse_GPGSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_parse_GPGSV </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#aa160e55aa868d46ab172c6f5291f5fe3">nmeaGPGSV</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse GSV packet from buffer. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packet buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+    <tr><td class="paramname">pack</td><td>a pointer of packet which will filled by function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>1 (true) - if parsed successfully or 0 (false) - if fail. </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00252">252</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="ae6de57f955e6d0310346f02063372c58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6de57f955e6d0310346f02063372c58">&#9670;&nbsp;</a></span>nmea_parse_GPRMC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_parse_GPRMC </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#abc670f7aa2631bba7ace6507cc1a7218">nmeaGPRMC</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse RMC packet from buffer. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packet buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+    <tr><td class="paramname">pack</td><td>a pointer of packet which will filled by function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>1 (true) - if parsed successfully or 0 (false) - if fail. </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00294">294</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+<a id="a50b74864c42fa79177c91c3208a00ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b74864c42fa79177c91c3208a00ca1">&#9670;&nbsp;</a></span>nmea_parse_GPVTG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nmea_parse_GPVTG </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buff_sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sentence_8h.html#ae4d1d997fcdbafdeb03ea35806e6d7a4">nmeaGPVTG</a> *&#160;</td>
+          <td class="paramname"><em>pack</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse VTG packet from buffer. </p>
+<dl class="params"><dt>Parametre</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buff</td><td>a constant character pointer of packet buffer. </td></tr>
+    <tr><td class="paramname">buff_sz</td><td>buffer size. </td></tr>
+    <tr><td class="paramname">pack</td><td>a pointer of packet which will filled by function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returnerer</dt><dd>1 (true) - if parsed successfully or 0 (false) - if fail. </dd></dl>
+
+<p class="definition">Defineret på linje <a class="el" href="parse_8c_source.html#l00339">339</a> i filen <a class="el" href="parse_8c_source.html">parse.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_734c1a9bcf946aa19cb1e292de045596.html">nmealib-0.5.3</a></li><li class="navelem"><a class="el" href="dir_5f4316b47fe927d7809378d88831d150.html">nmealib</a></li><li class="navelem"><a class="el" href="dir_e416eeec2c962966112f34ae69d51c63.html">src</a></li><li class="navelem"><a class="el" href="parse_8c.html">parse.c</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

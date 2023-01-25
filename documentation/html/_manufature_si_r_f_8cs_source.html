@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Kildefilen C:/Users/krs/Google Drev/ProjectNet/Projekter/NMEA connector/ManufatureSiRF.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_manufature_si_r_f_8cs_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">C:/Users/krs/Google Drev/ProjectNet/Projekter/NMEA connector/ManufatureSiRF.cs</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_manufature_si_r_f_8cs.html">Hop til denne fils dokumentation.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_n_m_e_a__connector.html">NMEA_connector</a></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;{</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_n_m_e_a__connector_1_1_manufature_si_r_f.html">    3</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_n_m_e_a__connector_1_1_manufature_si_r_f.html">ManufatureSiRF</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="comment">/* SiRF</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">         * The SiRF line of chips support several input sentences that permit</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">         * the user to customize the way the chip behaves. In addition SiRF has</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">         * a binary protocol that is even more powerful permitting different</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">         * implementations to behave entirely differently. However, most</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">         * applications do not attempt to customize the behavior so a user will</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">         * need to make sure that the any customization is compatible with the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">         * application they are planning to use. There are 5 input sentences</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">         * defined that begin with $PSRF which is followed by three digits.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">         * Each sentence takes a fix amount of input fields which must exist,</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">         * no null fields, and is terminated with the standard CR/LF sequence.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">         * The checksum is required.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">         * The sentences 100 and 102 set the serial ports. 100 sets the main</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">         * port A while 102 sets the DGPS input port B. 100 has an extra field</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">         * that can be used to switch the interface to binary mode. Binary mode</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">         * requires 8 bits, 1 stop bit, no parity. There is a command in binary</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">         * mode that will switch the interface back to NMEA. Do not use the</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">         * NMEA command to switch to binary mode unless you have the ability to</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">         * switch it back. You could render your gps inoperative.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">         * $PSRF100,0,9600,8,1,0*0C</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">         * $PSRF102,9600,8,1,0*3C</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">         * where:</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">         *    $PSRF100</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">         *    0          0=SiRF, 1=NMEA  - This is where the protocol is changed.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">         *    9600       b/s rate 4800, 9600, 19200, 38400</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">         *    8          7, 8 Databits</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">         *    1          0, 1 Stopbits</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">         *    0          0=none, 1=odd, 2=even Parity</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">         *    *0C        checksum</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">         * The sentences 101 and 104 can be used to initialize values to be used</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">         * by the gps. Supplying these values can shorten the initial lock time.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">         * If the clock offset is set to 0 then an internal default will be used.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">         * Sentence 101 supplies data in the internal ECEF (Earth centered, Earth</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">         * Fixed) format in meters while sentence 104 supplies the data in the</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">         * traditional Lat / Lon format.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">         * $PSRF101,-2686700,-4304200,3851624,95000,497260,921,12,3*22</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">         * $PSRF104,37.3875111,-121.97232,0,95000,237759,922,12,3*3A</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         * where:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">         *    $PSRF104</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">         *    37.3875111 Latitude in degrees</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">         *    -121.97232 Longitude in degrees</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">         *    0          Ellipsoid Altitude in meters</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">         *    95000      Clock offset</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">         *    237759     GPS Time of Week in seconds</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">         *    922        GPS Week Number</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">         *    12         Channel count (1 to 12)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">         *    3          Reset config where</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">         *               1 = warm start, ephemeris valid</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">         *               2 = clear ephemeris, warm start (First Fix)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">         *               3 = initialize with data, clear ephemeris</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">         *               4 = cold start, clear all data</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">         *               8 = cold start, set factory defaults</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">         *    *3A        checksum</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">         * The sentence 103 is used to control which NMEA sentences are to be</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">         * sent and how often. Each sentence type is controlled individually.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">         * If the query bit is set then the gps responds by sending this message</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">         * in the next second no matter what the rate is set to. Note that if</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">         * trickle power is in use (can only be set in binary mode) then the</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">         * actual update rate will be the selected update rate times the trickle</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">         * rate which could mean that the data will be sent less frequently than</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">         * was set here.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">         * $PSRF103,05,00,01,01*20</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">         * where:</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">         *    $PSRF103</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">         *    05         00=GGA</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">         *               01=GLL</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">         *               02=GSA</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">         *               03=GSV</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">         *               04=RMC</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">         *               05=VTG</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">         *    00         mode, 0=set rate, 1=query</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">         *    01         rate in seconds, 0-255</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">         *    01         checksum 0=no, 1=yes</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">         *    *20        checksum</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">         * The 105 sentence controls a debug mode which causes the gps to</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">         * report any errors it finds with the input data. $PSRF105,1*3E would</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">         * turn debug on while $PSRF105,0*3F would turn it off.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_n_m_e_a__connector_1_1_manufature_si_r_f.html#a16e4ab8e57b192565215f31a373b2de4">   94</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_n_m_e_a__connector_1_1_manufature_si_r_f.html#a16e4ab8e57b192565215f31a373b2de4">commandSiRF</a>()</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_n_m_e_a__connector_1_1_manufature_si_r_f_html_a16e4ab8e57b192565215f31a373b2de4"><div class="ttname"><a href="class_n_m_e_a__connector_1_1_manufature_si_r_f.html#a16e4ab8e57b192565215f31a373b2de4">NMEA_connector.ManufatureSiRF.commandSiRF</a></div><div class="ttdeci">void commandSiRF()</div><div class="ttdef"><b>Definition:</b> <a href="_manufature_si_r_f_8cs_source.html#l00094">ManufatureSiRF.cs:94</a></div></div>
+<div class="ttc" id="aclass_n_m_e_a__connector_1_1_manufature_si_r_f_html"><div class="ttname"><a href="class_n_m_e_a__connector_1_1_manufature_si_r_f.html">NMEA_connector.ManufatureSiRF</a></div><div class="ttdef"><b>Definition:</b> <a href="_manufature_si_r_f_8cs_source.html#l00003">ManufatureSiRF.cs:3</a></div></div>
+<div class="ttc" id="anamespace_n_m_e_a__connector_html"><div class="ttname"><a href="namespace_n_m_e_a__connector.html">NMEA_connector</a></div><div class="ttdef"><b>Definition:</b> <a href="consol_01app_2_program_8cs_source.html#l00003">Program.cs:3</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_manufature_si_r_f_8cs.html">ManufatureSiRF.cs</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

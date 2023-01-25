@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Kildefilen C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/nmealib-0.5.3/nmealib/samples/parse_file/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('parse__file_2main_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="parse__file_2main_8c.html">Hop til denne fils dokumentation.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="nmea_8h.html">nmea/nmea.h</a>&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifdef NMEA_WIN</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#   include &lt;io.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="parse__file_2main_8c.html#ae9dc5f00a3b5164351c33e2c1134d5fa">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="parse__file_2main_8c.html#ae9dc5f00a3b5164351c33e2c1134d5fa">trace</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> str_size)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    printf(<span class="stringliteral">&quot;Trace: &quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    write(1, str, str_size);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="parse__file_2main_8c.html#a3dc0da820df1a75981344afb319f561b">   16</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="parse__file_2main_8c.html#a3dc0da820df1a75981344afb319f561b">error</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *str, <span class="keywordtype">int</span> str_size)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    printf(<span class="stringliteral">&quot;Error: &quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    write(1, str, str_size);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="parse__file_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="generate_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> info;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="struct__nmea_p_a_r_s_e_r.html">nmeaPARSER</a> parser;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    FILE *file;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">char</span> buff[2048];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> size, <a class="code" href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a> = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="struct__nmea_p_o_s.html">nmeaPOS</a> dpos;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    file = fopen(<span class="stringliteral">&quot;gpslog.txt&quot;</span>, <span class="stringliteral">&quot;rb&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(!file)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="context_8h.html#ac59c72fd4111560f74e0e0846601463d">nmea_property</a>()-&gt;<a class="code" href="struct__nmea_p_r_o_p_e_r_t_y.html#a6ad9f090300275f57784d702285c17cd">trace_func</a> = &amp;<a class="code" href="parse__file_2main_8c.html#ae9dc5f00a3b5164351c33e2c1134d5fa">trace</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="context_8h.html#ac59c72fd4111560f74e0e0846601463d">nmea_property</a>()-&gt;<a class="code" href="struct__nmea_p_r_o_p_e_r_t_y.html#adeb530a3f865a5154d53b21a54e8b261">error_func</a> = &amp;<a class="code" href="parse__file_2main_8c.html#a3dc0da820df1a75981344afb319f561b">error</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="info_8h.html#a7439b48d026e3dec177b6f3a3d07f4dd">nmea_zero_INFO</a>(&amp;info);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="parser_8h.html#aa67502b0eca4cda5bbdc3572e49d75f2">nmea_parser_init</a>(&amp;parser);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    while(1)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">while</span>(!feof(file))</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        size = (int)fread(&amp;buff[0], 1, 100, file);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="parser_8h.html#a7f674fc42b80d16725ca0e16fd92e3ea">nmea_parse</a>(&amp;parser, &amp;buff[0], size, &amp;info);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="gmath_8h.html#a7ae16624d96691eba1d84570e8046dd7">nmea_info2pos</a>(&amp;info, &amp;dpos);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        printf(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="stringliteral">&quot;%03d, Lat: %f, Lon: %f, Sig: %d, Fix: %d\n&quot;</span>,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a>++, dpos.<a class="code" href="struct__nmea_p_o_s.html#a7460c3b73b0bc478183580d62ac90275">lat</a>, dpos.<a class="code" href="struct__nmea_p_o_s.html#aa90c327fd33606667ceef90f636e03a0">lon</a>, info.<a class="code" href="struct__nmea_i_n_f_o.html#a20246280a36e0e7d96efc825eb4afb44">sig</a>, info.<a class="code" href="struct__nmea_i_n_f_o.html#a66c102c95a0418353910a85753b2a8ed">fix</a></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    fseek(file, 0, SEEK_SET);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">    }</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="parser_8h.html#af8684d88babb5a3e1868d5816526215a">nmea_parser_destroy</a>(&amp;parser);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    fclose(file);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="astruct__nmea_i_n_f_o_html_a20246280a36e0e7d96efc825eb4afb44"><div class="ttname"><a href="struct__nmea_i_n_f_o.html#a20246280a36e0e7d96efc825eb4afb44">_nmeaINFO::sig</a></div><div class="ttdeci">int sig</div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00088">info.h:88</a></div></div>
+<div class="ttc" id="agmath_8h_html_a7ae16624d96691eba1d84570e8046dd7"><div class="ttname"><a href="gmath_8h.html#a7ae16624d96691eba1d84570e8046dd7">nmea_info2pos</a></div><div class="ttdeci">void nmea_info2pos(const nmeaINFO *info, nmeaPOS *pos)</div><div class="ttdoc">Convert position from INFO to radians position.</div><div class="ttdef"><b>Definition:</b> <a href="gmath_8c_source.html#l00364">gmath.c:364</a></div></div>
+<div class="ttc" id="astruct__nmea_p_r_o_p_e_r_t_y_html_a6ad9f090300275f57784d702285c17cd"><div class="ttname"><a href="struct__nmea_p_r_o_p_e_r_t_y.html#a6ad9f090300275f57784d702285c17cd">_nmeaPROPERTY::trace_func</a></div><div class="ttdeci">nmeaTraceFunc trace_func</div><div class="ttdef"><b>Definition:</b> <a href="context_8h_source.html#l00028">context.h:28</a></div></div>
+<div class="ttc" id="astruct__nmea_i_n_f_o_html_a66c102c95a0418353910a85753b2a8ed"><div class="ttname"><a href="struct__nmea_i_n_f_o.html#a66c102c95a0418353910a85753b2a8ed">_nmeaINFO::fix</a></div><div class="ttdeci">int fix</div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00089">info.h:89</a></div></div>
+<div class="ttc" id="aparse__file_2main_8c_html_a3dc0da820df1a75981344afb319f561b"><div class="ttname"><a href="parse__file_2main_8c.html#a3dc0da820df1a75981344afb319f561b">error</a></div><div class="ttdeci">void error(const char *str, int str_size)</div><div class="ttdef"><b>Definition:</b> <a href="parse__file_2main_8c_source.html#l00016">main.c:16</a></div></div>
+<div class="ttc" id="ainfo_8h_html_a7439b48d026e3dec177b6f3a3d07f4dd"><div class="ttname"><a href="info_8h.html#a7439b48d026e3dec177b6f3a3d07f4dd">nmea_zero_INFO</a></div><div class="ttdeci">void nmea_zero_INFO(nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="info_8c_source.html#l00015">info.c:15</a></div></div>
+<div class="ttc" id="aparse__file_2main_8c_html_ae9dc5f00a3b5164351c33e2c1134d5fa"><div class="ttname"><a href="parse__file_2main_8c.html#ae9dc5f00a3b5164351c33e2c1134d5fa">trace</a></div><div class="ttdeci">void trace(const char *str, int str_size)</div><div class="ttdef"><b>Definition:</b> <a href="parse__file_2main_8c_source.html#l00010">main.c:10</a></div></div>
+<div class="ttc" id="acontext_8h_html_ac59c72fd4111560f74e0e0846601463d"><div class="ttname"><a href="context_8h.html#ac59c72fd4111560f74e0e0846601463d">nmea_property</a></div><div class="ttdeci">nmeaPROPERTY * nmea_property()</div><div class="ttdef"><b>Definition:</b> <a href="context_8c_source.html#l00017">context.c:17</a></div></div>
+<div class="ttc" id="astruct__nmea_p_o_s_html_aa90c327fd33606667ceef90f636e03a0"><div class="ttname"><a href="struct__nmea_p_o_s.html#aa90c327fd33606667ceef90f636e03a0">_nmeaPOS::lon</a></div><div class="ttdeci">double lon</div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00044">info.h:44</a></div></div>
+<div class="ttc" id="agenerate_2main_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="generate_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="generate_2main_8c_source.html#l00010">main.c:10</a></div></div>
+<div class="ttc" id="aparser_8h_html_af8684d88babb5a3e1868d5816526215a"><div class="ttname"><a href="parser_8h.html#af8684d88babb5a3e1868d5816526215a">nmea_parser_destroy</a></div><div class="ttdeci">void nmea_parser_destroy(nmeaPARSER *parser)</div><div class="ttdoc">Destroy parser object.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8c_source.html#l00065">parser.c:65</a></div></div>
+<div class="ttc" id="anmea_8h_html"><div class="ttname"><a href="nmea_8h.html">nmea.h</a></div></div>
+<div class="ttc" id="aparser_8h_html_a7f674fc42b80d16725ca0e16fd92e3ea"><div class="ttname"><a href="parser_8h.html#a7f674fc42b80d16725ca0e16fd92e3ea">nmea_parse</a></div><div class="ttdeci">int nmea_parse(nmeaPARSER *parser, const char *buff, int buff_sz, nmeaINFO *info)</div><div class="ttdoc">Analysis of buffer and put results to information structure.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8c_source.html#l00077">parser.c:77</a></div></div>
+<div class="ttc" id="astruct__nmea_p_r_o_p_e_r_t_y_html_adeb530a3f865a5154d53b21a54e8b261"><div class="ttname"><a href="struct__nmea_p_r_o_p_e_r_t_y.html#adeb530a3f865a5154d53b21a54e8b261">_nmeaPROPERTY::error_func</a></div><div class="ttdeci">nmeaErrorFunc error_func</div><div class="ttdef"><b>Definition:</b> <a href="context_8h_source.html#l00029">context.h:29</a></div></div>
+<div class="ttc" id="aparser_8h_html_aa67502b0eca4cda5bbdc3572e49d75f2"><div class="ttname"><a href="parser_8h.html#aa67502b0eca4cda5bbdc3572e49d75f2">nmea_parser_init</a></div><div class="ttdeci">int nmea_parser_init(nmeaPARSER *parser)</div><div class="ttdoc">Initialization of parser object.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8c_source.html#l00039">parser.c:39</a></div></div>
+<div class="ttc" id="a_l_i_c_e_n_s_e_8_t_x_t_html_a76868a71f10b10fd75a76f81ad936660"><div class="ttname"><a href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a></div><div class="ttdeci">that you receive source code or can get it if you want it</div><div class="ttdef"><b>Definition:</b> <a href="_l_i_c_e_n_s_e_8_t_x_t_source.html#l00031">LICENSE.TXT:31</a></div></div>
+<div class="ttc" id="astruct__nmea_p_a_r_s_e_r_html"><div class="ttname"><a href="struct__nmea_p_a_r_s_e_r.html">_nmeaPARSER</a></div><div class="ttdef"><b>Definition:</b> <a href="parser_8h_source.html#l00024">parser.h:24</a></div></div>
+<div class="ttc" id="astruct__nmea_p_o_s_html_a7460c3b73b0bc478183580d62ac90275"><div class="ttname"><a href="struct__nmea_p_o_s.html#a7460c3b73b0bc478183580d62ac90275">_nmeaPOS::lat</a></div><div class="ttdeci">double lat</div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00043">info.h:43</a></div></div>
+<div class="ttc" id="astruct__nmea_i_n_f_o_html"><div class="ttname"><a href="struct__nmea_i_n_f_o.html">_nmeaINFO</a></div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00082">info.h:82</a></div></div>
+<div class="ttc" id="astruct__nmea_p_o_s_html"><div class="ttname"><a href="struct__nmea_p_o_s.html">_nmeaPOS</a></div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00041">info.h:41</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_734c1a9bcf946aa19cb1e292de045596.html">nmealib-0.5.3</a></li><li class="navelem"><a class="el" href="dir_5f4316b47fe927d7809378d88831d150.html">nmealib</a></li><li class="navelem"><a class="el" href="dir_2e0ad362157f3dc879e88dcf77932172.html">samples</a></li><li class="navelem"><a class="el" href="dir_c563b147f8662b4b1cc49545fc1ec3ed.html">parse_file</a></li><li class="navelem"><a class="el" href="parse__file_2main_8c.html">main.c</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

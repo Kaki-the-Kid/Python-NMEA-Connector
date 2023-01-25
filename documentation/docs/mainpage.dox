@@ -1,0 +1,118 @@
+/**
+@mainpage NMEA Controller
+@section intro_sec Resume
+Jeg ønsker, at lave en løsning som gør at man kan læse NMEA beskeder på computer                                   
+
+&copy; copyright 2019-2020 Karsten 'Kaki' Reitan Sørensen<br/>
+version 1.00-development
+
+- @subpage nmea_commands
+- @subpage \todo
+
+
+<hr/>
+
+@section project_goals Mål med projektet
+<h4>TCP/IP forbindelse</h4>
+<h4>SoftAP funktionen</h4>
+<h4>HTML side</h4>
+<h4>Håndtering af GET request</h4>
+- Tænde og slukke lysdiode på IO pin
+
+<hr/>
+
+@section projecct_structure Projekt struktur
+\todo udfyld den korrekte struktur
+
+Eksempel på struktur
+- Source Files
+*- main.c
+*- MCC Generated Files
+**- device_config.c
+**- eusart1.c
+**- eusart2.c
+**- interrupt_manager.c
+**- mcc.c
+**- pin_manager.c
+**- tmr2.c
+
+<hr/>
+
+@section file_structure Fil struktur
+- <i>build</i><br/>
+FIler genereret af compiler
+- <i>datablade</i><br/>
+Datablade for den anvendte PIC kreds, ESP01 og andre mere eller mindre relevante dokumenter<br/>
+<i>ESP01</i> - <br/>
+<i>MRF89XAM8A</i> - mappe til fremtidig udvidelse til LORA modul
+- <i>debug</i><br/>
+Filer genereret af compiler
+- <i>dist</i><br/>
+Filer generet af compiler
+- <i>docs</i><br/>
+<i>mainpage.dox</i> bliver brugt af Doxygen til at generere forsiden på projektet
+- <i>doxygen</i><br/>
+Indeholder den overordnede dokumentation af projektet i HTML version. Genreret med Doxygen
+- <i>mcc_generated_files</i><br/>
+Filer genereret af CodeConfigurator
+-  <i>nbproject</i><br/>
+Filer genereret af compiler
+- <i>powerpoints</i><br/>
+Mappe lavet til at holde produceret undervisnings materiale
+
+<hr/>
+
+@section SQLite3_tools SQLite3
+SQLite is a small, fast, and embeddable open source file system-based SQL database. It doesn't have a separate server component like traditional databases. Rather, it reads and writes data directly in disk files. A SQLite database is integrated with the application that accesses the database. The SQLite database file format is cross-platform and can be copied between 32-bit and 64-bit file systems. Due to the serverless architecture, developers don't need to install SQLite before using it. All SQLite transactions are fully ACID compliant; that means all queries and changes are Atomic, Consistent, Isolated, and Durable. 
+
+SQLite kildekode er offentlig og fri til brug hvilken som helst formål - kommercielt og privat.
+
+Fordi den er meget letvægt i sin opbygning bliver SQLite anvendt intensivt i embedded software, som TV, mobiltelefoner oma. Det sikrer en serverfri enhed. 
+SQLite is recommended for mobile-based applications. Reading and writing operations in SQLite database are extremely fast, almost 35% faster than any 
+traditional databases. SQLite reduces application cost because content can be accessed and updated by using concise SQL queries instead of lengthy 
+procedural queries. To connect SQLite, no additional database drivers, or ODBC configuration are required. Developers just have to download the 
+library and add the data file in their application.
+
+
+- DB Browser for SQLite<br/>
+Som Database er brug SQLite3 og her er værktøj som meget ligner det vi kender MSSQL og MySQL.<br/>
+Webside: https://sqlitebrowser.org/
+- Using SQLite in a C# Application<br/>
+Webside som indeholder præcis information omkring implementeringen af SQLite3 i Visual Studio projekt.<br/>
+Webside: https://www.codeguru.com/csharp/.net/net_data/using-sqlite-in-a-c-application.html
+
+<hr/>
+
+@section doxygen_tools Doxygen
+- Doxygen v1.8.17<br/>
+Kan implementeres som plugin i MPLabs / NetBeans IDE.<br/>
+Fordi jeg har skrevet størstedelen af kommentarer på dansk skal DoxyWizard instilles til 
+<i>Windows-1252</i> formattering af teksten. I IDE kan man bruge UTF-8 som normalt.<br/>
+Doxýgen dokumentation: https://http://www.doxygen.nl/index.html
+
+<hr/>
+
+@section project_other_text Kilder, inspiration og læring
+- Deepblue: UART | Serial Communication With PIC Microcontrollers Tutorial<br/>
+Side som indeholder et væld af information om seriel kommunikation.<br/>
+Webside: https://deepbluembedded.com/uart-pic-microcontroller-tutorial/
+
+<hr/>
+
+@section project_license Licens
+This program is free software; you can redistribute it and/or modify<br/>
+it under the terms of the GNU General Public License as published by<br/>
+the Free Software Foundation; either version 2 of the License, or<br/>
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,<br/>
+but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br/>
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License<br/>
+along with this program; if not, write to the Free Software<br/>
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+\example NMEA Connector.c
+*/

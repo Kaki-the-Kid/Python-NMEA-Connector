@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: Kildefilen C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/nmealib-0.5.3/nmealib/samples/generator/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('generator_2main_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="generator_2main_8c.html">Hop til denne fils dokumentation.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="nmea_8h.html">nmea/nmea.h</a>&gt;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifdef NMEA_WIN</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#   include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#   include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="generator_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   10</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="generate_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="struct__nmea_g_e_n_e_r_a_t_o_r.html">nmeaGENERATOR</a> *gen;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="struct__nmea_i_n_f_o.html">nmeaINFO</a> info;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">char</span> buff[2048];</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> gen_sz;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="info_8h.html#a7439b48d026e3dec177b6f3a3d07f4dd">nmea_zero_INFO</a>(&amp;info);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span>(0 == (gen = <a class="code" href="generator_8h.html#a53732566bbeb110b2b7c5be6c55e61f5">nmea_create_generator</a>(<a class="code" href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b">NMEA_GEN_ROTATE</a>, &amp;info)))</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span>(<a class="code" href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a> = 0; <a class="code" href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a> &lt; 10000; ++<a class="code" href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        gen_sz = <a class="code" href="generator_8h.html#a55a1b088ad4e2f2a71971f8777a00ad3">nmea_generate_from</a>(</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            &amp;buff[0], 2048, &amp;info, gen,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa7ce569034cd13427e4e6c3db6130017d">GPGGA</a> | <a class="code" href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa13962a43e3a2639f1cdc34c69e49102a">GPGSA</a> | <a class="code" href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa261c9fc87414b4426986d6a6e8d9bf24">GPGSV</a> | <a class="code" href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa4e46c2c907610e3cae94447c3d4c43f4">GPRMC</a> | <a class="code" href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daabe049feacfc7943a654b4c35e2a08c18">GPVTG</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        buff[gen_sz] = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        printf(<span class="stringliteral">&quot;%s\n&quot;</span>, &amp;buff[0]);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifdef NMEA_WIN</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Sleep(500);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        usleep(500000);        </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="generator_8h.html#a56f62dcd92c0325a23936afaa0382636">nmea_gen_destroy</a>(gen);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="asentence_8h_html_ac1e92675d5432f785d5302b3046c23daa261c9fc87414b4426986d6a6e8d9bf24"><div class="ttname"><a href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa261c9fc87414b4426986d6a6e8d9bf24">GPGSV</a></div><div class="ttdeci">@ GPGSV</div><div class="ttdef"><b>Definition:</b> <a href="sentence_8h_source.html#l00030">sentence.h:30</a></div></div>
+<div class="ttc" id="asentence_8h_html_ac1e92675d5432f785d5302b3046c23daa13962a43e3a2639f1cdc34c69e49102a"><div class="ttname"><a href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa13962a43e3a2639f1cdc34c69e49102a">GPGSA</a></div><div class="ttdeci">@ GPGSA</div><div class="ttdef"><b>Definition:</b> <a href="sentence_8h_source.html#l00029">sentence.h:29</a></div></div>
+<div class="ttc" id="ainfo_8h_html_a7439b48d026e3dec177b6f3a3d07f4dd"><div class="ttname"><a href="info_8h.html#a7439b48d026e3dec177b6f3a3d07f4dd">nmea_zero_INFO</a></div><div class="ttdeci">void nmea_zero_INFO(nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="info_8c_source.html#l00015">info.c:15</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a55a1b088ad4e2f2a71971f8777a00ad3"><div class="ttname"><a href="generator_8h.html#a55a1b088ad4e2f2a71971f8777a00ad3">nmea_generate_from</a></div><div class="ttdeci">int nmea_generate_from(char *buff, int buff_sz, nmeaINFO *info, struct _nmeaGENERATOR *gen, int generate_mask)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00101">generator.c:101</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b"><div class="ttname"><a href="generator_8h.html#a7476a998bdf5c43054222aa18b45aaaea9d930e7176433a4b5141ce96816fbf1b">NMEA_GEN_ROTATE</a></div><div class="ttdeci">@ NMEA_GEN_ROTATE</div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00030">generator.h:30</a></div></div>
+<div class="ttc" id="asentence_8h_html_ac1e92675d5432f785d5302b3046c23daa4e46c2c907610e3cae94447c3d4c43f4"><div class="ttname"><a href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa4e46c2c907610e3cae94447c3d4c43f4">GPRMC</a></div><div class="ttdeci">@ GPRMC</div><div class="ttdef"><b>Definition:</b> <a href="sentence_8h_source.html#l00031">sentence.h:31</a></div></div>
+<div class="ttc" id="agenerate_2main_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="generate_2main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="generate_2main_8c_source.html#l00010">main.c:10</a></div></div>
+<div class="ttc" id="asentence_8h_html_ac1e92675d5432f785d5302b3046c23daabe049feacfc7943a654b4c35e2a08c18"><div class="ttname"><a href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daabe049feacfc7943a654b4c35e2a08c18">GPVTG</a></div><div class="ttdeci">@ GPVTG</div><div class="ttdef"><b>Definition:</b> <a href="sentence_8h_source.html#l00032">sentence.h:32</a></div></div>
+<div class="ttc" id="anmea_8h_html"><div class="ttname"><a href="nmea_8h.html">nmea.h</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a53732566bbeb110b2b7c5be6c55e61f5"><div class="ttname"><a href="generator_8h.html#a53732566bbeb110b2b7c5be6c55e61f5">nmea_create_generator</a></div><div class="ttdeci">struct _nmeaGENERATOR * nmea_create_generator(int type, nmeaINFO *info)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00382">generator.c:382</a></div></div>
+<div class="ttc" id="astruct__nmea_g_e_n_e_r_a_t_o_r_html"><div class="ttname"><a href="struct__nmea_g_e_n_e_r_a_t_o_r.html">_nmeaGENERATOR</a></div><div class="ttdef"><b>Definition:</b> <a href="generator_8h_source.html#l00058">generator.h:58</a></div></div>
+<div class="ttc" id="a_l_i_c_e_n_s_e_8_t_x_t_html_a76868a71f10b10fd75a76f81ad936660"><div class="ttname"><a href="_l_i_c_e_n_s_e_8_t_x_t.html#a76868a71f10b10fd75a76f81ad936660">it</a></div><div class="ttdeci">that you receive source code or can get it if you want it</div><div class="ttdef"><b>Definition:</b> <a href="_l_i_c_e_n_s_e_8_t_x_t_source.html#l00031">LICENSE.TXT:31</a></div></div>
+<div class="ttc" id="astruct__nmea_i_n_f_o_html"><div class="ttname"><a href="struct__nmea_i_n_f_o.html">_nmeaINFO</a></div><div class="ttdef"><b>Definition:</b> <a href="info_8h_source.html#l00082">info.h:82</a></div></div>
+<div class="ttc" id="agenerator_8h_html_a56f62dcd92c0325a23936afaa0382636"><div class="ttname"><a href="generator_8h.html#a56f62dcd92c0325a23936afaa0382636">nmea_gen_destroy</a></div><div class="ttdeci">void nmea_gen_destroy(nmeaGENERATOR *gen)</div><div class="ttdef"><b>Definition:</b> <a href="generator_8c_source.html#l00079">generator.c:79</a></div></div>
+<div class="ttc" id="asentence_8h_html_ac1e92675d5432f785d5302b3046c23daa7ce569034cd13427e4e6c3db6130017d"><div class="ttname"><a href="sentence_8h.html#ac1e92675d5432f785d5302b3046c23daa7ce569034cd13427e4e6c3db6130017d">GPGGA</a></div><div class="ttdeci">@ GPGGA</div><div class="ttdef"><b>Definition:</b> <a href="sentence_8h_source.html#l00028">sentence.h:28</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_734c1a9bcf946aa19cb1e292de045596.html">nmealib-0.5.3</a></li><li class="navelem"><a class="el" href="dir_5f4316b47fe927d7809378d88831d150.html">nmealib</a></li><li class="navelem"><a class="el" href="dir_2e0ad362157f3dc879e88dcf77932172.html">samples</a></li><li class="navelem"><a class="el" href="dir_2ffe0f43df1411f38a71e3b5845c3778.html">generator</a></li><li class="navelem"><a class="el" href="generator_2main_8c.html">main.c</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

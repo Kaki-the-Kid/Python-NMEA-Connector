@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NMEA Connector: C:/Users/karst/OneDrive - AARHUS TECH/Dokumenter/Workspace/Csharp/NMEA-connector/Inspiration/VirtualGPSJet/vgps/driver/mdd.c filreference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">NMEA Connector
+   &#160;<span id="projectnumber">1.0-prototype</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Genereret af Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Søg');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Søg');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mdd_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funktioner</a>  </div>
+  <div class="headertitle">
+<div class="title">mdd.c filreference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;linklist.h&gt;</code><br />
+<code>#include &lt;serdbg.h&gt;</code><br />
+<code>#include &lt;pegdser.h&gt;</code><br />
+<code>#include &lt;devload.h&gt;</code><br />
+<code>#include &lt;ceddk.h&gt;</code><br />
+<code>#include &lt;pm.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_virtual_g_p_s_jet_2vgps_2driver_2config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mdd_8h_source.html">mdd.h</a>&quot;</code><br />
+</div>
+<p><a href="mdd_8c_source.html">Hop til denne fils kildekode.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funktioner</h2></td></tr>
+<tr class="memitem:a3211f3ac6ab813c78c4f220dacc4dfb4"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a3211f3ac6ab813c78c4f220dacc4dfb4">COM_Close</a> (<a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a> pOpenHead)</td></tr>
+<tr class="separator:a3211f3ac6ab813c78c4f220dacc4dfb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7fb7fc1afe81afbead798a1765e4dca"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#af7fb7fc1afe81afbead798a1765e4dca">COM_Deinit</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead)</td></tr>
+<tr class="separator:af7fb7fc1afe81afbead798a1765e4dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571d953667eebf399462c0b8df34aad5"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a571d953667eebf399462c0b8df34aad5">EvaluateEventFlag</a> (PVOID pHead, ULONG fdwEventMask)</td></tr>
+<tr class="separator:a571d953667eebf399462c0b8df34aad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35909f8da77e420e61195dff3302c5f6"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a35909f8da77e420e61195dff3302c5f6">DllEntry</a> (HINSTANCE hinstDll, DWORD dwReason, LPVOID lpReserved)</td></tr>
+<tr class="separator:a35909f8da77e420e61195dff3302c5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a572cdc024bb40a76c8d2b445aaec7919"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a572cdc024bb40a76c8d2b445aaec7919">DoTxData</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead)</td></tr>
+<tr class="separator:a572cdc024bb40a76c8d2b445aaec7919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0d0406f7e36c041982caab8d702842"><td class="memItemLeft" align="right" valign="top">VOID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#aff0d0406f7e36c041982caab8d702842">SerialEventHandler</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead)</td></tr>
+<tr class="separator:aff0d0406f7e36c041982caab8d702842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a473e446c5f2fb98cedabe6404fc66824"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a473e446c5f2fb98cedabe6404fc66824">StartDispatchThread</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead)</td></tr>
+<tr class="separator:a473e446c5f2fb98cedabe6404fc66824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34affd078dccc7352d0116ec32dfccf"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#af34affd078dccc7352d0116ec32dfccf">StopDispatchThread</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead)</td></tr>
+<tr class="separator:af34affd078dccc7352d0116ec32dfccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98720d759225609d42866faa373dce34"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a98720d759225609d42866faa373dce34">ApplyDCB</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead, DCB *pDCB, BOOL fOpen)</td></tr>
+<tr class="separator:a98720d759225609d42866faa373dce34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b7ddef8d981d30befa47b3fe751310"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a36b7ddef8d981d30befa47b3fe751310">COM_Init</a> (ULONG Identifier)</td></tr>
+<tr class="separator:a36b7ddef8d981d30befa47b3fe751310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bcfa24868bf853471dbf77c54179722"><td class="memItemLeft" align="right" valign="top">HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a4bcfa24868bf853471dbf77c54179722">COM_Open</a> (HANDLE pHead, DWORD AccessCode, DWORD ShareMode)</td></tr>
+<tr class="separator:a4bcfa24868bf853471dbf77c54179722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509c8a4ba9c45f93fb6b5894c83cbf36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a509c8a4ba9c45f93fb6b5894c83cbf36">COM_PreClose</a> (<a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a> pOpenHead)</td></tr>
+<tr class="separator:a509c8a4ba9c45f93fb6b5894c83cbf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74ffd644f82cdecda1fdab7d892d59ee"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a74ffd644f82cdecda1fdab7d892d59ee">ProcessExiting</a> (<a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a> pOpenHead)</td></tr>
+<tr class="separator:a74ffd644f82cdecda1fdab7d892d59ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1e63c9b24663266425178f0acfbaec"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#afc1e63c9b24663266425178f0acfbaec">COM_PreDeinit</a> (<a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a> pSerialHead)</td></tr>
+<tr class="separator:afc1e63c9b24663266425178f0acfbaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af995ebc898697a3a4d52259c3a692d0d"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#af995ebc898697a3a4d52259c3a692d0d">COM_Read</a> (HANDLE pHead, PUCHAR pTargetBuffer, ULONG BufferLength)</td></tr>
+<tr class="separator:af995ebc898697a3a4d52259c3a692d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9afc47fd5c204fb4fcc426315010173"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#af9afc47fd5c204fb4fcc426315010173">COM_Write</a> (HANDLE pHead, PUCHAR pSourceBytes, ULONG NumberOfBytes)</td></tr>
+<tr class="separator:af9afc47fd5c204fb4fcc426315010173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1787b5f4bf3efd393cb5e65c289f3fca"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a1787b5f4bf3efd393cb5e65c289f3fca">COM_Seek</a> (HANDLE pHead, LONG Position, DWORD Type)</td></tr>
+<tr class="separator:a1787b5f4bf3efd393cb5e65c289f3fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb280ad657824056998efd00d4e12726"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#acb280ad657824056998efd00d4e12726">COM_PowerUp</a> (HANDLE pHead)</td></tr>
+<tr class="separator:acb280ad657824056998efd00d4e12726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2378521e1ebe1198b80864f78be2d737"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a2378521e1ebe1198b80864f78be2d737">COM_PowerDown</a> (HANDLE pHead)</td></tr>
+<tr class="separator:a2378521e1ebe1198b80864f78be2d737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8568919b09fd84906c23b998644e148"><td class="memItemLeft" align="right" valign="top">ULONG&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#af8568919b09fd84906c23b998644e148">SerialGetDroppedByteNumber</a> (HANDLE pHead)</td></tr>
+<tr class="separator:af8568919b09fd84906c23b998644e148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4ef1416739c614723a09a93ca3cbd1"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#aee4ef1416739c614723a09a93ca3cbd1">WaitCommEvent</a> (<a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a> pOpenHead, PULONG pfdwEventMask, LPOVERLAPPED Unused)</td></tr>
+<tr class="separator:aee4ef1416739c614723a09a93ca3cbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b95e7433cb445c991d30c02dde6a1f"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mdd_8c.html#a26b95e7433cb445c991d30c02dde6a1f">COM_IOControl</a> (<a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a> pOpenHead, DWORD dwCode, PBYTE pBufIn, DWORD dwLenIn, PBYTE pBufOut, DWORD dwLenOut, PDWORD pdwActualOut)</td></tr>
+<tr class="separator:a26b95e7433cb445c991d30c02dde6a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funktions-dokumentation</h2>
+<a id="a98720d759225609d42866faa373dce34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98720d759225609d42866faa373dce34">&#9670;&nbsp;</a></span>ApplyDCB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ApplyDCB </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DCB *&#160;</td>
+          <td class="paramname"><em>pDCB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BOOL&#160;</td>
+          <td class="paramname"><em>fOpen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00551">551</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a3211f3ac6ab813c78c4f220dacc4dfb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3211f3ac6ab813c78c4f220dacc4dfb4">&#9670;&nbsp;</a></span>COM_Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL COM_Close </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a>&#160;</td>
+          <td class="paramname"><em>pOpenHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01082">1082</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="af7fb7fc1afe81afbead798a1765e4dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7fb7fc1afe81afbead798a1765e4dca">&#9670;&nbsp;</a></span>COM_Deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL COM_Deinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01249">1249</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a36b7ddef8d981d30befa47b3fe751310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b7ddef8d981d30befa47b3fe751310">&#9670;&nbsp;</a></span>COM_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE COM_Init </td>
+          <td>(</td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>Identifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00641">641</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a26b95e7433cb445c991d30c02dde6a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b95e7433cb445c991d30c02dde6a1f">&#9670;&nbsp;</a></span>COM_IOControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL COM_IOControl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a>&#160;</td>
+          <td class="paramname"><em>pOpenHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PBYTE&#160;</td>
+          <td class="paramname"><em>pBufIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwLenIn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PBYTE&#160;</td>
+          <td class="paramname"><em>pBufOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwLenOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PDWORD&#160;</td>
+          <td class="paramname"><em>pdwActualOut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01979">1979</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a4bcfa24868bf853471dbf77c54179722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bcfa24868bf853471dbf77c54179722">&#9670;&nbsp;</a></span>COM_Open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HANDLE COM_Open </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>AccessCode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>ShareMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00793">793</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a2378521e1ebe1198b80864f78be2d737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2378521e1ebe1198b80864f78be2d737">&#9670;&nbsp;</a></span>COM_PowerDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL COM_PowerDown </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01752">1752</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="acb280ad657824056998efd00d4e12726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb280ad657824056998efd00d4e12726">&#9670;&nbsp;</a></span>COM_PowerUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL COM_PowerUp </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01730">1730</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a509c8a4ba9c45f93fb6b5894c83cbf36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a509c8a4ba9c45f93fb6b5894c83cbf36">&#9670;&nbsp;</a></span>COM_PreClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_i_c_e_n_s_e_8_t_x_t.html#a3b083519fd2b41d83363afcfd5ebad9d">void</a> COM_PreClose </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a>&#160;</td>
+          <td class="paramname"><em>pOpenHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01018">1018</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="afc1e63c9b24663266425178f0acfbaec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1e63c9b24663266425178f0acfbaec">&#9670;&nbsp;</a></span>COM_PreDeinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL COM_PreDeinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01207">1207</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="af995ebc898697a3a4d52259c3a692d0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af995ebc898697a3a4d52259c3a692d0d">&#9670;&nbsp;</a></span>COM_Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG COM_Read </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PUCHAR&#160;</td>
+          <td class="paramname"><em>pTargetBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>BufferLength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01333">1333</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a1787b5f4bf3efd393cb5e65c289f3fca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1787b5f4bf3efd393cb5e65c289f3fca">&#9670;&nbsp;</a></span>COM_Seek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG COM_Seek </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LONG&#160;</td>
+          <td class="paramname"><em>Position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>Type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01714">1714</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="af9afc47fd5c204fb4fcc426315010173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9afc47fd5c204fb4fcc426315010173">&#9670;&nbsp;</a></span>COM_Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG COM_Write </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PUCHAR&#160;</td>
+          <td class="paramname"><em>pSourceBytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>NumberOfBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01547">1547</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a35909f8da77e420e61195dff3302c5f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35909f8da77e420e61195dff3302c5f6">&#9670;&nbsp;</a></span>DllEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL DllEntry </td>
+          <td>(</td>
+          <td class="paramtype">HINSTANCE&#160;</td>
+          <td class="paramname"><em>hinstDll</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>dwReason</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPVOID&#160;</td>
+          <td class="paramname"><em>lpReserved</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00081">81</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a572cdc024bb40a76c8d2b445aaec7919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572cdc024bb40a76c8d2b445aaec7919">&#9670;&nbsp;</a></span>DoTxData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID DoTxData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00110">110</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a571d953667eebf399462c0b8df34aad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a571d953667eebf399462c0b8df34aad5">&#9670;&nbsp;</a></span>EvaluateEventFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID EvaluateEventFlag </td>
+          <td>(</td>
+          <td class="paramtype">PVOID&#160;</td>
+          <td class="paramname"><em>pHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ULONG&#160;</td>
+          <td class="paramname"><em>fdwEventMask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01905">1905</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a74ffd644f82cdecda1fdab7d892d59ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74ffd644f82cdecda1fdab7d892d59ee">&#9670;&nbsp;</a></span>ProcessExiting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ProcessExiting </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a>&#160;</td>
+          <td class="paramname"><em>pOpenHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01179">1179</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="aff0d0406f7e36c041982caab8d702842"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0d0406f7e36c041982caab8d702842">&#9670;&nbsp;</a></span>SerialEventHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VOID SerialEventHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00196">196</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="af8568919b09fd84906c23b998644e148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8568919b09fd84906c23b998644e148">&#9670;&nbsp;</a></span>SerialGetDroppedByteNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ULONG SerialGetDroppedByteNumber </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>pHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01775">1775</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="a473e446c5f2fb98cedabe6404fc66824"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473e446c5f2fb98cedabe6404fc66824">&#9670;&nbsp;</a></span>StartDispatchThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL StartDispatchThread </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00466">466</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="af34affd078dccc7352d0116ec32dfccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34affd078dccc7352d0116ec32dfccf">&#9670;&nbsp;</a></span>StopDispatchThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL StopDispatchThread </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a7d937545f35a0713652a4face372a53d">PHW_INDEP_INFO</a>&#160;</td>
+          <td class="paramname"><em>pSerialHead</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l00502">502</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+<a id="aee4ef1416739c614723a09a93ca3cbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee4ef1416739c614723a09a93ca3cbd1">&#9670;&nbsp;</a></span>WaitCommEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL WINAPI WaitCommEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mdd_8h.html#a0b2d0eaf22a1ef6e11edbfe9868d5d89">PHW_OPEN_INFO</a>&#160;</td>
+          <td class="paramname"><em>pOpenHead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PULONG&#160;</td>
+          <td class="paramname"><em>pfdwEventMask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPOVERLAPPED&#160;</td>
+          <td class="paramname"><em>Unused</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Defineret på linje <a class="el" href="mdd_8c_source.html#l01795">1795</a> i filen <a class="el" href="mdd_8c_source.html">mdd.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_f1e1b6dc3dd18c62224d05b90f086a1c.html">Inspiration</a></li><li class="navelem"><a class="el" href="dir_c22b8d49b1f1c98d0ac9235bda304932.html">VirtualGPSJet</a></li><li class="navelem"><a class="el" href="dir_2c3aaa771705721e4fea6012ccab2af7.html">vgps</a></li><li class="navelem"><a class="el" href="dir_40f91d97fa4123f6c16a088b2a559b8e.html">driver</a></li><li class="navelem"><a class="el" href="mdd_8c.html">mdd.c</a></li>
+    <li class="footer">Genereret af
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
