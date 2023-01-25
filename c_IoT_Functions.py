@@ -34,4 +34,6 @@ class IoTFunctions:
     def on_unsubscribe(self, client, userdata, mid):
         print("Unsubscribed: "+str(mid))
     
-    
+    def publish(self, topic, payload, qos=0, retain=False):
+        self.client.publish(topic, payload, qos, retain)   
+        
