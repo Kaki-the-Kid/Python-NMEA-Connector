@@ -1,58 +1,64 @@
+'''
 /******************************************************************************
  * Sample Streams
  * These streams will be modified when a route is active with the inclusion
  * of route specific data.
  * @author      Karsten 'Kaki' Reitan Sørensen
- * @created     11. marts 2020
+ * @created     25. januar 2023
  ******************************************************************************/
-using System;
-using System.Collections;
-using System.Collections.Generic;
+ '''
 
-namespace NMEA_connector.testsuite
-{
-    public class testSuite
-    {
-        /******************************************************************************
-         * Garmin g12 sentences for version 4.57
-         *
-         * Here are some observations:
-         * Notice the complete cycle shows an update interval of 2 seconds which is caused
-         * by the fact that there is too much data to fit in one second at 4800 b/s.
-         * Upping the b/s rate to 9600 will cause an update every second.
-         *
-         * Notice that the samples are in real time for each sentence because the GGA sentence
-         * shows an update in the time of 1 second.
-         *
-         * It would be possible to provide update data every second by parsing more sentences
-         * since the data is adjusted every second.
-         *
-         * Notice the gaps in the GSA message where the satellites in use are shown in a
-         * there slots as compared to the GSV locations.Some tools do not decode this
-         * configuration correctly.
-         *
-         * Note the GGA sentence starts the sequence every two seconds.
-         *
-         * This sample is similar for other Garmin receivers designed in the same time
-         * frame as the G-12.
-         *******************************************************************************/
-        public IList<string> GarminG12 = new List<string>()
-        {
-            "$GPRMC,183729, A,3907.356, N,12102.482, W,000.0,360.0,080301,015.5, E*6F",
-            "$GPRMB, A,,,,,,,,,,,, V*71",
-            "$GPGGA,183730,3907.356, N,12102.482, W,1,05,1.6,646.4, M,-24.1, M,,*75",
-            "$GPGSA, A,3,02,,,07,,09,24,26,,,,,1.6,1.6,1.0*3D",
-            "$GPGSV,2,1,08,02,43,088,38,04,42,145,00,05,11,291,00,07,60,043,35*71",
-            "$GPGSV,2,2,08,08,02,145,00,09,46,303,47,24,16,178,32,26,18,231,43*77",
-            "$PGRME,22.0, M,52.9, M,51.0, M*14",
-            "$GPGLL,3907.360, N,12102.481, W,183730, A*33",
-            "$PGRMZ,2062, f,3*2D",
-            "$PGRMM, WGS 84*06",
-            "$GPBOD,, T,, M,,*47",
-            "$GPRTE,1,1, c,0*07",
-            "$GPRMC,183731, A,3907.482, N,12102.436, W,000.0,360.0,080301,015.5, E*67",
-            "$GPRMB, A,,,,,,,,,,,, V*71"
-        };
+class testSuite:
+    # All sentences are in the order they are received from the GPS
+    dictTestSentences = dict()
+    
+    '''
+    /******************************************************************************
+    * Garmin g12 sentences for version 4.57
+    *
+    * Here are some observations:
+    * Notice the complete cycle shows an update interval of 2 seconds which is caused
+    * by the fact that there is too much data to fit in one second at 4800 b/s.
+    * Upping the b/s rate to 9600 will cause an update every second.
+    *
+    * Notice that the samples are in real time for each sentence because the GGA sentence
+    * shows an update in the time of 1 second.
+    *
+    * It would be possible to provide update data every second by parsing more sentences
+    * since the data is adjusted every second.
+    *
+    * Notice the gaps in the GSA message where the satellites in use are shown in a
+    * there slots as compared to the GSV locations.Some tools do not decode this
+    * configuration correctly.
+    *
+    * Note the GGA sentence starts the sequence every two seconds.
+    *
+    * This sample is similar for other Garmin receivers designed in the same time
+    * frame as the G-12.
+    *******************************************************************************/
+    '''
+
+    GarminG12 = list()
+    GarminG12.append("$GPRMC,183729, A,3907.356, N,12102.482, W,000.0,360.0,080301,015.5, E*6F")
+    GarminG12.append("$GPRMB, A,,,,,,,,,,,, V*71")
+    GarminG12.append("$GPGGA,183730,3907.356, N,12102.482, W,1,05,1.6,646.4, M,-24.1, M,,*75",)
+    GarminG12.append("$GPGSA, A,3,02,,,07,,09,24,26,,,,,1.6,1.6,1.0*3D")
+    GarminG12.append("$GPGSV,2,1,08,02,43,088,38,04,42,145,00,05,11,291,00,07,60,043,35*71")
+    GarminG12.append("$GPGSV,2,2,08,08,02,145,00,09,46,303,47,24,16,178,32,26,18,231,43*77")
+    GarminG12.append("$PGRME,22.0, M,52.9, M,51.0, M*14")
+    GarminG12.append("$GPGLL,3907.360, N,12102.481, W,183730, A*33")
+    GarminG12.append("$PGRMZ,2062, f,3*2D")
+    GarminG12.append("$PGRMM, WGS 84*06")
+    GarminG12.append("$GPBOD,, T,, M,,*47")
+    GarminG12.append("$GPRTE,1,1, c,0*07")
+    GarminG12.append("$GPRMC,183731, A,3907.482, N,12102.436, W,000.0,360.0,080301,015.5, E*67")
+    GarminG12.append("$GPRMB, A,,,,,,,,,,,, V*71")
+    
+    # Add the Garmin G12 sentences to the main dictionary
+    dictTestSentences.append("GarminG12", GarminG12)
+
+
+
 
 
         /******************************************************************************
