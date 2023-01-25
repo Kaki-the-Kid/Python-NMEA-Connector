@@ -12,6 +12,20 @@ Bibliotek giver dig nem måde at lave forskellige slags NMEA2000-busenheder som 
 
 Bibliotek opfylder NMEA 2000 obligatoriske funktioner og adfærd. Enheder, der bruger bibliotek, kan bestå NMEA2000-certificeringstests. Bibliotek har været brugt i flere kommercielle certificerede produkter.
 
+# Feature wishlist
+Features
+* Most common NMEA messages fully supported
+  * GNSS: BOD, GGA, GLL, GNS, GSA, GST, GSV, RMB, RMA, RMB, RMC, RTE, VTG, ZDA
+  * Garmin Proprietary: PGRME, PGRMZ
+  * Trimble Laser Range Finder: PTNLA, PTNLB
+  * TruePulse Laser Range Finder: PLTIT
+* Automatic merging of multi-sentence messages for simplified usage.
+* Extensible with custom NMEA messages see here
+* Multiple input devices out of the box
+  * System.IO.Stream (all platforms)
+  * Emulation from NMEA log file (all platforms)
+  * Serial Device: .NET Framework, .NET Core (Windows, Linux, Mac) and Windows Universal.
+  * Bluetooth: Windows Universal and Android. .NET Core/.NET Framework is supported using the bluetooth device via the   SerialPortDevice.
 
 
 
