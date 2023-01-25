@@ -29,7 +29,7 @@
 
 
 class TEST_CASE("SEASMART EXPORT", "[seasmart]"):
-	tN2kMsg msg:
+	tN2kMsg = msg
 	# PGN127257 - "Attitude"
 	# SID: 42 - YAW: 1 degrees - Pitch: 10 degrees - Roll: 30 degrees
 	msg.SetPGN(127257L)
