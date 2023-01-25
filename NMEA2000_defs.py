@@ -1,5 +1,3 @@
-from as_struct import struct
-
 #*************************************************************************/#
 # \file  NMEA2000.h
 # \brief This file contains the class tNMEA2000, which is consists the main
@@ -15,7 +13,9 @@ from as_struct import struct
 #
 
 #include "NMEA2000_CompilerDefns.h"
-#include "N2kStream.h"
+
+import NMEA2000_Stream #include "N2kStream.h"
+
 #include "N2kMsg.h"
 #include "N2kCANMsg.h"
 #include "N2kTimer.h"
