@@ -411,8 +411,15 @@ class Test_case_GVTG():
 	ParseN2kPGN129026(N2kMsg, CourseOverGroundTrue[1], CourseOverGroundMagnetic[1], SpeedOverGroundKnots[1], SpeedOverGroundKmh[1]):
      
     #list test_msg = []
-	msg_sequence = list(msg, N2kMsg, CourseOverGroundTrue, CourseOverGroundMagnetic, SpeedOverGroundKnots, SpeedOverGroundKmh)
-    test_msg = dict()
+	'''	msg_sequence = list(
+     					msg, 
+          				N2kMsg, 
+              			CourseOverGroundTrue, 
+                 		CourseOverGroundMagnetic, 
+                   		SpeedOverGroundKnots, 
+                     	SpeedOverGroundKmh)'''
+ 
+    test_msg_sequence = list()
     
 	
  '''
