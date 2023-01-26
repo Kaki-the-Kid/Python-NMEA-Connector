@@ -37,7 +37,7 @@ def main():
     threads.append(main_thread)
 
     try:
-        #Update().update_json()
+        Update().update_json()
         #UpdateLog().create_log()
         #update_matrix()
 
