@@ -3,8 +3,8 @@
 from datetime import datetime
 
 from modules.Data.Data import Data
-from init_blinkt import *
-from init_logging import weather_logger
+#from modules.update.init_blinkt import *
+from modules.update.init_logging import weather_logger
 
 
 class UpdateLog(Data):

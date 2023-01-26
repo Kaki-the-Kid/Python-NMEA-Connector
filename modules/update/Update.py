@@ -5,8 +5,8 @@ import json
 import requests
 
 from modules.Config import Config
-from .init_blinkt import blink
-from init_logging import log_string
+#from init_blinkt import blink
+from modules.update.init_logging import log_string
 
 
 class Update:
@@ -49,7 +49,9 @@ class Update:
 
             log_string('json data saved to temporary file')
 
-            blink('white')
+            #blink('white')
+            echo_string = 'white'
+            print(echo_string)
 
         except StandardError:
 
