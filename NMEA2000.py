@@ -7,11 +7,11 @@ import os
 #import NMEA2000_Receive
 #import NMEA2000_Send
 
-import modules.Config.Config as Config
+import Modules.Config.Config as Config
        
 # Import NMEA2000 modules
-from modules.update.Update import Update
-from modules.update.UpdateLog import UpdateLog
+from Modules.update.Update import Update
+from Modules.update.UpdateLog import UpdateLog
 #from modules.update.UpdateUnicorn import UniCorn, UpdateIcon
 #from modules.update.init_unicorn import unicorn_init
 #from modules.update.update_matrix import *

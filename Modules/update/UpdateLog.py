@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 
-from modules.Data.Data import Data
+from Modules.Data.Data import Data
 #from modules.update.init_blinkt import *
-from modules.update.init_logging import weather_logger
+from Modules.update.init_logging import weather_logger
 
 
 class UpdateLog(Data):

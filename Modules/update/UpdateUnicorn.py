@@ -4,7 +4,7 @@ import os.path
 
 from PIL import Image
 
-from modules.Data.Data import Data
+from Modules.Data.Data import Data
 from init_blinkt import *
 from init_unicorn import *
 

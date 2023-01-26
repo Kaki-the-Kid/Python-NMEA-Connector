@@ -4,7 +4,7 @@ import time
 from collections import namedtuple
 from datetime import datetime
 
-from modules.Data.Data import Data
+from Modules.Data.Data import Data
 from init_logging import log_string
 
 TFM = '%d.%m.%Y %H:%M:%S'

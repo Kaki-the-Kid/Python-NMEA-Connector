@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import json
 
-from modules.update.init_logging import log_string
+from Modules.update.init_logging import log_string
 
 
 class Config:

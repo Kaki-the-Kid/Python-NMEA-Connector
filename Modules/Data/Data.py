@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import json
 
-from modules.Config.Config import Config
-from modules.update.init_logging import log_string
+from Modules.Config.Config import Config
+from Modules.update.init_logging import log_string
 
 
 class Data:
