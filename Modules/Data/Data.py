@@ -3,7 +3,7 @@
 import json
 
 from Modules.Config.Config import Config
-from Modules.update.init_logging import log_string
+from Modules.Update.init_logging import log_string
 
 
 class Data:

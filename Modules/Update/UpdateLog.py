@@ -4,7 +4,7 @@ from datetime import datetime
 
 from Modules.Data.Data import Data
 #from modules.update.init_blinkt import *
-from Modules.update.init_logging import weather_logger
+from Modules.Update.init_logging import weather_logger
 
 
 class UpdateLog(Data):

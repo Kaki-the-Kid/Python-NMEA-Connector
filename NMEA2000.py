@@ -10,8 +10,8 @@ import os
 import Modules.Config.Config as Config
        
 # Import NMEA2000 modules
-from Modules.update.Update import Update
-from Modules.update.UpdateLog import UpdateLog
+from Modules.Update.Update import Update
+from Modules.Update.UpdateLog import UpdateLog
 #from modules.update.UpdateUnicorn import UniCorn, UpdateIcon
 #from modules.update.init_unicorn import unicorn_init
 #from modules.update.update_matrix import *

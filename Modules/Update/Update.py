@@ -6,7 +6,7 @@ import requests
 
 from Modules.Config import Config
 #from init_blinkt import blink
-from Modules.update.init_logging import log_string
+from Modules.Update.init_logging import log_string
 
 
 class Update:
