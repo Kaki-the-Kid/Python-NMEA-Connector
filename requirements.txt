@@ -1,0 +1,9 @@
+tzlocal
+pytz
+flask
+requests
+blinkt
+pillow
+unicornhat
+unicornhathd
+numpy

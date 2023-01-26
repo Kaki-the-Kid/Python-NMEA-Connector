@@ -27,6 +27,16 @@ Features
   * Serial Device: .NET Framework, .NET Core (Windows, Linux, Mac) and Windows Universal.
   * Bluetooth: Windows Universal and Android. .NET Core/.NET Framework is supported using the bluetooth device via the   SerialPortDevice.
 
+# Requirements
+* tzlocal
+* pytz
+* flask
+* requests
+* blinkt
+* pillow
+* unicornhat
+* unicornhathd
+* numpy
 
 
 # Referencer og kilder
