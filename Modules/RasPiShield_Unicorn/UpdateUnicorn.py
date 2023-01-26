@@ -5,8 +5,8 @@ import os.path
 from PIL import Image
 
 from Modules.Data.Data import Data
-from init_blinkt import *
-from init_unicorn import *
+from Modules.RasPiShield_Blinkt.init_blinkt import *
+from Modules.RasPiShield_Unicorn.init_unicorn import *
 
 img_file = None
 

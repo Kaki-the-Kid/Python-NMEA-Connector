@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from init_blinkt import *
+from Modules.RasPiShield_Blinkt.init_blinkt import *
 
 
 def update_blinkt():

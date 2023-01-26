@@ -7,8 +7,8 @@ from RainData import RainData
 from SensorData import SensorData
 from check_alarms import *
 from clear import clear_all
-from init_blinkt import *
-from init_matrix import *
+from Modules.RasPiShield_Blinkt.init_blinkt import *
+from Modules.RasPiShield_Matrix.init_matrix import *
 
 # read the config file
 config = Config().get_config()
