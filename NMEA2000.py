@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 from multiprocessing import Process
 import os
-import threading
 
-import NMEA2000_defs
+#import NMEA2000_defs
 #import NMEA2000_Receive
 #import NMEA2000_Send
 
@@ -26,38 +25,32 @@ def quit_all_threads():
         thread.join()
         
 
-def quit_all_processes():
-    for process in processes:
-        process.terminate()
-        process.join()
+# def quit_all_processes():
+#     for process in processes:
+#         process.terminate()
+#         process.join()
         
 def main():
 
     main_thread = threading.Timer(THREADING_TIMER, main)
-
     main_thread.start()
-
     threads.append(main_thread)
 
     try:
+        #Update().update_json()
+        #UpdateLog().create_log()
+        #update_matrix()
 
-        Update().update_json()
+        #p = Process(target=update_bargraph)
 
-        UpdateLog().create_log()
+        #for process in processes_bar:
+        #    process.terminate()
 
-        update_matrix()
-
-        p = Process(target=update_bargraph)
-
-        for process in processes_bar:
-            process.terminate()
-
-        p.start()
-        processes_bar.append(p)
+        #p.start()
+        #processes_bar.append(p)
 
         UpdateIcon().set_icon_path()
 
     except KeyboardInterrupt:
-        
-        quit_all()
-        clear_all()
+        quit_all_threads()
+        #clear_all()
