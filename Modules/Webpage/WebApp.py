@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, jsonify, render_template
 
-from Modules.update.Endpoint import Endpoint
+from Modules.Webpage.Endpoint import Endpoint
 
 app = Flask(__name__)
 
