@@ -1,9 +1,34 @@
+# Timezones helpers
 tzlocal
 pytz
+
+# Web
 flask
+#flask-restful
+#flask-cors
+#flask-socketio
+#flask-socketio-client
+#flask-socketio-client-async
+#flask-socketio-client-asyncio
+#flask-socketio-client-gevent
+#flask-socketio-client-gevent-websocket
+#flask-socketio-client-gevent-websocket-asyncio
+#flask-socketio-client-gevent-websocket-gevent
+#flask-socketio-client-gevent-websocket-gevent-websocket
+
+#HTTP library
 requests
+
+# Connection to blink
 blinkt
+
+#   Python Imaging Library (Fork)
 pillow
+
+# Python library for driving Pimoroni Unicorn HAT HD
 unicornhat
+# Python library for driving Pimoroni Scroll pHAT HD
 unicornhathd
+
+# Fundamental package for array computing in Python
 numpy
