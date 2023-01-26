@@ -4,8 +4,11 @@
 import logging.handlers
 
 # create a weather logger
+nmea_command_path = "./logs/NMEA_Commands_Data.log"
+NMEA_LOG_FILENAME = nmea_command_path
 
-weather_path = '/home/pi/WeatherPi/logs/Weather_Log_Data.log'
+# create a weather logger
+weather_path = './logs/Weather_Log_Data.log'
 WEATHER_LOG_FILENAME = weather_path
 
 # Set up a specific logger with our desired output level
@@ -16,10 +19,8 @@ weather_logger.setLevel(logging.INFO)
 weather_handler = logging.handlers.RotatingFileHandler(WEATHER_LOG_FILENAME, maxBytes=10485760, backupCount=100)
 weather_logger.addHandler(weather_handler)
 
-
 # create a debug logger
-
-debug_path = '/home/pi/WeatherPi/logs/Debug_Log.log'
+debug_path = './logs/Debug_Log.log'
 DEBUG_LOG_FILENAME = debug_path
 
 # Set up a specific logger with our desired output level

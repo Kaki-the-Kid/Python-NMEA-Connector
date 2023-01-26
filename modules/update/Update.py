@@ -4,8 +4,8 @@ import json
 
 import requests
 
-from Config import Config
-from init_blinkt import blink
+from modules.Config import Config
+from .init_blinkt import blink
 from init_logging import log_string
 
 
