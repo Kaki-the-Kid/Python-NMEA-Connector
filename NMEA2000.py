@@ -12,9 +12,9 @@ import modules.Config.Config as Config
 # Import NMEA2000 modules
 from modules.update.Update import Update
 from modules.update.UpdateLog import UpdateLog
-from modules.update.UpdateUnicorn import UniCorn, UpdateIcon
-from modules.update.init_unicorn import unicorn_init
-from modules.update.update_matrix import *
+#from modules.update.UpdateUnicorn import UniCorn, UpdateIcon
+#from modules.update.init_unicorn import unicorn_init
+#from modules.update.update_matrix import *
 
 # Global variables
 processes_bar = []
@@ -25,10 +25,10 @@ def quit_all_threads():
         thread.join()
         
 
-# def quit_all_processes():
-#     for process in processes:
-#         process.terminate()
-#         process.join()
+def quit_all_processes():
+    for process in processes:
+        process.terminate()
+        process.join()
         
 def main():
 
@@ -38,7 +38,7 @@ def main():
 
     try:
         Update().update_json()
-        #UpdateLog().create_log()
+        UpdateLog().create_log()
         #update_matrix()
 
         #p = Process(target=update_bargraph)
