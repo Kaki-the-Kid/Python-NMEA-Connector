@@ -190,7 +190,6 @@ class tNMEA2000():
 
  
  
-# 061184 Enkelt, ejendomsbeskyttet
 # 126208 NMEA® anmod om gruppefunktion
 
 
@@ -509,6 +508,7 @@ class tNMEA2000():
 	# 060928 ISO-adressekrav
 
 
+	# 061184 Enkelt, ejendomsbeskyttet
 	#**********************************************************************/#
 	# @brief Check if the given PGN is proprietary
 	#
@@ -524,7 +524,6 @@ class tNMEA2000():
 	# @return false
 	# @see IsProprietaryMessage
 	#
-	# 061184 Enkelt, ejendomsbeskyttet
 	@staticmethod
 	def IsProprietaryMessage(PGN): #unsigned long
 		return
