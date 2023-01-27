@@ -273,18 +273,19 @@ class tNMEA2000('''Product'''):
 			LoadEquivalency=((_LoadEquivalency!=0xff) ? _LoadEquivalency : 1 )
 		
 
-		#*****************************************************************/#
-		# \brief Clears out all data #/
-		def Clear():
-			return
-		#*****************************************************************/#
-		# \brief Compares two product information structures
-		#
-		# \param Other An other product information structure
-		# \return true
-		# \return false
-		#/
-		bool IsSame(const tProductInformation &Other)
+	#*****************************************************************/#
+	# \brief Clears out all data #/
+	def Clear():
+		return 0
+
+	#*****************************************************************/#
+	# \brief Compares two product information structures
+	#
+	# \param Other An other product information structure
+	# \return true
+	# \return false
+	#/
+	bool IsSame(const tProductInformation &Other)
 
 	#********************************************************************/#
 	# \class tDeviceInformation
@@ -469,7 +470,7 @@ class tNMEA2000('''Product'''):
 		# \return false
 		#/
 		inline bool IsSame(uint64_t Other) { return GetName()==Other; }
-	};
+
 
 
 
@@ -609,67 +610,66 @@ class tNMEA2000('''Product'''):
 
 
  #**********************************************************************/#
-	# \class tMsgHandler
-	# \brief Message handler class
-	#
+# \class tMsgHandler
+# \brief Message handler class
+#
+#/
+class tMsgHandler:
+	private:
+	friend class tNMEA2000;
+	# \brief Pointer to a message handler*/
+	tMsgHandler#pNext;
+	# \brief Pointer to a tNMEA2000 object*/
+	tNMEA2000#pNMEA2000;
+	protected:
+	# Parameter Group Number*/
+	unsigned long PGN;
+	#*****************************************************************/#
+	# \brief Handles a given message      #
+	# \param N2kMsg Reference to a N2kMsg Object
 	#/
-	class tMsgHandler {
-		private:
-			friend class tNMEA2000;
-			# \brief Pointer to a message handler*/
-			tMsgHandler#pNext;
-			# \brief Pointer to a tNMEA2000 object*/
-			tNMEA2000#pNMEA2000;
-		protected:
-			# Parameter Group Number*/
-			unsigned long PGN;
-			#*****************************************************************/#
-			# \brief Handles a given message      #
-			# \param N2kMsg Reference to a N2kMsg Object
-			#/
-			virtual void HandleMsg(const tN2kMsg &N2kMsg)=0;
-			# \brief Returns the tNMEA2000 object of this handler
-			# \return  tNMEA2000  #/
-			tNMEA2000#GetNMEA2000() { return pNMEA2000; }
-		public:
-			#****************************************************************/#
-			# \brief Construct a new Message Handler object
-			#
-			# Attaches this message handler to a tNMEA2000 object.
-			#
-			# \param _PGN        PGN of the message that should be handled
-			# \param _pNMEA2000  Pointer to tNMEA2000 object, where the handle
-			#                    should be attached
-			#/
-			tMsgHandler(unsigned long _PGN=0, tNMEA2000#_pNMEA2000=0) {
-				PGN=_PGN; pNext=0; pNMEA2000=0;
-				if ( _pNMEA2000!=0 ) _pNMEA2000->AttachMsgHandler(this);
-			}
-			#*****************************************************************/#
-			# \brief Destroys the Message Handler object
-			#/
-			virtual ~tMsgHandler() { if ( pNMEA2000!=0 ) pNMEA2000->DetachMsgHandler(this); }
-			#*****************************************************************/#
-			# \brief Return the PGN that is handled by this message handler
-			# \return unsigned long
-			#/
-			inline unsigned long GetPGN() const { return PGN; }
-	};
+	virtual void HandleMsg(const tN2kMsg &N2kMsg)=0;
+	# \brief Returns the tNMEA2000 object of this handler
+	# \return  tNMEA2000  #/
+	tNMEA2000#GetNMEA2000() { return pNMEA2000; }
+	public:
+	#****************************************************************/#
+	# \brief Construct a new Message Handler object
+	#
+	# Attaches this message handler to a tNMEA2000 object.
+	#
+	# \param _PGN        PGN of the message that should be handled
+	# \param _pNMEA2000  Pointer to tNMEA2000 object, where the handle
+	#                    should be attached
+	#/
+	tMsgHandler(unsigned long _PGN=0, tNMEA2000#_pNMEA2000=0) {
+		PGN=_PGN; pNext=0; pNMEA2000=0;
+		if ( _pNMEA2000!=0 ) _pNMEA2000->AttachMsgHandler(this);
+	}
+	#*****************************************************************/#
+	# \brief Destroys the Message Handler object
+	#/
+	virtual ~tMsgHandler() { if ( pNMEA2000!=0 ) pNMEA2000->DetachMsgHandler(this); }
+	#*****************************************************************/#
+	# \brief Return the PGN that is handled by this message handler
+	# \return unsigned long
+	#/
+	inline unsigned long GetPGN() const { return PGN; }
 
-public:
+
 	#**********************************************************************/#
 	# \enum    tForwardType
 	# \brief   Type how to forward messages in listen mode
 	#/
 	typedef enum {
-						# Forwards messages to output port in Actisense format. Note
-						# that some Navigation sw uses this.#/
-						fwdt_Actisense,
+		# Forwards messages to output port in Actisense format. Note
+		# that some Navigation sw uses this.#/
+		fwdt_Actisense,
 
-						# Forwards messages to output port in clear text. This is e.g.
-						#  for debugging.#/
-						fwdt_Text
-					} tForwardType;
+		# Forwards messages to output port in clear text. This is e.g.
+		#  for debugging.#/
+		fwdt_Text
+	} tForwardType;
 	
 	#**********************************************************************/#
 	# \enum    tN2kMode
