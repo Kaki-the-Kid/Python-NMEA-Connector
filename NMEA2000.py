@@ -14,7 +14,7 @@ from Modules.Update.Update import Update
 from Modules.Update.UpdateLog import UpdateLog
 #from modules.update.UpdateUnicorn import UniCorn, UpdateIcon
 #from modules.update.init_unicorn import unicorn_init
-#from modules.update.update_matrix import *
+from Modules.RasPiShield_Matrix.update_matrix import update_bargraph, update_matrix
 
 # Global variables
 processes_bar = []
@@ -39,14 +39,14 @@ def main():
     try:
         Update().update_json()
         UpdateLog().create_log()
-        #update_matrix()
+        update_matrix()
 
-        #p = Process(target=update_bargraph)
+        p = Process(target=update_bargraph)
 
-        #for process in processes_bar:
-        #    process.terminate()
+        for process in processes_bar:
+            process.terminate()
 
-        #p.start()
+        p.start()
         #processes_bar.append(p)
 
         UpdateIcon().set_icon_path()
