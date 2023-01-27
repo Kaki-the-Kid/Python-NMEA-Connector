@@ -1,0 +1,550 @@
+-------------------------------------------------------------------------------
+--                 Copyright Active Research Limited 2015-21                 --
+--                                                                           --
+--                           Release notes for the                           --
+--                 Actisense Toolkit, Update & Config Utility                --
+--                                                                           --
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+-- Product Firmware releases available                                       --
+-------------------------------------------------------------------------------
+Actisense EMU-1 Firmware:
+ EMU-1              Release v0.070      (added in v1.041.017)
+ EMU-1              Release v1.015      (added in v1.040.016)
+ EMU-1              Release v1.038      (added in v1.072.023)
+
+Actisense PRO-BUF-1 Firmware:
+ PRO-BUF-1          Release v1.005      (added in v1.012.005)
+Actisense PRO-BUF-1 Web UI:
+ PRO-BUF-1          Release v1.002      (added in v1.012.005)
+
+Actisense PRO-MUX-1, PRO-BUF-2 & NDC-5 Firmware:
+ PRO-BUF-2          Release v2.002      (added in v1.075.027)
+ PRO-MUX-1 & NDC-5  Release v2.002      (added in v1.073.024)
+ PRO-MUX-1 & NDC-5  Release v2.005      (added in v1.074.026)
+ PRO-BUF-2          Release v2.005      (added in v1.074.026)
+Actisense PRO-MUX-1, PRO-BUF-2 & NDC-5 Web UI:
+ PRO & NDC          Release v1.010      (added in v1.073.024)
+ PRO & NDC          Release v1.011      (added in v1.073.024)
+
+-------------------------------------------------------------------------------
+-- Changes from v1.082 to v1.083                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Changed DNS Host name lookup to once per task so all Ping operations will 
+    use the same IP Address.
+  - Improved engineer/debug logging of Ping and FTP File operations.
+  - Added Toolkit & Firmware Pack version details to programming log so that 
+    it's part of the exported log to help Tech Support.
+
+Bug Fixes:
+  - Fixed IP Device List bug that would appear to disabled upgrade/downgrade 
+    options when the "Refresh" button was pressed, until the user move the 
+	selection to another device and then back to the required device.
+  - Fixed small issue with 'Upload of Configs' operation reporting the wrong 
+    maximum number of steps, giving the impression that something was amiss.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.077 to v1.082                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - To improve firmware updating, advanced "Main App has stopped" detector to 
+    require 3 successive timeouts & "Main App has started" detector to require
+	3 successive successes.
+  - Multiple improvements to logging of programming events to help Tech Support
+    and customers better debug issues. 
+
+Bug Fixes:
+  - Feedback suggested adding extra FTP Disconnect after "Main App has stopped"
+    was detected so new Main App can have a new FTP session.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.075 to v1.077                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Fixed bug that could cause the "Close" button on programming panel to not 
+    be re-enabled if an error occurred during update process, preventing close.
+  - Cleaned and improved up programming log messages.
+  - Rework of IP device pinging to detect device operational status.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.074 to v1.075                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Improved firmware update log message details.
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Increased maximum "Wait" time 10 seconds.
+
+Firmware releases (Firmware pack number 027):
+  - PRO-BUF-2: Added firmware release v2.002
+  - PRO-BUF-2: Removed firmware Release v2.001
+
+-------------------------------------------------------------------------------
+-- Changes from v1.073 to v1.074                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Minor fix to logged text during firmware 
+    update process.
+
+Firmware releases (Firmware pack number 025):
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Added new firmware release v2.004
+  - PRO-MUX-1 & NDC-5: Removed firmware Release v2.003
+  - PRO-BUF-2: Removed firmware Release v2.003
+
+Firmware releases (Firmware pack number 026):
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Added new firmware release v2.005
+  - PRO-MUX-1 & NDC-5: Removed firmware Release v2.004
+  - PRO-BUF-2: Removed firmware Release v2.004
+
+-------------------------------------------------------------------------------
+-- Changes from v1.072 to v1.073                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Improved upgrade/downgrade of firmware.
+
+Firmware releases (Firmware pack number 024):
+  - PRO-MUX-1 & NDC-5: Added new firmware release v2.002.
+  - PRO-MUX-1, PRO-BUF-2 & NDC-5: Added new firmware release v2.003
+  - PRO-MUX-1 & NDC-5: Removed firmware Release v1.006
+  - PRO-MUX-1 & NDC-5: Removed firmware Release v2.000
+
+-------------------------------------------------------------------------------
+-- Changes from v1.071 to v1.072                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - PRO-BUF-2: Added beta support for firmware updates.
+   
+Bug Fixes:
+  - PRO-MUX-1 & NDC-5: Fixed support for firmware updates. 
+    PRO-BUF-1: firmware update support temporarily disabled. 
+
+Firmware releases (Firmware pack number 023):
+  - EMU-1: Added new firmware release v1.038.
+  - PRO-MUX-1 & NDC-5: Added new firmware release v2.000
+  - PRO-BUF-2: Added new firmware release v2.001
+  - PRO-MUX-1 & NDC-5: Removed firmware release v1.004
+ 
+-------------------------------------------------------------------------------
+-- Changes from v1.070 to v1.071                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Re-released as firmware v1.037 was missing from firmware pack.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.068 to v1.070                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - 64-bit build.
+  - NGT-1: Fixed issue that would prevent Toolkit setting "Receive All" 
+    operating mode on a device running firmware v2.500 or earlier, preventing 
+	reception of all PGNs from the network.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.067 to v1.068                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Fixed issue with blank Window Pane text (shown on title bar or tab).
+  - Improved the default Window Pane layout and resetting back to this default.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.066 to v1.067                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Fixed issue preventing COM port from be set to "offline"
+  - PRO-MUX-1 and NDC-5: Fixed access issue preventing processing of web files.
+ 
+Firmware releases (Firmware pack number 022):
+  - EMU-1: Added new firmware release v1.037
+  - EMU-1: Removed firmware release v1.032
+
+-------------------------------------------------------------------------------
+-- Changes from v1.060 to v1.066                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Improved "Custom Gauge" editor controls and graph.
+  - Improved remote command timeouts to better cope on bus NMEA 2000 networks.
+  - Added Device Parameters to Properties pane.
+  - Added "Device Command Timeout" values (Local & Remote) to Status bar.
+  - Improved "Preferred Source Address" & "View Config" ribbon menu icons.
+
+Firmware releases (Firmware pack number 021):
+  - EMU-1: Added new firmware release v1.032
+
+-------------------------------------------------------------------------------
+-- Changes from v1.053 to v1.059                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Improved Custom Gauge Manager facility.  
+  - EMU-1: Added "Engine hours" display to property pane.
+  - Added Preferred Source Address functionality.
+  - Added Web Browser option for Actisense IP products.
+
+Bug Fixes:
+  - Fixed various load and save Custom Gauge issues.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.052 to v1.053                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - NGW-1: Changed Talker IDs for HDT and THS from HC to HE in DBConfigurator
+    for "Standard", "AIS" and "Fast Heading".
+
+-------------------------------------------------------------------------------
+-- Changes from v1.051 to v1.052                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Disabled option to chose a library gauge as template for a custom 
+    gauge until this feature can be improved.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.050 to v1.051                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - NGW-1 : Added Configuration manual and option to open it from Ribbon menu.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.048 to v1.050                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - EMU-1: Improved Custom Gauge facility.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.047 to v1.048                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Improved networking library for BST-Ethernet and IP Data view.
+  - PRO-MUX-1 & NDC-5: Updated Web UI to v1.007.
+  - EMU-1: Added 'Offset' buttons to Custom Gauge editor that allow quicker 
+    editing of gauge values.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.046 to v1.047                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - PRO-MUX-1 & NDC-5: Fixed upgrade/downgrade that was not reliable enough.
+  - PRO-MUX-1 & NDC-5: Fixed IPv4 AutoIP mode by increasing comms timeouts.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.045 to v1.046                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Better highlighting (using colour) of log error events.
+  - Added more feedback to user when programming process has completed.
+  - W2K-1: Added support for showing device properties.
+  - EMU-1: Added to new Murphy gauges for EGS21 Temperature & EGS21 Pressure.
+
+Bug Fixes:
+  - Fixed rare chance of a crash-to-desktop during program close.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.044 to v1.045                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Now shows more details in output log when opening Actisense programming 
+    (*.actp) files to help Tech Support.
+
+Bug Fixes:
+  - Completed actp file error exception handler to allow Toolkit to continue 
+    to operate and ignore any files deemed invalid.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.043 to v1.044                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Optimised Ethernet discovery and display to reduce CPU load.
+
+Bug Fixes:
+  - EMU-1: Fixed recently added reprogramming issues affecting reprogramming.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.041 to v1.043                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Added new VDO Viewline gauges for Temperature and Pressure.
+   
+-------------------------------------------------------------------------------
+-- Changes from v1.040 to v1.041                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Added relevant units text to Gustom Gauge table and graph parameters.
+
+Bug Fixes:
+  - EMU-1: Fixed bug that prevented restoration of an EMU configuration after
+    re-programming (upgrade/downgrade).
+  - EMU-1: Fixed bug preventing output value of 0.0 being shown on the graph.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.038 to v1.040                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Improved Ethernet/IP device discovery.
+  - In-active devices are now 'greyed out' in the appropriate device list to 
+    indicate that communication with that device has ceased.
+  - EMU-1: Added 'Custom Gauge' import/load & export/save features to allow 
+    gauge definitions to be shared between users/PCs.
+  - EMU-1: Added display units to the 'Custom Gauge' graph - the gauge table 
+    values are now shown and entered in display units.
+
+Bug Fixes:
+  - PRO-BUF-1: Fixed bug that prevented devices from being discovered.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.037 to v1.038                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Standardised some GUI text to improve user feedback.
+  - EMU-1: Added 'Custom Gauge' Ribbon icon.
+  - EMU-1: Improved the displaying of configurations.
+  - Added better user feedback to 'Load from Device' & 'Send to Device' config
+    operations so user is told the reason it's not available.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.036 to v1.037                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - EMU-1: Improved the 'Custom Gauge Manager' and 'Custom Gauge' creation and 
+    edit dialogs.
+  - EMU-1: Created temporary "copy gauge" option: rename gauge in 'Edit Gauge'.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.035 to v1.036                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Moved the "Choose a new config..." combo-box from configuration document 
+    to the "New/Edit Config" pop-up wizard and added button to access it.
+  - EMU-1: Added first beta release of the "Custom Gauge Manager".
+
+Bug Fixes:
+  - NGW-1: Fixed issue that would fail to correctly show PGN overrides if both
+    Rx & Tx were disabled in overrides.
+  - NGW-1: Corrected operation to only read the PGN overrides when the device 
+    has a valid configuration.
+  - NGW-1: Fixed bug that could result in two (or more) configurations being 
+    combined together, as previous config settings were not being cleared first.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.034 to v1.035                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - NGW-1: Fixed issue that would cause a 'crash' (unhandled exception) when 
+    the configuration name was changed in the 'Send to Device' wizard.
+  - NGW-1: Fixed behaviour when a blank User Config is read from a device.
+  - NGW-1: Fixed issue that prevented bottom of Sentence/PGN lists from being
+    seen  (scroll bar would not allow bottom 2 rows).
+  - NGW-1: Added 'Operation complete' user feedback on Config progress panel.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.033 to v1.034                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - NGW-1: Minor improvements to window default layout and to make viewing on
+    Windows 8.1 better.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.032 to v1.033                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - NGW-1: Added additional user information on the 'Blank config' wizard to 
+    better describe difference between Blank Online & Offline configurations.
+  - NGW-1: firmware must now be v2.600 or higher to allow "Load From Device".
+    This is due to necessary firmware modification for config persistence.
+  - NGW-1: Improved NMEA 0183 & NMEA 2000 Enable list to highlight overrides
+    (sent to NGW-1 using alternative config tools) and any user modifications 
+    made since configuration document was opened.
+  - NGW-1: Tweaked 'Standard configuration' to offer maximum conversions
+    from NMEA 0183 to NMEA 2000, and keep roughly within bandwidth limits
+    on conversions NMEA 2000 to NMEA 0183.
+  - PRO-MUX-1 & NDC-5: Implemented Autoswitch setting preservation during the
+    upgrade/downgrade process.
+  - Now warns user if an attempt is made to overwrite an existing config file.
+
+Bug Fixes:
+  - Fixed Sync symbol going green/sync'd even though an error occurred during
+    the "Send to Device" operation.
+  - NGW-1: Fixed issues with Sentence/PGN Tx Rate value persistence between 
+    'Send to Device' and subsequent 'Read from Device'.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.031 to v1.032                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Automatically reconnects at the new baud rate after changing the baud rate
+    configuration of a local (Serial) device.
+
+Bug Fixes:
+  - NGW-1: Fixed 'Apply' settings (P-code & baud rate) for local NGW-1 devices.
+  - Fixed a number of crash conditions (with Serial COMs and unplugging USB
+    Virtual COM port devices).
+
+-------------------------------------------------------------------------------
+-- Changes from v1.030 to v1.031                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Now correctly differentiates between NMEA Device Class and Function codes
+    used by devices before and after NMEA 2000 Edition 3.100.
+   
+-------------------------------------------------------------------------------
+-- Changes from v1.029 to v1.030                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - Improved cancellation of any active commands (& retries) when the service
+    is stopped (e.g. on COM port close).
+
+Bug Fixes:
+  - Fixed random crashes caused by 'IP Device Discovery' process.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.027 to v1.029                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - NDC-5 & PRO-BUF-2: Added ability to update Bootloaders.
+  - PRO-MUX-1, NDC-5 & PRO-BUF-2: Update Web Programming operation to upgrade
+    products using new directory structure.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.026 to v1.027                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - PRO-MUX-1, NDC-5 & PRO-BUF-2: Official release for beta customers to 
+	upgrade/downgrade firmware.
+
+Bug Fixes:	
+  - Set N2K bus load value to 0% at start up.
+  - Correctly display Sub Model ID for selected device in device properties.
+  - NDC-5: Fixed upgrade and downgrade options.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.025 to v1.026                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:	
+  - Fixed IP device discovery crash issues.
+  - NGW-1: Configuration editing improvements. Save to & Load from file is 
+    still "Work-In-Progress". 
+
+-------------------------------------------------------------------------------
+-- Changes from v1.023 to v1.025                                             --
+-------------------------------------------------------------------------------
+Improvements:
+  - NGW-1: Now user is required to define "Based On" configuration option when
+    creating a blank User Configuration.	
+
+Bug Fixes:	
+  - Correctly prevents programming of any device without a serial number.
+  - Now offers user more Network Adapters, including a direct connection that
+    uses Auto-IP. Select correct Adapter to discover Actisense IP devices.
+  - Improve Web programming to use device host name instead of IPv4 address
+    to better cope with Auto-IP.
+  - Improve Web programming to handle longer wait for Auto-IP device to be 
+	detected by ping after restart. Added 60 seconds to DHCP scenario.
+  - Fixed progress bar for web programming.
+  - Fixed Web programming to restart device at the end of upgrade/downgrade.
+  - Standardised "Based On" text on Wizard and Configuration document.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.021 to v1.023                                             --
+-------------------------------------------------------------------------------
+New Features:
+  - PRO-BUF-1, PRO-MUX-1 & NDC-5: Improved ability to handle Bootloader-only
+    recovery for IP products. First program device via Serial, and then second
+    step is to upload web files via Ethernet.
+
+Bug Fixes:
+  - Now stops Ethernet discovery service during web programming to avoid
+	incomplete device data being shown on GUI.  Restarts once complete.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.011 to v1.021                                             --
+-------------------------------------------------------------------------------
+New Features:
+  - Added user manual menu option. Can now select EMU-1 or PRO-BUF-1.
+  - Added background IP/Ethernet device information discovery.
+  - Added 'IP Device List' window to display all discovered device details.
+  - Changed first column of IP Device list to contain IP address.
+  - Improved 'Reset Views' to restore all dockable windows to their default
+    locations and widths.
+  - Improved the synchronisation between dockable windows/pane.
+
+  - PRO-BUF-1 & PRO-MUX-1: Update Web programming to work with folders/
+    directories via FTP.
+  - PRO-BUF-1 & PRO-MUX-1: Update Web programming to set a file Date & Time
+    timestamp after format flash on reboot.
+
+    - EMU-1: Improved control validation checks for duplications & conflicts.
+
+    - NGW-1: Added support of config load and save to device and to file. 
+    - NGW-1: NMEA 2000 PGNs can Enable/disable Tx & Rx and set Tx rates. 
+    - NGW-1: NMEA 0183 Sentences can Enable/disable Tx and set Tx rates.
+    - NGW-1: Add user friendly description of each PGN/Sentence formatter.
+    - NGW-1: firmware version check to disable "Load From Device" option for
+      firmware < 2.540.
+
+Bug Fixes:
+  - PRO-BUF-1 & PRO-MUX-1: Fixed Web programming via FTP.
+  - NGW-1: Made NMEA 2000 & NMEA 0183 grid controls scrollable.
+  - Correctly disables "Based on" option in config wizard popup panel when 
+    "Load from Device" is actioned.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.010 to v1.011                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Fixed issue with Upgrade and Downgrade device options (in ribbon & menu) 
+    not automatically refreshing after a Firmware update. 
+  - Improved Web programming state machine: Now retries FTP connect 3 times.
+  - Improved Web programming state machine: During Firmware update detects when
+    device restarted using ping instead of a fixed sleep period.
+    
+-------------------------------------------------------------------------------
+-- Changes from v1.009 to v1.010                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Now shows the Device properties before device information is complete.
+  - EMU-1: Fixed upgrade firmware option for Bootloader only devices.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.008 to v1.009                                             --
+-------------------------------------------------------------------------------
+Bug Fixes:
+  - Modified settings to allow Toolkit to run on Windows XP computers.
+  
+-------------------------------------------------------------------------------
+-- Changes from v1.005 to v1.008                                             --
+-------------------------------------------------------------------------------
+New Features:
+  - PRO-BUF-1: Added support for firmware and Web UI Upgrade/Downgrade using
+    the Ethernet FTP method.
+  - PRO-BUF-1: Added saving and restoring of 'User Settings' files during the
+    Upgrade/Downgrade operation using the Ethernet FTP process.
+
+Bug Fixes:
+  - Improved display of 'Device List' in 'Network View' to show all devices as
+    they are being built up during initial "information requesting" phase.
+  - Fixed issue that could occasionally cause a crash when refreshing 'Device 
+    List' with a NMEA 2000 bus load was above 25%.
+  - Increased command timeout to better cope with a busy NMEA 2000 bus.
+  - Passive FTP mode now used to avoid trigging Windows firewall from 
+    requesting user to confirm the first-time connection.
+  - Fixed crash if temporary folder used for FTP does not exit. Now catches
+    an exception and use Windows Temp folder.
+
+Known issues:
+  - PRO-BUF-1: This release does not support an Ethernet-based discovery method.
+    A serial connection to the PRO-BUF-1 is still required to allow the device
+	to be discovered by Toolkit and enable Upgrading/Downgrading.
+
+-------------------------------------------------------------------------------
+-- Changes from v1.000 to v1.005                                             --
+-------------------------------------------------------------------------------
+New Features:
+  - Now prevents more than one instance of Toolkit from running.
+  - Uses "actc" extensions on device configuration files (when saving/loading).
+  - Now selects the relevant device config after "Send To Device" operation.
+  - Removed device config name from the Toolkit's title bar.
+  
+Bug Fixes:
+  - Fixed crash that occured if a device config is open and that device is 
+    removed / powered down (breaking the sync link).
+  - Fixed flickering of "Network View" tree control.
+  - Fixed issue when a previously detected device is no longer active.
+  - Removed green 'Sync' symbol from "offline" device configs.
+ 
