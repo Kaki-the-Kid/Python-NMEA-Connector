@@ -217,6 +217,7 @@ class tNMEA2000():
 					const unsigned long#PGNs
 				):
 
+
 	#**********************************************************************/#
 	# @brief Setting up Message "PGN List - Transmit PGNs group
 	#        function" - PGN 126464
@@ -236,6 +237,8 @@ class tNMEA2000():
 # 126720 Hurtig pakke, ejendomsbeskyttet
 # 126992 PGN-liste
 
+
+
 	# 126993 Puls
 	#**********************************************************************/#
 	# @brief Setting up PGN 126993 Message "Heartbeat"
@@ -249,7 +252,12 @@ class tNMEA2000():
 	# @param timeInterval_ms   time interval in msec (0.01 - 655.32s )
 	# @param sequenceCounter   Sequence counter
 	#/
-	void SetN2kPGN126993(tN2kMsg &N2kMsg, uint32_t timeInterval_ms, uint8_t sequenceCounter);
+	def SetN2kPGN126993(
+					tN2kMsg &N2kMsg, 
+     				uint32_t timeInterval_ms, 
+         			uint8_t sequenceCounter
+            	):
+
 
 	#**********************************************************************/#
 	# @brief Setting up Message "Heartbeat" - PGN 126993
@@ -257,10 +265,96 @@ class tNMEA2000():
 	# Alias of PGN 126993. This alias was introduced to improve the readability
 	# of the source code. See parameter details on @ref SetN2kPGN126993
 	#/
-	inline void SetHeartbeat(tN2kMsg &N2kMsg, uint32_t timeInterval_ms, uint8_t sequenceCounter) {
-		SetN2kPGN126993(N2kMsg, timeInterval_ms, sequenceCounter);
-	}
+	def SetHeartbeat(
+					tN2kMsg &N2kMsg, 
+     				uint32_t timeInterval_ms, 
+         			uint8_t sequenceCounter
+            	): 
+		SetN2kPGN126993(N2kMsg, timeInterval_ms, sequenceCounter)
+
  
+	#*******************************************************************/#
+	# @brief Set the Heartbeat Interval and Offset for a device
+	#
+	# According to document [NMEA Heartbeat Corrigendum]
+	# (https:#www.nmea.org/Assets/20140102%20nmea-2000-126993%20heartbeat%20pgn%20corrigendum.pdf)
+	# all NMEA devices shall transmit heartbeat PGN 126993. With this
+	# function you can set transmission interval in ms (range 1000-655320ms
+	# , default 60000). Set <1000 to disable it.
+	# You can temporally change interval by setting SetAsDefault parameter
+	# to false. Then you can restore default interval with interval
+	# parameter value 0xfffffffe
+	#
+	# Function allows to set interval over 60 s or 0 to disable sending fr test purposes.
+	#
+	# @param interval      Heartbeat Interval in ms
+	# @param offset  		Heartbeat Offset in ms
+	# @param iDev          index of the device on @ref Devices
+	#/
+	def SetHeartbeatIntervalAndOffset(uint32_t interval, uint32_t offset=0, int iDev=-1):
+		if (iDev<0 || iDev>=DeviceCount)
+  			return
+		Devices[iDev].HeartbeatScheduler.SetPeriod(interval,offset)
+	
+	#*******************************************************************/#
+	# @brief Get the Heartbeat Interval of a device
+	#
+	# Heartbeat interval may be changed by e.g. MFD by group function. I
+	# have not yet found should changed value be saved for next
+	# startup or not.
+	#
+	# @param iDev          index of the device on @ref Devices
+	# @return uint_32  -> Device heartbeat interval in ms
+	#/
+	def GetHeartbeatInterval(int iDev=0):
+		if (iDev<0 || iDev>=DeviceCount) 
+  			return 60000
+	
+ 		return Devices[iDev].HeartbeatScheduler.GetPeriod()
+ 
+ 
+	#*******************************************************************/#
+	# @brief Get the Heartbeat Offset of a device
+	#
+	# Heartbeat Offset may be changed by e.g. MFD by group function. I
+	# have not yet found should changed value be saved for next
+	# startup or not.
+	#
+	# @param iDev          index of the device on @ref Devices
+	# @return uint_32  -> Device heartbeat Offset in ms
+	#/
+	def GetHeartbeatOffset(int iDev=0):
+		if (iDev<0 || iDev>=DeviceCount):
+			return 0
+		return Devices[iDev].HeartbeatScheduler.GetOffset()
+
+
+	#*******************************************************************/#
+	# @brief Send heartbeat for specific device.
+	#
+	# @param iDev          index of the device on @ref Devices
+	#/
+	def SendHeartbeat(int iDev):
+		if (iDev<0 || iDev>=DeviceCount):
+			return
+		Devices[iDev].HeartbeatScheduler.ForceSend()
+
+ 
+	#*******************************************************************/#
+	# @brief Send Heartbeat for all devices
+	#
+	# Library will automatically send heartbeat, if interval is >0. You
+	# can also manually send it any time or force sent, if interval=0;
+	#
+	# @param force True will send Heartbeat immediately, default = false
+	#/
+	def SendHeartbeat(bool force=false):
+		for (int i=0; i<DeviceCount; i++)
+			if (force || Devices[i].HeartbeatScheduler.GetPeriod()>0):
+				Devices[i].HeartbeatScheduler.ForceSend()		
+
+
+
 
 
 
