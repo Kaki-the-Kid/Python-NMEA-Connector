@@ -76,7 +76,7 @@ class tNMEA2000():
 	# @param MaxLen  Max length of the buffer
 	# @param buf     Pointer to the buffer
 	@staticmethod
-	def SetCharBuf(data,  MaxLen, buf):
+	def SetCharBuf(data, MaxLen, buf):
 		return data
 
 
@@ -1022,9 +1022,7 @@ protected:
 		# NMEA2000_teensy.cpp.
 		#/
 		virtual void InitCANFrameBuffers();
-#if defined(DEBUG_NMEA2000_ISR)
-		virtual void TestISR() {;}
-#endif
+
 
 protected:
 		#********************************************************************/#
@@ -2242,68 +2240,7 @@ public:
 		#/
 		bool SendConfigurationInformation(int DeviceIndex=0);
 
-#if !defined(N2K_NO_HEARTBEAT_SUPPORT)
 		
-
-		#*******************************************************************/#
-		# @brief Set the Heartbeat Interval and Offset for a device
-		#
-		# According to document [NMEA Heartbeat Corrigendum]
-		# (https:#www.nmea.org/Assets/20140102%20nmea-2000-126993%20heartbeat%20pgn%20corrigendum.pdf)
-		# all NMEA devices shall transmit heartbeat PGN 126993. With this
-		# function you can set transmission interval in ms (range 1000-655320ms
-		# , default 60000). Set <1000 to disable it.
-		# You can temporally change interval by setting SetAsDefault parameter
-		# to false. Then you can restore default interval with interval
-		# parameter value 0xfffffffe
-		#
-		# Function allows to set interval over 60 s or 0 to disable sending fr test purposes.
-		#
-		# @param interval      Heartbeat Interval in ms
-		# @param offset  		Heartbeat Offset in ms
-		# @param iDev          index of the device on @ref Devices
-		#/
-		void SetHeartbeatIntervalAndOffset(uint32_t interval, uint32_t offset=0, int iDev=-1);
-		
-		#*******************************************************************/#
-		# @brief Get the Heartbeat Interval of a device
-		#
-		# Heartbeat interval may be changed by e.g. MFD by group function. I
-		# have not yet found should changed value be saved for next
-		# startup or not.
-		#
-		# @param iDev          index of the device on @ref Devices
-		# @return uint_32  -> Device heartbeat interval in ms
-		#/
-		uint32_t GetHeartbeatInterval(int iDev=0) { if (iDev<0 || iDev>=DeviceCount) return 60000; return Devices[iDev].HeartbeatScheduler.GetPeriod(); }
-		#*******************************************************************/#
-		# @brief Get the Heartbeat Offset of a device
-		#
-		# Heartbeat Offset may be changed by e.g. MFD by group function. I
-		# have not yet found should changed value be saved for next
-		# startup or not.
-		#
-		# @param iDev          index of the device on @ref Devices
-		# @return uint_32  -> Device heartbeat Offset in ms
-		#/
-		uint32_t GetHeartbeatOffset(int iDev=0) { if (iDev<0 || iDev>=DeviceCount) return 0; return Devices[iDev].HeartbeatScheduler.GetOffset(); }
-	
-		#*******************************************************************/#
-		# @brief Send heartbeat for specific device.
-		#
-		# @param iDev          index of the device on @ref Devices
-		#/
-		void SendHeartbeat(int iDev);
-		
-		#*******************************************************************/#
-		# @brief Send Heartbeat for all devices
-		#
-		# Library will automatically send heartbeat, if interval is >0. You
-		# can also manually send it any time or force sent, if interval=0;
-		#
-		# @param force True will send Heartbeat immediately, default = false
-		#/
-		void SendHeartbeat(bool force=false);
 
 		# deprecated! SetAsDefault has no effect. Use function SetHeartbeatIntervalAndOffset.
 		void SetHeartbeatInterval(unsigned long interval, bool SetAsDefault=true, int iDev=-1) __attribute__ ((deprecated));
