@@ -1,4 +1,4 @@
-PyQt/PySide with QML
+# PyQt/PySide with QML
 Best for Raspberry Pi, microcontrollers, industrial and consumer electronics
 
 When using PyQt and PySide you actually have two options for building your GUIs. We've already introduced the Qt Widgets API which is well-suited for building desktop applications. But Qt also provides a declarative API in the form of Qt Quick/QML.
@@ -14,6 +14,7 @@ A simple Hello World app in PyQt6 with QML. Save the QML file in the same folder
 # Examples
 ## main.py
 ´´´
+
 import sys
 
 from PyQt6.QtGui import QGuiApplication
@@ -27,10 +28,12 @@ engine.quit.connect(app.quit)
 engine.load('main.qml')
 
 sys.exit(app.exec())
+
 ´´´
 
 ## main.qml
 ´´´
+
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
@@ -47,4 +50,5 @@ ApplicationWindow {
     }
 
 }
+
 ´´´
