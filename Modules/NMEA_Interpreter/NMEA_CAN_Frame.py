@@ -36,63 +36,66 @@ class tCANSendFrame(tNMEA2000):
 	# @struct  tCANSendFrame
 	# @brief   Structure holds all the data needed for a valide CAN-Message
 	#/
-	class tCANSendFrame
-	{
-	public:
+	class tCANSendFrame():
 		# @brief  ID of the CAN Message*/
-		unsigned long id;
+		id: int
 		# @brief  Length of carried data of the CAN Message*/
-		unsigned char len;
+		len: int
 		# @brief  Data payload for the CAN Message*/
-		unsigned char buf[8];
+		buf[8]: str
 		# @brief  Has the CAN Message to wait before sending*/
-		bool wait_sent;
+		wait_sent: bool
 
-	public:
 		# Clears all the fieds of the CAN Message#/
-		void Clear() {id=0; len=0; for (int i=0; i<8; i++) { buf[i]=0; } }
-	};
+		def Clear():
+			id=0
+			len=0
+      
+			for i in range<8:
+				buf[i] = 0
+
 
 	# @brief Buffer for received messages#/
-	tN2kCANMsg#N2kCANMsgBuf;
+	N2kCANMsgBuf: tN2kCANMsg
+ 
 	# @brief Max number CAN messages that can go to the buffer
 	#          @ref N2kCANMsgBuf#/
-	uint8_t MaxN2kCANMsgs;
+	MaxN2kCANMsgs: int
 
 	# @brief Buffer for ssend out CAN messages#/
-	tCANSendFrame#CANSendFrameBuf;
+	CANSendFrameBuf: tCANSendFrame
+
 	# @brief Max number of send out CAN messages that can go to the buffer
 	#          @ref CANSendFrameBuf
 	# @sa @ref InitCANFrameBuffers()*/
-	uint16_t MaxCANSendFrames;
+	MaxCANSendFrames: int
+ 
+	# @brief  In,dex for the CAN message Send buffer
+	# @todo Please double check Docu
+	#/
+	CANSendFrameBufferWrite: int
+ 
 	# @brief  Index for the CAN message Send buffer
 	# @todo Please double check Docu
 	#/
-	uint16_t CANSendFrameBufferWrite;
-	# @brief  Index for the CAN message Send buffer
-	# @todo Please double check Docu
-	#/
-	uint16_t CANSendFrameBufferRead;
+	CANSendFrameBufferRead: int
+ 
 	# @brief Max number received CAN messages that can go to the buffer
 	# @sa @ref InitCANFrameBuffers()
 	#/
-	uint16_t MaxCANReceiveFrames;
+	MaxCANReceiveFrames: int
 
 	# @brief ???
 	# @todo Better documentation needed#/
-	void (*OnOpen)();
+	#void (*OnOpen)();
 			
 	# @brief Handler callbacks for normal messages#/
-	void (*MsgHandler)(const tN2kMsg &N2kMsg);
-	# @brief Handler callbacks for 'ISORequest' messages#/
-	bool (*ISORqstHandler)(unsigned long RequestedPGN, unsigned char Requester, int DeviceIndex);
+	#void (*MsgHandler)(const tN2kMsg &N2kMsg);
+	
+ 	# @brief Handler callbacks for 'ISORequest' messages#/
+	#bool (*ISORqstHandler)(unsigned long RequestedPGN, unsigned char Requester, int DeviceIndex);
 
-#if !defined(N2K_NO_GROUP_FUNCTION_SUPPORT)
-	# @brief Pointer to Buffer for GRoup Function Handlers*/
-	tN2kGroupFunctionHandler#pGroupFunctionHandlers;
-#endif
 
-protected:
 	#*******************************************************************/#
 	# @brief Send a CAN Frame
 	#
@@ -112,7 +115,9 @@ protected:
 	# @return true   -> Success
 	# @return false  -> there is no space in the queue
 	#/
-	virtual bool CANSendFrame(unsigned long id, unsigned char len, const unsigned char#buf, bool wait_sent=true)=0;
+	def CANSendFrame( id: int, len: int, buf: int, wait_sent: bool = True ): return False
+
+
 	#*******************************************************************/#
 	# @brief Open the CAN Interface
 	#
@@ -128,8 +133,9 @@ protected:
 	# @return false  -> currently prevent accidental by second instance.
 	#                   Maybe possible in future.
 	#/
+	def CANOpen(): return False
 
-	virtual bool CANOpen()=0;
+
 	#*******************************************************************/#
 	# @brief Get a CAN Frame
 	#
@@ -144,7 +150,7 @@ protected:
 	# @return true   -> Ther is a new frame
 	# @return false  ->
 	#/
-	virtual bool CANGetFrame(unsigned long &id, unsigned char &len, unsigned char#buf)=0;
+	def CANGetFrame( id , len, buf): return False
 
 	
 	#*******************************************************************/#
@@ -155,17 +161,18 @@ protected:
 	# and you want to change size of library send frame buffer size. See e.g.
 	# NMEA2000_teensy.cpp.
 	#/
-	virtual void InitCANFrameBuffers();
+	def InitCANFrameBuffers(): pass
 
 
-protected:
 	#********************************************************************/#
 	# @brief Sends pending all frames
 	#
 	# @return true   -> Success
 	# @return false  -> Message could not be send out
 	#/
-	bool SendFrames();
+	def SendFrames(): return False
+
+
 	#********************************************************************/#
 	# @brief Sends a single CAN frame
 	#
@@ -180,13 +187,15 @@ protected:
 	# @return true   -> success
 	# @return false  -> failed
 	#/
-	bool SendFrame(unsigned long id, unsigned char len, const unsigned char#buf, bool wait_sent=true);
+	def SendFrame( id, len, buf, wait_sent: bool = true ): return False
+
 
 	#*******************************************************************/#
 	# @brief Get the Next Free CAN Frame  from @ref CANSendFrameBuf
 	# @return tCANSendFrame*
 	#/
 	tCANSendFrame#GetNextFreeCANSendFrame();
+
 
 	#*******************************************************************/#
 	# @brief Send ISO AddressClaim, Product Information and Config
@@ -199,15 +208,16 @@ protected:
 	# @sa  @ref SendIsoAddressClaim(), @ref SendProductInformation(),
 	#      @ref SendConfigurationInformation()
 	#/
-	void SendPendingInformation();
+	def SendPendingInformation(): pass
 
-protected:
+
 	#*******************************************************************/#
 	# @brief Determines if the CAN BUS is already initialized
 	# @return true
 	# @return false
 	#/
-	bool IsInitialized() { return (N2kCANMsgBuf!=0); }
+	def IsInitialized(): return (bool)(N2kCANMsgBuf!=0)
+
 
 	#*******************************************************************/#
 	# @brief Function handles received CAN frame and adds it to tN2kCANMsg
@@ -222,4 +232,4 @@ protected:
 	# @param buf       buffer for payload of message
 	# @return uint8_t  -> Index of the CAN message on @ref N2kCANMsgBuf
 	#/
-	uint8_t SetN2kCANBufMsg(unsigned long canId, unsigned char len, unsigned char#buf);
+	def SetN2kCANBufMsg( canId, len, buf): pass
