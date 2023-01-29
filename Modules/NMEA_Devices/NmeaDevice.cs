@@ -301,3 +301,24 @@ namespace NmeaParser
         public NmeaMessage Message { get; }
     }
 }
+
+
+		#*******************************************************************/#
+		# @brief Initialize all devices
+		#
+		# This function initializes the array @ref Devices with the size of
+		# @ref DeviceCount and sets default device information.
+		#
+		# Default Device Info is:
+		#  - Unique ID = Device Index +1 ==> 21 bit resolution, max 2097151. Each
+		#    device from same manufacturer should have unique number.
+		#  - Device Function = 130 ==> PC Gateway
+		#  - Device Class = 25  ==> Inter/Intranetwork Device.
+		#  - Manufacturer Code = 2046  ==> Maximum 2046
+		#  - Industrie Group Code = 4  ==> Marine
+		#
+		# @sa
+		#  - http:#www.nmea.org/Assets/20120726%20nmea%202000%20class%20&%20function%20codes%20v%202.00.pdf
+		#  - http:#www.nmea.org/Assets/20121020%20nmea%202000%20registration%20list.pdf
+		#/
+		void InitDevices();

@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 '''
 MQTT AT Commands
 In general, AT MQTT commands will be responded within 10s

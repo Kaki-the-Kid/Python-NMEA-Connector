@@ -1,4 +1,13 @@
 class tNMEA2000():
+	# @brief Pointer to a message handler*/
+	tMsgHandler#pNext;
+ 
+	# @brief Pointer to a tNMEA2000 object*/
+	tNMEA2000#pNMEA2000;
+ 
+	# Parameter Group Number*/
+	unsigned long PGN;
+
 	# PGN for an Iso Address Claim message
 	N2kPGNIsoAddressClaim = 60928
 	
@@ -236,6 +245,23 @@ class tNMEA2000():
 
 # 126720 Hurtig pakke, ejendomsbeskyttet
 # 126992 PGN-liste
+		#*******************************************************************/#
+		# @brief Send a list with all supported Receive messages
+		#
+		# This function sends a PGN 126464 message consisting of all messages
+		# supported by this device for reception.
+		#
+		# @param Destination   Destination address
+		# @param DeviceIndex   index of the device on @ref Devices
+		# @param UseTP         use multi packet message, default = false
+		#/
+		void SendRxPGNList(unsigned char Destination, int DeviceIndex, bool UseTP=false);
+#else
+		void SendTxPGNList(unsigned char Destination, int DeviceIndex);
+		void SendRxPGNList(unsigned char Destination, int DeviceIndex);
+#endif
+
+
 
 
 
@@ -597,9 +623,90 @@ class tNMEA2000():
 
 
 	# 060416 ISO-transportprotokol, administration af tilslutning – RTS gruppefunktion
+	#*******************************************************************/#
+	# @brief   Send ISO Transport Protocol message RTS
+	#
+	# @param iDev    index of the device on @ref Devices
+	#
+	# @return true
+	# @return false
+	#/
+	bool SendTPCM_RTS(int iDev);
+
+		#*******************************************************************/#
+		# @brief   Send ISO Transport Protocol message CTS
+		#
+		# @param PGN                 PGN
+		# @param Destination         Destination address
+		# @param iDev    index of the device on @ref Devices
+		# @param nPackets            Number of packets
+		# @param NextPacketNumber    Number of the next packet
+		#
+		#/
+		void SendTPCM_CTS(unsigned long PGN, unsigned char Destination, int iDev, unsigned char nPackets, unsigned char NextPacketNumber);
+
+		#********************************************************************/#
+		# @brief Send ISO Transport Protocol message End Acknowledge
+		#
+		# @param PGN                 PGN
+		# @param Destination         Destination address
+		# @param iDev    index of the device on @ref Devices
+		# @param nBytes              Number of bytes
+		# @param nPackets            Number of packets
+		#/
+		void SendTPCM_EndAck(unsigned long PGN, unsigned char Destination, int iDev, uint16_t nBytes, unsigned char nPackets);
+
+		#*******************************************************************/#
+		# @brief Send ISO Transport Protocol message Abort
+		#
+		# @param PGN               PGN
+		# @param Destination       Destination address
+		# @param iDev    index of the device on @ref Devices
+		# @param AbortCode         Abort Code
+		#/
+		void SendTPCM_Abort(unsigned long PGN, unsigned char Destination, int iDev, unsigned char AbortCode);
+
+		#*******************************************************************/#
+		# @brief Ends sending of ISO-TP message
+		#
+		# @param iDev    index of the device on @ref Devices
+		#/
+		void EndSendTPMessage(int iDev);
+
+		#*******************************************************************/#
+		# @brief Send pending ISO-TP Messages
+		#
+		# @param iDev    index of the device on @ref Devices
+		#/
+		void SendPendingTPMessage(int iDev);
+
+
+		#********************************************************************/#
+		# @brief Check if this message is a Transmit message of this device
+		#
+		# @param PGN     PGN to be checked
+		# @param iDev    index of the device on @ref Devices
+		# @return true
+		# @return false
+		#/
+		bool IsTxPGN(unsigned long PGN, int iDev=0);
+
+
+
 
 
 	# 060928 ISO-adressekrav
+	#*******************************************************************/#
+	# @brief Send an IsoAddressClaim message
+	#
+	# This is automatically used by class. You only need to use this, if
+	# you want to write your own behavior for address claiming.
+	#
+	# @param Destination     Destination address for the message
+	# @param DeviceIndex     index of the device on @ref Devices
+	# @param FromNow         optional time delay from now in ms
+	#/
+	void SendIsoAddressClaim(unsigned char Destination=0xff, int DeviceIndex=0, unsigned long FromNow=0);
 
 
 	# 061184 Enkelt, ejendomsbeskyttet
@@ -627,14 +734,211 @@ class tNMEA2000():
 
 
 	# 065240 ISO kommandoadresse
- 
+ 		#*******************************************************************/#
+		# @brief Starting the ISO Address Claim for a device
+		#
+		# @param iDev          index of the device on @ref Devices
+		#/
+		void StartAddressClaim(int iDev);
+
+		#*******************************************************************/#
+		# @brief Starting the ISO Address Claim for all devices
+		#
+		#/
+		void StartAddressClaim();
+
+		#*******************************************************************/#
+		# @brief Checks if the IsoAddressClaim is already started
+		#
+		# @param iDev          index of the device on @ref Devices
+		# @return true
+		# @return false
+		#/
+		bool IsAddressClaimStarted(int iDev);
+
+		#********************************************************************/#
+		# @brief Handles an IsoAddressClaim
+		#
+		# @param N2kMsg        Reference to a N2kMsg Object
+		#/
+		void HandleISOAddressClaim(const tN2kMsg &N2kMsg);
+
+		#********************************************************************/#
+		# @brief Handles if we get commanded to set a new address
+		#
+		# @param CommandedName   Device name that have been commanded to set
+		#                        new address
+		# @param NewAddress      new address for the device
+		# @param iDev          index of the device on @ref Devices
+		#/
+		void HandleCommandedAddress(uint64_t CommandedName, unsigned char NewAddress, int iDev);
+
+		 #********************************************************************/#
+		# @brief Handles if we get commanded to set a new address
+		#
+		# @param N2kMsg        Reference to a N2kMsg Object
+		#/
+		void HandleCommandedAddress(const tN2kMsg &N2kMsg);
+
+		#********************************************************************/#
+		# @brief Get the next free address for the device
+		#
+		# @param DeviceIndex     index of the device on @ref Devices
+		# @param RestartAtEnd    Restart the search from the beginning if the
+		#                        search for the free source has reached
+		#                        @ref N2kNullCanBusAddress
+		#/
+		void GetNextAddress(int DeviceIndex, bool RestartAtEnd=false);
+
+		#********************************************************************/#
+		# @brief Checks if the source belongs to a device on @ref Devices
+		#
+		# @param Source Source address
+		# @return true
+		# @return false
+		#/
+		bool IsMySource(unsigned char Source);
+
+		#********************************************************************/#
+		# @brief Finds a device on @ref Devices by its source address
+		#
+		# @param Source Source address of the device
+		# @return int DeviceIndex, not found = -1
+		#/
+		int FindSourceDeviceIndex(unsigned char Source);
+
+		#********************************************************************/#
+		# @brief Get the Sequence Counter for the PGN
+		#
+		# @param PGN     PGN
+		# @param iDev    index of the device on @ref Devices
+		# @return int    Sequence Counter, non valid iDEV = 0
+		#/
+		int GetSequenceCounter(unsigned long PGN, int iDev);
+
+
  
 	# 126208 NMEA anmod om gruppefunktion
- 
- 
+ 		#*******************************************************************/#
+		# @brief Respond to an Group Function
+		#
+		#
+		# Document https:#www.nmea.org/Assets/20140109%20nmea-2000-corrigendum-tc201401031%20pgn%20126208.pdf
+		# defines that systems should respond to NMEA Request/Command/Acknowledge
+		# group function PGN 126208. Here we first call callback and if that will
+		# not handle function, we use default handler.
+		#
+		# @param N2kMsg        Reference to a N2kMsg Object
+		# @param GroupFunctionCode
+		# @param PGNForGroupFunction
+		# @param iDev          index of the device on @ref Devices
+		#/
+		void RespondGroupFunction(const tN2kMsg &N2kMsg, tN2kGroupFunctionCode GroupFunctionCode, unsigned long PGNForGroupFunction, int iDev);
+
+		#*******************************************************************/#
+		# @brief Handles a Group Function
+		#
+		# Document https:#www.nmea.org/Assets/20140109%20nmea-2000-corrigendum-tc201401031%20pgn%20126208.pdf
+		# defines that systems should respond to NMEA Request/Command/Acknowledge
+		# group function PGN 126208. On the document it is not clear can request
+		# be send as broadcast, so we handle it, if we can.
+		#
+		# @param N2kMsg        Reference to a N2kMsg Object
+		#/
+		void HandleGroupFunction(const tN2kMsg &N2kMsg);
+#endif
+
+ 		#*******************************************************************/#
+		# @brief   Send ISO Transport Protocol message BAM
+		#
+		# This is used for Broadcast messages
+		#
+		# @param iDev    index of the device on @ref Devices
+		#
+		# @return true
+		# @return false
+		#/
+		bool SendTPCM_BAM(int iDev);
+  
 	# 126720 Hurtig pakke, ejendomsbeskyttet
+	#*******************************************************************/#
+	# @brief Get the Fast Packet Tx PGN Count
+	#
+	# @param iDev    index of the device on @ref Devices
+	# @return size_t
+	#/
+	size_t GetFastPacketTxPGNCount(int iDev);
+
+		#*******************************************************************/#
+		# @brief ISO Transport Protocol handlers for multi packet support
+		#
+		# @param PGN           PGN
+		# @param Source        Source address
+		# @param Destination   Destination address
+		# @param len           len of the data payload
+		# @param buf           pointer to a byte buffer for the
+		# @param MsgIndex      MsgIndex for @ref N2kCANMsgBuf
+		#
+		# @return true
+		# @return false
+		#/
+		bool TestHandleTPMessage(unsigned long PGN, unsigned char Source, unsigned char Destination,
+														 unsigned char len, unsigned char#buf,
+														 uint8_t &MsgIndex);
  
- 
+ 		#*******************************************************************/#
+		# @brief Check if this PNG is a fast packet message
+		#
+		# Determines if this given PGN belongs to a fast packet message by
+		# checking if a corresponding message is listed on @ref
+		# FastPacketMessages[]
+		#
+		# @param N2kMsg Reference to a N2kMsg Object
+		# @return true
+		# @return false
+		#/
+		bool IsFastPacket(const tN2kMsg &N2kMsg);
+
+		#*******************************************************************/#
+		# @brief Check if this PNG is a fast packet message
+		#
+		# Determines if this given PGN belongs to a fast packet message by
+		# checking if a corresponding message is listed on @ref
+		# FastPacketMessages[]
+		#
+		# @param PGN     PGN to be checked
+		# @return true
+		# @return false
+		#/
+		bool IsFastPacketPGN(unsigned long PGN);
+  
+ 		#*******************************************************************/#
+		# @brief Respond to an ISO request
+		#
+		# If there is now IsoAdressClaim procedure started for this device, we
+		# respond for the requested PGN with sending IsoAddressClaim, Tx/Rx PGN
+		# lists, Product- / Config informations or an user defined ISORqstHandler.
+		#
+		# If non of this fits the RequestedPGN, we directly respond to the
+		# requester NAK. ( @ref SetN2kPGNISOAcknowledgement)
+		#
+		# @param N2kMsg        Reference to a N2kMsg Object
+		# @param RequestedPGN  Requested PGN
+		# @param iDev          index of the device on @ref Devices
+		#/
+		void RespondISORequest(const tN2kMsg &N2kMsg, unsigned long RequestedPGN, int iDev);
+
+		#*******************************************************************/#
+		# @brief Handles an Iso Request
+		#
+		# The function determines if the request is for us (Broadcast message or
+		# device in our list) and responds to the request.
+		#
+		# @param N2kMsg        Reference to a N2kMsg Object
+		#/
+		void HandleISORequest(const tN2kMsg &N2kMsg);
+  
+  
 	# 129026 COG og SOG, hurtig opdatering
  
  
@@ -673,3 +977,90 @@ class tNMEA2000():
  
 	# 129810 AIS Klasse B "CS" – statiske data, del B
 
+
+
+	#**********************************************************************/#
+	#*******************************************************************/#
+	# @brief Send a list with all supported Transmit messages
+	#
+	# This function sends a PGN 126464 message consisting of all messages
+	# supported by this device for transmission.
+	#
+	# @param Destination   Destination address
+	# @param DeviceIndex   index of the device on @ref Devices
+	# @param UseTP         use multi packet message, default = false
+	#/
+	void SendTxPGNList(unsigned char Destination, int DeviceIndex, bool UseTP=false);
+
+
+		#*******************************************************************/#
+		# @brief Checks if the device is ready to send a message
+		#
+		# @return true
+		# @return false
+		#/
+		bool IsReadyToSend() const {
+			return ( (OpenState==os_Open || dbMode!=dm_None) &&
+							 (N2kMode!=N2km_ListenOnly) &&
+							 (N2kMode!=N2km_SendOnly) &&
+							 (N2kMode!=N2km_ListenAndSend)
+						 );
+		}
+
+		#*******************************************************************/#
+		# @brief Handles a received system message
+		#
+		# If the node is not @ref N2km_SendOnly or @ref N2km_ListenAndSend this
+		# function chooses the correct handler for the given system message.
+		#
+		# @sa  @ref HandleISORequest,  @ref HandleISOAddressClaim,
+		#      @ref HandleCommandedAddress, @ref HandleCommandedAddress
+		#
+		# @param MsgIndex  Message Index on @ref N2kCANMsgBuf
+		# @return true     -> message was handled
+		# @return false
+		#/
+		bool HandleReceivedSystemMessage(int MsgIndex);
+  
+  
+  		#*******************************************************************/#
+		# @brief Check if this Message is known to the system
+		#
+		# Determines wether this message is known to the system, either by beeing
+		# a default, mandatory or system message or this specific message which is
+		# listed in @ref SingleFrameMessages @@ @ref FastPacketMessages.
+		#
+		# @sa @ref IsDefaultSingleFrameMessage, @ref IsMandatoryFastPacketMessage,
+		#      @ref IsDefaultFastPacketMessage, @ref IsSingleFrameSystemMessage,
+		#      @ref IsFastPacketSystemMessage,
+		#
+		# @param PGN             PGN to be checked
+		# @param SystemMessage   Flag system message
+		# @param FastPacket      Flag fast packet
+		# @return true
+		# @return false
+		#/
+		bool CheckKnownMessage(unsigned long PGN, bool &SystemMessage, bool &FastPacket);
+  
+  
+  
+  	#*****************************************************************/#
+	# @brief Return the PGN that is handled by this message handler
+	# @return unsigned long
+	#/
+	inline unsigned long GetPGN() const { return PGN; }
+
+
+	#****************************************************************//*
+	# @brief Construct a new Message Handler object
+	#
+	# Attaches this message handler to a tNMEA2000 object.
+	#
+	# @param _PGN        PGN of the message that should be handled
+	# @param _pNMEA2000  Pointer to tNMEA2000 object, where the handle
+	#                    should be attached
+	#/
+	tMsgHandler(unsigned long _PGN=0, tNMEA2000#_pNMEA2000=0) {
+		PGN=_PGN; pNext=0; pNMEA2000=0;
+		if ( _pNMEA2000!=0 ) _pNMEA2000->AttachMsgHandler(this);
+	}

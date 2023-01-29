@@ -9,27 +9,27 @@ from dataclasses import field, dataclass
 class StructGPSData:
 	def __init__(
 		self, 
-		GPSTimestamp: str,
-		GPSLatitudeDegree: str,
-		GPSLatitudeMins: str,
-		GPSLatitudeDirection: str,
-		GPSLatitudeString: str,
-		GPSLongitudeDegree: str,
-		GPSLongitudeMins: str,
-		GPSLongitudeDirection: str,
-		GPSLongitudeString: str,
-		GPSQuality: int,
-		GPSQualityText: str,
-		GPSNumberSatelites: int,
-		GPSHdop: float,
-		GPSAntenneAltitude: float,
-		GPSAntennaAltitudemf: str,
-		GPSGeoidalSeparation: float,
-		GPSGeoidalSeparationmf: str,
-		GPSAgeCorrection: str,
-		GPSStationId: str,
-		GPSLastChecksum: str,
-		GPSLastChecksumOK: bool
+		GPSTimestamp: str           = "181908.00",
+		GPSLatitudeDegree: str      = 340,       # Latitude in the DDMM.MMMMM,Direction
+		GPSLatitudeMins: str        = 4.7041778,
+		GPSLatitudeDirection: str   = "N",
+		GPSLatitudeString: str      = "",
+		GPSLongitudeDegree: str     = "070",       # Longitude in the DDMM.MMMMM,Direction
+		GPSLongitudeMins: str       = 44.3966270,
+		GPSLongitudeDirection: str  = "W",
+		GPSLongitudeString: str     = "",
+		GPSQuality: int             = 4,
+		GPSQualityText: str         = FixQuality[4], #4 = Real Time Kinematic
+		GPSNumberSatelites: int     = 13,
+		GPSHdop: float              = 1.00,
+		GPSAntenneAltitude: float   = 495.144,
+		GPSAntennaAltitudemf: str   = "M",
+		GPSGeoidalSeparation: float = 29.200,
+		GPSGeoidalSeparationmf: str = "M",
+		GPSAgeCorrection: str       = 0.10,
+		GPSStationId: str           = "0000",
+		GPSLastChecksum: str        = "*40",
+		GPSLastChecksumOK: bool     = True
 		):
 		self._GPSTimestamp = GPSTimestamp
 		self._GPSLatitudeDegree = GPSLatitudeDegree

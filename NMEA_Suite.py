@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 from multiprocessing import Process
 import os
+import argparse
 
-#import NMEA2000_defs
+import Modules.NMEA_Interpreter.NMEA_Interpreter as Interpreter
 #import NMEA2000_Receive
 #import NMEA2000_Send
 
@@ -14,7 +15,7 @@ from Modules.Update.Update import Update
 from Modules.Update.UpdateLog import UpdateLog
 #from modules.update.UpdateUnicorn import UniCorn, UpdateIcon
 #from modules.update.init_unicorn import unicorn_init
-from Modules.RasPiShield_Matrix.update_matrix import update_bargraph, update_matrix
+#from Modules.RasPiShield_Matrix.update_matrix import update_bargraph, update_matrix
 
 # Global variables
 processes_bar = []
@@ -31,7 +32,14 @@ def quit_all_processes():
         process.join()
         
 def main():
+    argParser = argparse.ArgumentParser()
+    argParser.add_argument("-n", "--name", help="your name")
 
+    args = argParser.parse_args()
+    print("args=%s" % args)
+
+    print("args.name=%s" % args.name)
+    
     main_thread = threading.Timer(THREADING_TIMER, main)
     main_thread.start()
     threads.append(main_thread)
@@ -54,3 +62,4 @@ def main():
     except KeyboardInterrupt:
         quit_all_threads()
         #clear_all()
+        quit_all_processes()
