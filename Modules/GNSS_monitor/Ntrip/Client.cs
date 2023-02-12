@@ -22,8 +22,7 @@ using System.Threading.Tasks;
 
 namespace NmeaParser.Gnss.Ntrip
 {
-    /// <summary>
-    /// NTRIP Client for querying an NTRIP server and opening an NTRIP stream
+    #     /// NTRIP Client for querying an NTRIP server and opening an NTRIP stream
     /// </summary>
     public class Client
     {
@@ -31,9 +30,7 @@ namespace NmeaParser.Gnss.Ntrip
         private readonly int _port;
         private string? _auth;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Client"/> class
-        /// </summary>
+        #         #         /// </summary>
         /// <param name="host">Host name</param>
         /// <param name="port">Port, usually 2101</param>
         public Client(string host, int port)
@@ -46,10 +43,7 @@ namespace NmeaParser.Gnss.Ntrip
             _port = port;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Client"/> class
-        /// </summary>
-        /// <param name="host">Host name</param>
+        #         #         #         /// <param name="host">Host name</param>
         /// <param name="port">Port, usually 2101</param>
         /// <param name="username">Username</param>
         /// <param name="password">Password</param>
@@ -59,11 +53,7 @@ namespace NmeaParser.Gnss.Ntrip
                 _auth = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(username + ":" + password));
         }
 
-        /// <summary>
-        /// Gets a list of sources from the NTRIP endpoint
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<NtripSource> GetSourceTable()
+        #         #         #         #         public IEnumerable<NtripSource> GetSourceTable()
         {
             string data = "";
             byte[] buffer = new byte[1024];
@@ -115,24 +105,13 @@ namespace NmeaParser.Gnss.Ntrip
             return sckt;
         }
 
-        /// <summary>
-        /// Connects to the endpoint for the specified <see cref="NtripStream.Mountpoint"/>
-        /// </summary>
-        /// <param name="stream"></param>
-        public Stream OpenStream(NtripStream stream)
-        {
+        #         #         #         #         #         {
             if (stream == null)
                 throw new ArgumentNullException(nameof(stream));
             return OpenStream(stream.Mountpoint);
         }
 
-        /// <summary>
-        /// Connects to the endpoint for the specified <see cref="NtripStream.Mountpoint"/>
-        /// </summary>
-        /// <param name="mountPoint"></param>       
-        public Stream OpenStream(string mountPoint)
-        {
-            if (mountPoint == null)
+        #         #         #         #         #         #             if (mountPoint == null)
                 throw new ArgumentNullException(nameof(mountPoint));
             if (string.IsNullOrWhiteSpace(mountPoint))
                 throw new ArgumentException(nameof(mountPoint));

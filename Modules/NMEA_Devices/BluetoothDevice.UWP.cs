@@ -28,8 +28,7 @@ using Windows.Networking.Proximity;
 
 namespace NmeaParser
 {
-    /// <summary>
-    /// A Bluetooth NMEA device
+    #     /// A Bluetooth NMEA device
     /// </summary>
     /// <remarks>
     /// To use the NMEA Parser against a bluetooth device in a Universal App,
@@ -75,10 +74,7 @@ namespace NmeaParser
         private bool m_disposeService;
         private SemaphoreSlim m_semaphoreSlim = new SemaphoreSlim(1, 1);
 
-        /// <summary>
-        /// Gets a list of bluetooth devices that supports serial communication
-        /// </summary>
-        /// <returns>A set of bluetooth devices available that supports serial connections</returns>
+        #         /// <returns>A set of bluetooth devices available that supports serial connections</returns>
         public static async Task<IEnumerable<RfcommDeviceService>> GetBluetoothSerialDevicesAsync()
         {
             string serialDeviceType = RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort);
@@ -89,23 +85,16 @@ namespace NmeaParser
             return services;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BluetoothDevice"/> class.
-        /// </summary>
-        /// <param name="service">The RF Comm Device service.</param>
-        /// <param name="disposeService">Whether this devicee should also dispose the RfcommDeviceService provided when this device disposes.</param>
+        #         /// Initializes a new instance of the <see cref="BluetoothDevice"/> class.
+        #         /// <param name="disposeService">Whether this devicee should also dispose the RfcommDeviceService provided when this device disposes.</param>
         public BluetoothDevice(RfcommDeviceService service, bool disposeService = false)
         {
             m_deviceService = service ?? throw new ArgumentNullException(nameof(service));
             m_disposeService = disposeService;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BluetoothDevice"/> class.
-        /// </summary>
-        /// <param name="peer">The peer information device.</param>
-        public BluetoothDevice(Windows.Networking.Proximity.PeerInformation peer)
-        {
+        #         #         /// </summary>
+        #         {
             m_devicePeer = peer ?? throw new ArgumentNullException(nameof(peer));
         }
 

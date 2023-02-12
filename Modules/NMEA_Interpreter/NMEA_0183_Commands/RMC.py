@@ -9,281 +9,155 @@
 from NMEA0183_Commands import NMEA0183_Command
 
 
-class BWC(NMEA0183_Command):
-#  *******************************************************************************
-#  *  Licensed under the Apache License, Version 2.0 (the "License");
-#  *  you may not use this file except in compliance with the License.
-#  *  You may obtain a copy of the License at
-#  *
-#  *  http://www.apache.org/licenses/LICENSE-2.0
-#  *
-#  *   Unless required by applicable law or agreed to in writing, software
-#  *   distributed under the License is distributed on an "AS IS" BASIS,
-#  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  *   See the License for the specific language governing permissions and
-#  *   limitations under the License.
-#  ******************************************************************************
+class RMC(NMEA0183_Command):
 
-from NMEA0183_Commands import NMEA0183_Command
+    def __init__(self, sentence):
+        self._datasentence = sentence.split(",")
+        if (message == null or message.Length < 11):
+            raise Exception("Invalid RMC: {}".message)
 
-using System;
-using System.Globalization;
-
-namespace NmeaParser.Messages
-{
-    class RMC:
-    def __init__(self):
-        self.time = None
-        self.status = None
-        self.latitude = None
-        self.latitude_direction = None
-        self.longitude = None
-        self.longitude_direction = None
-        self.speed = None
-        self.track_angle = None
-        self.date = None
-        self.magnetic_variation = None
-        self.magnetic_variation_direction = None
-        self.mode_indicator = None
+        if (message[8].Length == 6 and message[0].Length >= 6):
+            FixTime = new DateTimeOffset(int.Parse(message[8].Substring(4, 2), CultureInfo.InvariantCulture) + 2000,
+                                    int.Parse(message[8].Substring(2, 2), CultureInfo.InvariantCulture),
+                                    int.Parse(message[8].Substring(0, 2), CultureInfo.InvariantCulture),
+                                    int.Parse(message[0].Substring(0, 2), CultureInfo.InvariantCulture),
+                                    int.Parse(message[0].Substring(2, 2), CultureInfo.InvariantCulture),
+                                    0, TimeSpan.Zero).AddSeconds(double.Parse(message[0].Substring(4), CultureInfo.InvariantCulture))
         
-    def set_time(self, time):
-        self.time = time
-        
-    def get_time(self):
-        return self.time
-    
-    def set_status(self, status):
-        self.status = status
-        
-    def get_status(self):
-        return self.status
-    
-    def set_latitude(self, latitude):
-        self.latitude = latitude
-        
-    def get_latitude(self):
-        return self.latitude
-    
-    def set_latitude_direction(self, latitude_direction):
-        self.latitude_direction = latitude_direction
-        
-    def get_latitude_direction(self):
-        return self.latitude_direction
-    
-    def set_longitude(self, longitude):
-        self.longitude = longitude
-        
-    def get_longitude(self):
-        return self.longitude
-    
-    def set_longitude_direction(self, longitude_direction):
-        self.longitude_direction = longitude_direction
-        
-    def get_longitude_direction(self):
-        return self.longitude_direction
-    
-    def set_speed(self, speed):
-        self.speed = speed
-        
-    def get_speed(self):
-        return self.speed
-    
-    def set_track_angle(self, track_angle):
-        self.track_angle = track_angle
-        
-    def get_track_angle(self):
-        return self.track_angle
-    
-    def set_date(self, date):
-        self.date = date
-        
-    def get_date(self):
-        return self.date
-    
-    def set_magnetic_variation(self, magnetic_variation):
-        self.magnetic_variation = magnetic_variation
-        
-    def get_magnetic_variation(self):
-        return self.magnetic_variation
-    
-    def set_magnetic_variation_direction(self, magnetic_variation_direction):
-        self.magnetic_variation_direction = magnetic_variation_direction
-        
-    def get_magnetic_variation_direction(self):
-        return self.magnetic_variation_direction
-    
-    def set_mode_indicator(self, mode_indicator):
-        self.mode_indicator = mode_indicator
-        
-    def get_mode_indicator(self):
-        return self.mode_indicator
-
-    class RMC:
-    def __init__(self):
         self.time = ""
         self.status = ""
-        self.latitude = 0.0
+        float: self.latitude = 0.0
+        # Latitude
+        Latitude = NmeaMessage.StringToLatitude(message[2], message[3])
         self.latitude_direction = ""
-        self.longitude = 0.0
+        # Longitude
+        float: self.longitude = 0.0
+        Longitude = NmeaMessage.StringToLongitude(message[4], message[5])
         self.longitude_direction = ""
+        # Speed over the ground in knots
         self.speed = 0.0
-        self.course = 0.0
+        Speed = NmeaMessage.StringToDouble(message[6])
+        # Track angle in degrees True
+        float: self.course = 0.0 #track_angle
+        Course = NmeaMessage.StringToDouble(message[7])
         self.date = ""
-        self.magnetic_variation = 0.0
+        # Magnetic Variation
+        float: self.magnetic_variation = 0.0
+        MagneticVariation = NmeaMessage.StringToDouble(message[9])
         self.magnetic_variation_direction = ""
-        self.mode = ""
+        if (not double.IsNaN(MagneticVariation) and message[10] == "W")
+            MagneticVariation *= -1
+        # Mode indicator
+        self.mode_indicator = ""
 
-    # setters
+        Active = (message[1] == "A")
+
+
     def set_time(self, time):
         self.time = time
+
+    def get_time(self):
+        return self.time
 
     def set_status(self, status):
         self.status = status
 
-    def set_latitude(self, latitude):
-        self.latitude = latitude
-
-    def set_latitude_direction(self, latitude_direction):
-        self.latitude_direction = latitude_direction
-
-    def set_longitude(self, longitude):
-        self.longitude = longitude
-
-    def set_longitude_direction(self, longitude_direction):
-        self.longitude_direction = longitude_direction
-
-    def set_speed(self, speed):
-        self.speed = speed
-
-    def set_course(self, course):
-        self.course = course
-
-    def set_date(self, date):
-        self.date = date
-
-    def set_magnetic_variation(self, magnetic_variation):
-        self.magnetic_variation = magnetic_variation
-
-    def set_magnetic_variation_direction(self, magnetic_variation_direction):
-        self.magnetic_variation_direction = magnetic_variation_direction
-
-    def set_mode(self, mode):
-        self.mode = mode
-
-    # getters
-    def get_time(self):
-        return self.time
-
     def get_status(self):
         return self.status
+
+    def set_latitude(self, latitude):
+        self.latitude = latitude
 
     def get_latitude(self):
         return self.latitude
 
+    def set_latitude_direction(self, latitude_direction):
+        self.latitude_direction = latitude_direction
+
     def get_latitude_direction(self):
         return self.latitude_direction
+
+    def set_longitude(self, longitude):
+        self.longitude = longitude
 
     def get_longitude(self):
         return self.longitude
 
+    def set_longitude_direction(self, longitude_direction):
+        self.longitude_direction = longitude_direction
+
     def get_longitude_direction(self):
         return self.longitude_direction
+
+    def set_speed(self, speed):
+        self.speed = speed
 
     def get_speed(self):
         return self.speed
 
-    def get_course(self):
-        return self.course
+    def set_track_angle(self, track_angle):
+        self.track_angle = track_angle
+
+    def get_track_angle(self):
+        return self.track_angle
+
+    def set_date(self, date):
+        self.date = date
 
     def get_date(self):
         return self.date
 
+    def set_magnetic_variation(self, magnetic_variation):
+        self.magnetic_variation = magnetic_variation
+
     def get_magnetic_variation(self):
         return self.magnetic_variation
+
+    def set_magnetic_variation_direction(self, magnetic_variation_direction):
+        self.magnetic_variation_direction = magnetic_variation_direction
 
     def get_magnetic_variation_direction(self):
         return self.magnetic_variation_direction
 
-    def get_mode(self):
-        return self.mode
+    def set_mode_indicator(self, mode_indicator):
+        self.mode_indicator = mode_indicator
 
-    
-    # Recommended Minimum specific GNSS data
-    
-    # <remarks>
-    # <para>Time, date, position, course and speed data provided by a GNSS navigation receiver. This sentence is
-    # transmitted at intervals not exceeding 2-seconds and is always accompanied by <see cref="Rmb"/> when a destination waypoint
-    # is active.</para>
-    # <para><see cref="Rmc"/> and <see cref="Rmb"/> are the recommended minimum data to be provided by a GNSS receiver.</para>
-    # </remarks>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Gprmc")]
-    [NmeaMessageType("--RMC")]
-    public class Rmc : NmeaMessage, ITimestampedMessage, IGeographicLocation
-    {
-        
-        # Initializes a new instance of the <see cref="Rmc"/> class.
-        
-        # <param name="type">The message type</param>
-        # <param name="message">The NMEA message values.</param>
-        public Rmc(string type, string[] message) : base(type, message)
-        {
-            if (message == null || message.Length < 11):
-                raise Exception("Invalid RMC: {}".message)
-            
-            if (message[8].Length == 6 && message[0].Length >= 6)
-            {
-                FixTime = new DateTimeOffset(int.Parse(message[8].Substring(4, 2), CultureInfo.InvariantCulture) + 2000,
-                                       int.Parse(message[8].Substring(2, 2), CultureInfo.InvariantCulture),
-                                       int.Parse(message[8].Substring(0, 2), CultureInfo.InvariantCulture),
-                                       int.Parse(message[0].Substring(0, 2), CultureInfo.InvariantCulture),
-                                       int.Parse(message[0].Substring(2, 2), CultureInfo.InvariantCulture),
-                                       0, TimeSpan.Zero).AddSeconds(double.Parse(message[0].Substring(4), CultureInfo.InvariantCulture));
-            }
-            Active = (message[1] == "A");
-            Latitude = NmeaMessage.StringToLatitude(message[2], message[3]);
-            Longitude = NmeaMessage.StringToLongitude(message[4], message[5]);
-            Speed = NmeaMessage.StringToDouble(message[6]);
-            Course = NmeaMessage.StringToDouble(message[7]);
-            MagneticVariation = NmeaMessage.StringToDouble(message[9]);            
-            if (!double.IsNaN(MagneticVariation) && message[10] == "W")
-                MagneticVariation *= -1;
-        }
-
-        
+    def get_mode_indicator(self):
         # Fix Time
-        
-        public DateTimeOffset FixTime { get; }
+        public DateTimeOffset FixTime { get }
 
-        
         # Gets a value whether the device is active
-        
-        public bool Active { get; }
+        public bool Active { get }
 
-        
-        # Latitude
-        
-        public double Latitude { get; }
+        TimeSpan ITimestampedMessage.Timestamp => FixTime.TimeOfDay
 
-        
-        # Longitude
-        
-        public double Longitude { get; }
 
-        
-        # Speed over the ground in knots
-        
-        public double Speed { get; }
+    #TestMethod
+    def TestCodeGPRMC():
+        str input = "$GPRMC,123519,A,4807.038,S,01131.000,W,022.4,084.4,230313,003.1,W*6A"
+        var msg = NmeaMessage.Parse(input)
+        Assert.IsInstanceOfType(msg, typeof(Rmc))
+        Rmc rmc = (Rmc)msg
+        Assert.AreEqual(new DateTimeOffset(2013, 03, 23, 12, 35, 19, TimeSpan.Zero), rmc.FixTime)
+        Assert.AreEqual(-48.1173, rmc.Latitude)
+        Assert.AreEqual(-11.516666666666667, rmc.Longitude, 0.0000000001)
 
-        
-        # Track angle in degrees True
-        
-        public double Course { get; }
+        str input = "$GNRMC,231011.00,A,3403.47163804,N,11711.80926595,W,0.019,11.218,201217,12.0187,E,D*01"
+        var msg = NmeaMessage.Parse(input)
+        Assert.IsInstanceOfType(msg, typeof(Rmc))
+        Rmc rmc = (Rmc)msg
+        Assert.AreEqual("GNRMC", rmc.MessageType)
+        Assert.AreEqual(new DateTimeOffset(2017, 12, 20, 23, 10, 11, TimeSpan.Zero), rmc.FixTime)
+        Assert.AreEqual(34.057860634, rmc.Latitude, 0.0000000001)
+        Assert.AreEqual(-117.19682109916667, rmc.Longitude, 0.0000000001)
+        Assert.AreEqual(true, rmc.Active)
+        Assert.AreEqual(11.218, rmc.Course)
+        Assert.AreEqual(12.0187, rmc.MagneticVariation)
+        Assert.AreEqual(0.019, rmc.Speed)
 
-        
-        # Magnetic Variation
-        
-        public double MagneticVariation { get; }
+        pass
 
-        TimeSpan ITimestampedMessage.Timestamp => FixTime.TimeOfDay;
-    }
-}
+    def test_rms_command():
+        testsentence = []
+        testsentence.append("$GPRMC,123519,A,4807.038,S,01131.000,W,022.4,084.4,230313,003.1,W*6A")
+        testsentence.append("$GNRMC,231011.00,A,3403.47163804,N,11711.80926595,W,0.019,11.218,201217,12.0187,E,D*01")

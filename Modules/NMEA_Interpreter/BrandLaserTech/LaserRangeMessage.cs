@@ -17,14 +17,12 @@ using System.Globalization;
 
 namespace NmeaParser.Messages
 {
-    /// <summary>
-    /// Laser Range Measurement
+    #     /// Laser Range Measurement
     /// </summary>
     public abstract class LaserRangeMessage : NmeaMessage
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LaserRangeMessage"/> class.
-        /// </summary>
+        #         /// </summary>
         /// <param name="type">The message type</param>
         /// <param name="message">The NMEA message values.</param>
         protected LaserRangeMessage(string type, string[] message) : base(type, message)
@@ -45,26 +43,22 @@ namespace NmeaParser.Messages
 
         /// <summary>
         /// Gets the horizontal vector.
-        /// </summary>
-        public string HorizontalVector { get; }
+        #         public string HorizontalVector { get; }
 
         /// <summary>
         /// Gets the horizontal distance.
         /// </summary>
-        public double HorizontalDistance { get; }
-
+        # 
         /// <summary>
         /// Gets the units of the <see cref="HorizontalDistance"/> value.
         /// </summary>
         public char HorizontalDistanceUnits { get; }
-
-        /// <summary>
+#         /// <summary>
         /// Gets the horizontal angle.
         /// </summary>
         public double HorizontalAngle { get; }
 
-        /// <summary>
-        /// Gets the units of the <see cref="HorizontalAngle"/> value.
+        #         /// Gets the units of the <see cref="HorizontalAngle"/> value.
         /// </summary>
         public char HorizontalAngleUnits { get; }
 

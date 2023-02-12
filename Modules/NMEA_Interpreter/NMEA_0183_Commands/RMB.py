@@ -184,3 +184,41 @@ class RMB(NMEAMessage):
         Ok,
         # Warning
         Warning,
+
+
+        public void TestGprmb_Empty()
+        {
+            string input = "$GPRMB,A,,,,,,,,,,,,A,A*0B";
+            var msg = NmeaMessage.Parse(input);
+            Assert.IsInstanceOfType(msg, typeof(Rmb));
+            Rmb rmb = (Rmb)msg;
+            Assert.AreEqual(true, rmb.Arrived);
+            Assert.AreEqual(double.NaN, rmb.CrossTrackError);
+            Assert.AreEqual(double.NaN, rmb.DestinationLatitude);
+            Assert.AreEqual(double.NaN, rmb.DestinationLongitude);
+            Assert.AreEqual(0, rmb.DestinationWaypointId);
+            Assert.AreEqual(0, rmb.OriginWaypointId);
+            Assert.AreEqual(double.NaN, rmb.RangeToDestination);
+            Assert.AreEqual(Rmb.DataStatus.Ok, rmb.Status);
+            Assert.AreEqual(double.NaN, rmb.TrueBearing);
+            Assert.AreEqual(double.NaN, rmb.Velocity);
+        }
+
+        [TestMethod]
+        public void TestGprmb()
+        {
+            string input = "$GPRMB,A,0.66,L,003,004,4917.24,S,12309.57,W,001.3,052.5,000.5,V*3D";
+            var msg = NmeaMessage.Parse(input);
+            Assert.IsInstanceOfType(msg, typeof(Rmb));
+            Rmb rmb = (Rmb)msg;
+            Assert.AreEqual(Rmb.DataStatus.Ok, rmb.Status);
+            Assert.AreEqual(-.66, rmb.CrossTrackError);
+            Assert.AreEqual(3, rmb.OriginWaypointId);
+            Assert.AreEqual(4, rmb.DestinationWaypointId);
+            Assert.AreEqual(-49.287333333333333333, rmb.DestinationLatitude);
+            Assert.AreEqual(-123.1595, rmb.DestinationLongitude);
+            Assert.AreEqual(1.3, rmb.RangeToDestination);
+            Assert.AreEqual(52.5, rmb.TrueBearing);
+            Assert.AreEqual(.5, rmb.Velocity);
+            Assert.AreEqual(false, rmb.Arrived);
+        }

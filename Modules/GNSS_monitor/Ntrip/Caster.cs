@@ -17,8 +17,7 @@ using System.Net;
 
 namespace NmeaParser.Gnss.Ntrip
 {
-    /// <summary>
-    /// Gets metadata about the NTRIP Caster
+    #     /// Gets metadata about the NTRIP Caster
     /// </summary>
     public class Caster : NtripSource
     {
@@ -36,9 +35,7 @@ namespace NmeaParser.Gnss.Ntrip
             FallbackAddress = IPAddress.Parse(d[9]);
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Caster"/> class.
-        /// </summary>
+        #         #         /// </summary>
         /// <param name="address"></param>
         /// <param name="port"></param>
         /// <param name="identifier"></param>
@@ -61,49 +58,33 @@ namespace NmeaParser.Gnss.Ntrip
             FallbackAddress = fallbackkAddress;
         }
 
-        /// <summary>
-        /// Gets the caster IP Address
-        /// </summary>
-        public IPAddress Address { get; }
+        #         #         #         public IPAddress Address { get; }
 
-        /// <summary>
-        /// Gets the caster port
-        /// </summary>
-        public int Port { get; }
-
+        #         /// Gets the caster port
+        #         # 
         /// <summary>
         /// Gets the caster identifier
         /// </summary>
-        public string Identifier { get; }
-
-        /// <summary>
+        # #         /// <summary>
         /// Gets the caster operator
         /// </summary>
         public string Operator { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether it supports NMEA
+#         #         /// Gets a value indicating whether it supports NMEA
         /// </summary>
         public bool SupportsNmea { get; }
 
         /// <summary>
-        /// Gets the country code for the caster origin
-        /// </summary>
+        #         /// </summary>
         public string CountryCode { get; }
 
         /// <summary>
-        /// Gets the latitude for the caster
-        /// </summary>
-        public double Latitude { get; }
+        #         #         public double Latitude { get; }
         
         /// <summary>
         /// Gets the longitude for the caster
-        /// </summary>
-        public double Longitude { get; }
-
+        #         # 
         /// <summary>
         /// Gets the fallback address for the caster
         /// </summary>
-        public IPAddress FallbackAddress { get; }
-    }
-}
+        #     }# }
+# # 

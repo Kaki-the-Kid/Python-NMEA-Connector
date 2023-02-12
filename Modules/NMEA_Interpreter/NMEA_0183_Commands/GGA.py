@@ -1,10 +1,25 @@
 ﻿# ****************************************************************************//*
 # *   @project  Python NMEA Connector
-# *   @file     RSD.py
-# *   @brief    Radar System Data
+# *   @file     GGA.py
+# *   @brief    GGA - Global Positioning System Fix Data
 # *   @author   Karsten Reitan Sørensen
 # *   Date:     11-02-2023
 # *******************************************************************************
+# In NMEA 0183, GGA stands for Global Positioning System Fix Data. It is one of 
+# the sentences used in the NMEA 0183 protocol to provide essential fix data for 
+# navigation. The GGA sentence provides information about the current time, 
+# position, altitude, and the quality of the GPS fix. The data can be used by a 
+# GPS receiver to determine the latitude, longitude, and altitude of the device, 
+# as well as the number of satellites being used to provide the fix and the 
+# accuracy of the data.
+#
+# The GGA sentence is one of the most commonly used sentences in the NMEA 0183
+# protocol. It is used to provide essential fix data for navigation. The GGA
+# sentence provides information about the current time, position, altitude, and
+# the quality of the GPS fix. The data can be used by a GPS receiver to determine
+# the latitude, longitude, and altitude of the device, as well as the number of
+# satellites being used to provide the fix and the accuracy of the data.
+
 
 from NMEA0183_Commands import NMEA0183_Command as NMEAMessage
 
@@ -33,12 +48,12 @@ class GGA(NMEAMessage):
         
         # Fix Quality
         self.__fix_quality = None
-        if (not string.IsNullOrEmpty(NMEAMessage[5])):
+        if (not str.IsNullOrEmpty(NMEAMessage[5])):
             Quality =  (Gga.FixQuality)int.Parse(NMEAMessage[5], CultureInfo.InvariantCulture)
         #def Gga.FixQuality Quality { get }
 
         self.__number_of_satellites = None
-        if (mot string.IsNullOrEmpty(NMEAMessage[6])):
+        if (mot str.IsNullOrEmpty(NMEAMessage[6])):
             NumberOfSatellites = int.Parse(NMEAMessage[6], CultureInfo.InvariantCulture)
         self.__horizontal_dilution = None
         Hdop = NMEAMessage.StringToDouble(NMEAMessage[7])
@@ -75,7 +90,7 @@ class GGA(NMEAMessage):
     def double Altitude { get }
 
     #/ Altitude units ('M' for Meters)
-    def string AltitudeUnits { get }
+    def str AltitudeUnits { get }
 
     #/ Geoidal separation: the difference between the WGS-84 earth ellipsoid surface and mean-sea-level (geoid) surface.
     #/ <remarks>
@@ -87,7 +102,7 @@ class GGA(NMEAMessage):
     #/ <summary>
     #/ Altitude units ('M' for Meters)
     #/ </summary>
-    def string GeoidalSeparationUnits { get }
+    def str GeoidalSeparationUnits { get }
 
     #/ <summary>
     #/ Time since last DGPS update (ie age of the differential GPS data)
@@ -100,8 +115,8 @@ class GGA(NMEAMessage):
     def int DgpsStationId { get }
 
             
-        FixTime = StringToTimeSpan(NMEAMessage[0])
-        timeInSeconds = StringToDouble(NMEAMessage[12])
+    FixTime = StringToTimeSpan(NMEAMessage[0])
+    timeInSeconds = StringToDouble(NMEAMessage[12])
         
             
     @property
@@ -220,3 +235,76 @@ class GGA(NMEAMessage):
         ManualInput = 7,
         #/ <summary>Simulator mode</summary>
         Simulation = 8
+        
+    def TestGpgga():
+        str input = "$GPGGA,235236,3925.9479,N,11945.9211,W,1,10,0.8,1378.0,M,-22.1,M,,*46"
+        msg = NmeaMessage.Parse(input)
+        Assert.IsInstanceOfType(msg, typeof(Gga))
+        Gga gga = (Gga)msg
+        Assert.AreEqual(new TimeSpan(23, 52, 36), gga.FixTime)
+        Assert.AreEqual(39.432465, gga.Latitude)
+        Assert.AreEqual(-119.7653516666666667, gga.Longitude, 0.0000000001)
+        Assert.AreEqual(Gga.FixQuality.GpsFix, gga.Quality)
+        Assert.AreEqual(10, gga.NumberOfSatellites)
+        Assert.AreEqual(.8, gga.Hdop)
+        Assert.AreEqual(1378, gga.Altitude)
+        Assert.AreEqual("M", gga.AltitudeUnits)
+        Assert.AreEqual(-22.1, gga.GeoidalSeparation)
+        Assert.AreEqual("M", gga.GeoidalSeparationUnits)
+        Assert.AreEqual(-1, gga.DgpsStationId)
+        Assert.IsNull(gga.TimeSinceLastDgpsUpdate)
+        
+        pass
+
+    #[TestMethod]
+    def TestGngga():
+        str input = "$GNGGA,231011.00,3403.47163804,N,11711.80926595,W,5,13,0.9,403.641,M,-32.133,M,1.0,0000*6D"
+        msg = NmeaMessage.Parse(input)
+        Assert.IsInstanceOfType(msg, typeof(Gga))
+        Gga gga = (Gga)msg
+        Assert.AreEqual(new TimeSpan(23, 10, 11), gga.FixTime)
+        Assert.AreEqual(34.057860634, gga.Latitude)
+        Assert.AreEqual(-117.19682109916667, gga.Longitude, 0.0000000001)
+        Assert.AreEqual(Gga.FixQuality.FloatRtk, gga.Quality)
+        Assert.AreEqual(13, gga.NumberOfSatellites)
+        Assert.AreEqual(.9, gga.Hdop)
+        Assert.AreEqual(403.641, gga.Altitude)
+        Assert.AreEqual("M", gga.AltitudeUnits)
+        Assert.AreEqual(-32.133, gga.GeoidalSeparation)
+        Assert.AreEqual("M", gga.GeoidalSeparationUnits)
+        Assert.AreEqual(0, gga.DgpsStationId)
+        Assert.AreEqual(TimeSpan.FromSeconds(1), gga.TimeSinceLastDgpsUpdate)
+        
+        pass
+
+
+    #[TestMethod]
+    def TestGPGGA_NoSats():
+        str: input = "$GPGGA,181651.98,3403.47163804,N,11711.80926595,W,0,,,,M,,M,,*6E"
+        msg = NmeaMessage.Parse(input)
+        Assert.IsInstanceOfType(msg, typeof(Gga))
+        Gga gga = (Gga)msg
+        Assert.AreEqual(0, gga.NumberOfSatellites)
+        
+        pass
+
+
+    #[TestMethod]
+    def TestGPGGA_Empty():
+        str: input = "$GPGGA,,,,,,,,,,,,,,*56"
+        msg = NmeaMessage.Parse(input)
+        Assert.IsInstanceOfType(msg, typeof(Gga))
+        Gga gga = (Gga)msg
+        Assert.AreEqual(0, gga.NumberOfSatellites)
+        Assert.AreEqual(Gga.FixQuality.Invalid, gga.Quality)
+        Assert.IsTrue(double.IsNaN(gga.GeoidalSeparation))
+        Assert.AreEqual(str.Empty, gga.GeoidalSeparationUnits)
+        Assert.IsTrue(double.IsNaN(gga.Longitude))
+        Assert.IsTrue(double.IsNaN(gga.Latitude))
+        Assert.IsTrue(double.IsNaN(gga.Altitude))
+        Assert.AreEqual(str.Empty, gga.AltitudeUnits)
+        Assert.IsTrue(double.IsNaN(gga.Hdop))
+        Assert.IsNull(gga.TimeSinceLastDgpsUpdate)
+        Assert.AreEqual(TimeSpan.Zero, gga.FixTime)
+        Assert.AreEqual(-1, gga.DgpsStationId)
+        pass

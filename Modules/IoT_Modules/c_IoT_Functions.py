@@ -9,31 +9,38 @@ class IoTFunctions:
         self.client.on_disconnect = self.on_disconnect
         self.client.on_unsubscribe = self.on_unsubscribe
 
-    def on_connect(self, client, userdata, flags, rc):
+    @staticmethod
+    def on_connect(client, userdata, flags, rc):
         print("Connected with result code "+str(rc))
         # Subscribing in on_connect() means that if we lose the connection and
         # reconnect then subscriptions will be renewed.
         client.subscribe("iot-2/type/+/id/+/evt/+/fmt/+")
 
-    def on_message(self, client, userdata, msg):
+    @staticmethod
+    def on_message(client, userdata, msg):
         print(msg.topic+" "+str(msg.payload))
 
-    def on_publish(self, client, userdata, mid):
+    @staticmethod
+    def on_publish(client, userdata, mid):
         print("mid: "+str(mid))
 
-    def on_subscribe(self, client, userdata, mid, granted_qos):
+    @staticmethod
+    def on_subscribe(client, userdata, mid, granted_qos):
         print("Subscribed: "+str(mid)+" "+str(granted_qos))
 
-    def on_log(self, client, userdata, level, buf):
+    @staticmethod
+    def on_log(client, userdata, level, buf):
         print("log: "+buf)
 
-    def on_disconnect(self, client, userdata, rc):
+    @staticmethod
+    def on_disconnect(client, userdata, rc):
         if rc != 0:
             print("Unexpected disconnection.")
 
-    def on_unsubscribe(self, client, userdata, mid):
+    @staticmethod
+    def on_unsubscribe(client, userdata, mid):
         print("Unsubscribed: "+str(mid))
     
     def publish(self, topic, payload, qos=0, retain=False):
         self.client.publish(topic, payload, qos, retain)   
-        
+        pass

@@ -21,8 +21,7 @@ using System.Threading.Tasks;
 
 namespace NmeaParser
 {
-    /// <summary>
-    /// A file-based NMEA device reading from a NMEA log file.
+    #     /// A file-based NMEA device reading from a NMEA log file.
     /// </summary>
     public class NmeaFileDevice : BufferedStreamDevice
     {
@@ -32,40 +31,26 @@ namespace NmeaParser
         private string m_filename;
 
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NmeaFileDevice"/> class.
-        /// </summary>
+        #         #         /// </summary>
         /// <param name="fileName"></param>
         public NmeaFileDevice(string fileName) : this(fileName, 1000)
         {
         }
 
 #if NETFX_CORE
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NmeaFileDevice"/> class.
-        /// </summary>
-        /// <param name="storageFile"></param>
+        #         #         #         /// <param name="storageFile"></param>
         public NmeaFileDevice(Windows.Storage.IStorageFile storageFile) : this(storageFile, 1000)
         {
         }
 #endif
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NmeaFileDevice"/> class.
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <param name="readSpeed">The time to wait between each group of lines being read in milliseconds</param>
+        #         #         #         #         /// <param name="readSpeed">The time to wait between each group of lines being read in milliseconds</param>
         public NmeaFileDevice(string fileName, int readSpeed) : base(readSpeed)
         {
             m_filename = fileName;
         }
 
 #if NETFX_CORE
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NmeaFileDevice"/> class.
-        /// </summary>
-        /// <param name="storageFile"></param>
-        /// <param name="readSpeed">The time to wait between each group of lines being read in milliseconds</param>
-        public NmeaFileDevice(Windows.Storage.IStorageFile storageFile, int readSpeed)
+        #         #         #         #         #         public NmeaFileDevice(Windows.Storage.IStorageFile storageFile, int readSpeed)
             : base(readSpeed)
         {
             m_storageFile = storageFile ?? throw new ArgumentNullException(nameof(storageFile));
@@ -73,13 +58,8 @@ namespace NmeaParser
         }
 #endif
 
-        /// <summary>
-        /// Gets the name of the nmea file this device is using.
-        /// </summary>
-        public string FileName
-        {
-            get
-            {
+        #         #         #         public string FileName
+        #         #             {
                 return m_filename;
             }
         }

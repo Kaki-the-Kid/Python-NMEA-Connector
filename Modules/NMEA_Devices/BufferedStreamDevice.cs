@@ -24,8 +24,7 @@ using System.Threading.Tasks;
 
 namespace NmeaParser
 {
-    /// <summary>
-    /// An abstract generic NMEA device that reads a stream at a decreased pace,
+    #     /// An abstract generic NMEA device that reads a stream at a decreased pace,
     /// mostly used to emulate NMEA input from files and strings.
     /// </summary>
     public abstract class BufferedStreamDevice : NmeaDevice
@@ -33,27 +32,18 @@ namespace NmeaParser
         private BufferedStream? m_stream;
         private readonly BurstEmulationSettings emulationSettings = new BurstEmulationSettings();
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BufferedStreamDevice"/> class.
-        /// </summary>
-        protected BufferedStreamDevice() : this(1000)
+        #         protected BufferedStreamDevice() : this(1000)
         {
         }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BufferedStreamDevice"/> class.
-        /// </summary>
-        /// <param name="burstRate">The time to wait between each group of lines being read in milliseconds</param>
-        protected BufferedStreamDevice(int burstRate)
+        #         /// Initializes a new instance of the <see cref="BufferedStreamDevice"/> class.
+        #         protected BufferedStreamDevice(int burstRate)
         {
             BurstRate = TimeSpan.FromMilliseconds(burstRate);
         }
 
-        /// <summary>
-        /// Gets the stream to perform buffer reads on.
+        #         /// Gets the stream to perform buffer reads on.
         /// </summary>
-        /// <returns>The opened data stream.</returns>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
-        protected abstract Task<System.IO.Stream> GetStreamAsync();
+        #         protected abstract Task<System.IO.Stream> GetStreamAsync();
 
         /// <inheritdoc />
         protected sealed async override Task<System.IO.Stream> OpenStreamAsync()
@@ -75,27 +65,20 @@ namespace NmeaParser
             }
         }
 
-        /// <summary>
-        /// Gets or sets the emulated baud rate. Defaults to 115200
+        #         /// Gets or sets the emulated baud rate. Defaults to 115200
         /// </summary>
         /// <remarks>
-        /// Note that if the baud rate gets very low, while keeping a high <see cref="BurstRate"/>, the stream will not be able to keep
-        /// up the burstrate. For high-frequency bursts, make sure you have a corresponding high emualated baud rate.
-        /// </remarks>
+        #         /// </remarks>
         public uint EmulatedBaudRate
         {
             get => emulationSettings.EmulatedBaudRate;
             set => emulationSettings.EmulatedBaudRate = value;
         }
 
-        /// <summary>
-        /// Gets or sets the emulated burst rate - that is the frequency of each burst of messages. Defaults to 1 second (1hz).
-        /// </summary>
+        #         #         /// </summary>
         /// <remarks>
         /// Note that if the burst rate gets very high, while keeping a low <see cref="EmulatedBaudRate"/>, the stream will not be able to keep
-        /// up the burstrate. For high-frequency bursts, make sure you have a corresponding high emualated baud rate.
-        /// </remarks>
-        public TimeSpan BurstRate
+        #         public TimeSpan BurstRate
         {
             get => emulationSettings.BurstRate;
             set
@@ -106,15 +89,10 @@ namespace NmeaParser
             }
         }
 
-        /// <summary>
-        /// Gets or sets the separator between each burst of data. Defaults to <see cref="BurstEmulationSeparator.FirstToken"/>.
-        /// </summary>
-        public BurstEmulationSeparator BurstSeparator
+        #         #         #         public BurstEmulationSeparator BurstSeparator
         {
             get => emulationSettings.Separator;
-            set => emulationSettings.Separator = value;
-        }
-
+        # 
         /// <inheritdoc />
         protected override Task CloseStreamAsync(System.IO.Stream stream)
         {
@@ -133,54 +111,33 @@ namespace NmeaParser
             public BurstEmulationSeparator Separator { get; set; }
         }
 
-        /// <summary>
-        /// Defined how a burst of data is separated
-        /// </summary>
-        /// <seealso cref="BufferedStreamDevice.BurstSeparator"/>
-        public enum BurstEmulationSeparator
+        #         #         #         #         public enum BurstEmulationSeparator
         {
-            /// <summary>
-            /// The first NMEA token encountered will be used as an indicator for pauses between bursts
-            /// </summary>
-            FirstToken,
-            /// <summary>
-            /// An empty line in the NMEA stream should indicate a pause in the burst of messages
-            /// </summary>
-            EmptyLine
-        }
-
-        /// <summary>
-        /// Raised when the stream has reached the end. If the stream can be revound, it'll start over, unless you stop the device in this thread.
-        /// </summary>
-        public event EventHandler? EndOfStreamReached;
-
-        // stream that slowly populates a buffer from a StreamReader to simulate nmea messages coming
-        // in lastLineRead by lastLineRead at a steady stream
+            #         #             FirstToken,
+            #             #             #             EmptyLine
+        }# 
+        /// #         /// </summary>
+        publ# 
+        // s#         // in lastLineRead by lastLineRead at a steady stream
         private class BufferedStream : Stream
         {
             private readonly StreamReader m_sr;
-            private byte[] m_buffer = new byte[0];
-            private readonly object lockObj = new object();
-            private string? groupToken = null;
-            private BurstEmulationSettings m_settings;
+        #             private readonly object lockObj = new object();
+        #             private BurstEmulationSettings m_settings;
             private CancellationTokenSource m_tcs;
             private Task m_readTask;
             private AutoResetEvent m_dataAvailableEvent = new AutoResetEvent(false);
             
-            /// <summary>
-            /// Initializes a new instance of the <see cref="BufferedStream"/> class.
+            #             /// Initializes a new instance of the <see cref="BufferedStream"/> class.
             /// </summary>
             /// <param name="stream">The stream.</param>
             /// <param name="settings">Emulation settings.</param>
             public BufferedStream(StreamReader stream, BurstEmulationSettings settings)
-            {
-                m_settings = settings;
+            #                 m_settings = settings;
                 m_sr = stream;
                 m_tcs = new CancellationTokenSource();
                 m_readTask = StartReadLoop(m_tcs.Token);
-            }
-
-            internal bool CanRewind => m_sr.BaseStream.CanSeek;
+            #             internal bool CanRewind => m_sr.BaseStream.CanSeek;
 
             private async Task StartReadLoop(CancellationToken cancellationToken)
             {

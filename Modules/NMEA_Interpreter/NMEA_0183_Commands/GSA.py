@@ -152,3 +152,23 @@ class GSA(NMEAMessage):
         NotAvailable = 1,#Not available
         Fix2D = 2, #2D Fix
         Fix3D = 3  #3D Fix
+
+
+        [TestMethod]
+        public void TestGpgsa_Empty()
+        {
+            string input = "$GPGSA,A,3,,,,,,16,18,,22,24,,,,,*14";
+            var msg = NmeaMessage.Parse(input);
+            Assert.IsInstanceOfType(msg, typeof(Gsa));
+            Gsa gsa = (Gsa)msg;
+            Assert.AreEqual(Gsa.ModeSelection.Auto, gsa.Mode);
+            Assert.AreEqual(Gsa.FixType.Fix3D, gsa.Fix);
+            Assert.AreEqual(4, gsa.SatelliteIDs.Length);
+            Assert.AreEqual(16, gsa.SatelliteIDs[0]);
+            Assert.AreEqual(18, gsa.SatelliteIDs[1]);
+            Assert.AreEqual(22, gsa.SatelliteIDs[2]);
+            Assert.AreEqual(24, gsa.SatelliteIDs[3]);
+            Assert.AreEqual(double.NaN, gsa.Pdop);
+            Assert.AreEqual(double.NaN, gsa.Hdop);
+            Assert.AreEqual(double.NaN, gsa.Vdop);
+        }

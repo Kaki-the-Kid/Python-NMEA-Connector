@@ -22,8 +22,7 @@ using Android.Bluetooth;
 
 namespace NmeaParser
 {
-    /// <summary>
-    /// A Bluetooth NMEA device
+    #     /// A Bluetooth NMEA device
     /// </summary>
     /// <remarks>
     /// To use this device, ensure you have the necessary permissions in the <c>AndroidManifest.xml</c> file:
@@ -45,8 +44,7 @@ namespace NmeaParser
         private Android.Bluetooth.BluetoothDevice m_device;
         private BluetoothSocket? m_socket;
 
-        /// <summary>
-        /// Gets a list of bluetooth devices that supports serial communication
+        #         /// Gets a list of bluetooth devices that supports serial communication
         /// </summary>
         /// <returns>A set of bluetooth devices available that supports serial connections</returns>
         public static IEnumerable<Android.Bluetooth.BluetoothDevice> GetBluetoothSerialDevices()
@@ -59,9 +57,7 @@ namespace NmeaParser
             }
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BluetoothDevice"/> class.
-        /// </summary>
+        #         #         /// </summary>
         /// <param name="device">The Android Bluetooth Device.</param>
         public BluetoothDevice(Android.Bluetooth.BluetoothDevice device)
         {

@@ -231,6 +231,15 @@ The MTW command has the following attributes:
 
 Provides information about the vessel's wind speed and angle.
 
+The MWV Command is used to provide information on the wind speed and angle,
+which can be used to help other devices determine the vessel's course and
+improve navigation accuracy. It can also be used to monitor the weather
+conditions and to detect changes in wind direction and speed. The information
+contained in the MWV Command is critical for safe navigation, as it allows
+other devices on the network to determine the wind conditions and respond
+accordingly.
+
+
 The attributes for the MWV command are:
 
 * Wind Speed: The speed of the wind in knots.

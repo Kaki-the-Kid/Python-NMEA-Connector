@@ -28,4 +28,24 @@ namespace NmeaParser.Messages.Trimble
         /// <param name="message">The NMEA message values.</param>
         public Ptnla(string type, string[] message) : base(type, message) { }
     }
+    
+    [TestMethod]
+    public void TestPtlna()
+    {
+        string input = "$PTNLA,HV,002.94,M,288.1,D,008.6,D,002.98,M*74";
+        var msg = NmeaMessage.Parse(input);
+        Assert.IsInstanceOfType(msg, typeof(NmeaParser.Messages.Trimble.Ptnla));
+        Assert.AreEqual(Talker.ProprietaryCode, msg.TalkerId);
+        NmeaParser.Messages.Trimble.Ptnla ptlna = (NmeaParser.Messages.Trimble.Ptnla)msg;
+        Assert.AreEqual(2.94, ptlna.HorizontalDistance);
+        Assert.AreEqual('M', ptlna.HorizontalDistanceUnits);
+        Assert.AreEqual(288.1, ptlna.HorizontalAngle);
+        Assert.AreEqual('D', ptlna.HorizontalAngleUnits);
+        Assert.AreEqual(8.6, ptlna.VerticalAngle);
+        Assert.AreEqual('D', ptlna.VerticalAngleUnits);
+        Assert.AreEqual(2.98, ptlna.SlopeDistance);
+        Assert.AreEqual('M', ptlna.SlopeDistanceUnits);
+    }
 }
+
+
