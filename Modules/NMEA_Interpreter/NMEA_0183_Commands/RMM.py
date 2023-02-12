@@ -1,37 +1,110 @@
 ﻿# ****************************************************************************//*
-# *   @project  Python NMEA Connector
-# *   @file     BWC.py
-# *   @brief    Cross Track Error, Measured
-# *   @author   Karsten Reitan Sørensen
-# *   Date:     11-02-2023
+# @project  Python NMEA Connector
+# @title:   NMEA0183 RMM Command
+# @file     RMM.py
+# @brief    Recommended minimum navigation information
+# @author   Karsten Reitan Sørensen
+# @created: 11-02-2023
+# *******************************************************************************
+# The RMM Command is used to share navigation information between devices on 
+# the network and can be used to help other devices determine their position 
+# and improve navigation accuracy.
+# *******************************************************************************
+# NMEA 0183 is a standard for communicating marine data between various navigation 
+# devices and systems. The RMM (Recommended Minimum Navigation Information) Command 
+# is a specific type of NMEA 0183 message that provides navigation information to 
+# other devices on the network. The RMM Command contains the following attributes:
+#
+# * Message ID: 
+#   A two-letter identifier that indicates the type of message being sent. For the RMM Command, 
+#   the Message ID is "AP".
+# * UTC Time:
+#   The Coordinated Universal Time (UTC) of the device sending the message.
+# * Latitude:
+#   The latitude of the device sending the message, in decimal degrees.
+# * Latitude Hemisphere: 
+#   The hemisphere in which the latitude is located, either "N" for North or "S" for South.
+# * Longitude:
+#   The longitude of the device sending the message, in decimal degrees.
+# * Longitude Hemisphere:
+#   The hemisphere in which the longitude is located, either "E" for East or "W" for West.
+# * Speed Over Ground:
+#   The speed of the device over the ground, in knots.
+# * Course Over Ground:
+#   The course of the device over the ground, in degrees.
+# * Variation:
+#   The magnetic variation at the device's location, in degrees.
+# * Variation Hemisphere:
+#   The hemisphere in which the variation is located, either "E" for East or "W" for West.
+# * Mode Indicator:
+#   An indicator of the device's navigation mode, either "A" for autonomous, "D" for 
+#   differential, or "E" for estimated.
+#
+# Example:
+# $GPRMM,A,4916.45,N,12311.12,W,225444,A*35
 # *******************************************************************************
 
 from NMEA0183_Commands import NMEA0183_Command
 
 
-class BWC(NMEA0183_Command):
-# *******************************************************************************
-# Title: NMEA 0183 RMM Command
-
-# Description: RMM Command
-
-# Generated: 2018-04-06 11:34:50.00000
-
-# *******************************************************************************
-
-from NMEA0183_Commands import NMEA0183_Command
-
-# *******************************************************************************
-# RMM - Recommended minimum navigation information
-# *******************************************************************************
-class RMM(NMEA_Command):
+class RMM(NMEA0183_Command):
     
-    class RMM:
-    def __init__(self):
+    def __init__(self, sentence):
+        self._datasentence = sentence.split(',')
+        
         self.__mode_indicator = None
         self.__cross_track_error = None
         self.__direction_to_steer = None
         self.__arrival_circle_entered = None
+        
+        
+        
+    # Make setter and getter for each field
+    def __init__(self):
+        self.__status = None
+        self.__latitude = None
+        self.__longitude = None
+        self.__time_difference_A = None
+        self.__time_difference_B = None
+        self.__speed = None
+        self.__course = None
+        self.__magnetic_variation = None
+        self.__mode = None
+        
+        
+        #   A two-letter identifier that indicates the type of message being sent. For the RMM Command, 
+        # * Message ID: the Message ID is "AP".
+        
+        # * UTC Time:
+        #   The Coordinated Universal Time (UTC) of the device sending the message.
+        
+        # * Latitude:
+        #   The latitude of the device sending the message, in decimal degrees.
+
+        # * Latitude Hemisphere: 
+        #   The hemisphere in which the latitude is located, either "N" for North or "S" for South.
+
+        # * Longitude:
+        #   The longitude of the device sending the message, in decimal degrees.
+
+        # * Longitude Hemisphere:
+        #   The hemisphere in which the longitude is located, either "E" for East or "W" for West.
+
+        # * Speed Over Ground:
+        #   The speed of the device over the ground, in knots.
+
+        # * Course Over Ground:
+        #   The course of the device over the ground, in degrees.
+
+        # * Variation:
+        #   The magnetic variation at the device's location, in degrees.
+
+        # * Variation Hemisphere:
+        #   The hemisphere in which the variation is located, either "E" for East or "W" for West.
+
+        # * Mode Indicator:
+        #   An indicator of the device's navigation mode, either "A" for autonomous, "D" for 
+        #   differential, or "E" for estimated.
     
     def set_mode_indicator(self, mode_indicator):
         self.__mode_indicator = mode_indicator
@@ -57,175 +130,16 @@ class RMM(NMEA_Command):
     def get_arrival_circle_entered(self):
         return self.__arrival_circle_entered
 
-
-
-# Make setter and getter forr each field
-    def __init__(self):
-        self.__status = None
-        self.__latitude = None
-        self.__longitude = None
-        self.__time_difference_A = None
-        self.__time_difference_B = None
-        self.__speed = None
-        self.__course = None
-        self.__magnetic_variation = None
-        self.__mode = None
-        
     @property   
     def status(self):
         return self.__status    
     
-    @status.setter          
-                    
-                    
-namespace NmeaParser.Messages
-{
-    
-    # Recommended minimum specific Loran-C Data
-    
-    # <remarks>
-    # <para>Position, course and speed data provided by a Loran-C receiver. Time differences A and B are those used in computing latitude/longitude.
-    # This sentence is transmitted at intervals not exceeding 2-seconds and is always accompanied by <see cref="Rmb"/> when a destination waypoint is active.</para>
-    # </remarks>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Gprmb")]
-    [NmeaMessageType("--RMA")]
-    public class Rma : NmeaMessage, IGeographicLocation
-    {
-        
-        # Positioning system status field
-        
-        public enum PositioningStatus
-        {
-            
-            # Data not valid
-            
-            Invalid = 0,
-            
-            # Autonomous
-            
-            Autonomous,
-            
-            # Differential
-            
-            Differential
-        }
+    @status.setter
+    def status(self, value):
+        self.__status = value       
 
+    def test_command():
+        testsentence = []
+        testsentence.append("$GPRMM,A,4916.45,N,12311.12,W,225444,A*35")
         
-        # Positioning system mode indicator
-        
-        public enum PositioningMode
-        {
-            
-            # Data not valid
-            
-            NotValid = 0,
-            
-            # Autonomous mode
-            
-            Autonomous,
-            
-            # Differential mode
-            
-            Differential,
-            
-            # Estimated (dead reckoning) mode
-            
-            Estimated,
-            
-            # Manual input mode
-            
-            Manual,
-            
-            # Simulator mode
-            
-            Simulator,
-        }
-        
-        # Initializes a new instance of the <see cref="Rma"/> class.
-        
-        # <param name="type">The message type</param>
-        # <param name="message">The NMEA message values.</param>
-        public Rma(string type, string[] message) : base(type, message)
-        {
-            if (message == null || message.Length < 12)
-                rasie Exception("Invalid RMA: {}".message)
-
-            Status = message[0] == "A" ? PositioningStatus.Autonomous : (message[0] == "D" ? PositioningStatus.Differential : PositioningStatus.Invalid);
-            Latitude = NmeaMessage.StringToLatitude(message[1], message[2]);
-            Longitude = NmeaMessage.StringToLongitude(message[3], message[4]);
-            if (double.TryParse(message[5], NumberStyles.Float, CultureInfo.InvariantCulture, out double tmp))
-                TimeDifferenceA = TimeSpan.FromMilliseconds(tmp / 1000);
-            if (double.TryParse(message[6], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                TimeDifferenceB = TimeSpan.FromMilliseconds(tmp / 1000);
-            if (double.TryParse(message[7], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                Speed = tmp;
-            else
-                Speed = double.NaN;
-            if (double.TryParse(message[8], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                Course = tmp;
-            else
-                Course = double.NaN;
-            if (double.TryParse(message[9], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                MagneticVariation = tmp * (message[10] == "E" ? -1 : 1);
-            else
-                MagneticVariation = double.NaN;
-
-            switch (message[11])
-            {
-                case "A": Mode = PositioningMode.Autonomous; break;
-                case "D": Mode = PositioningMode.Autonomous; break;
-                case "E": Mode = PositioningMode.Estimated; break;
-                case "M": Mode = PositioningMode.Manual; break;
-                case "S": Mode = PositioningMode.Simulator; break;
-                case "N":
-                default:
-                    Mode = PositioningMode.Autonomous; break;
-            }
-        }
-
-        
-        # Positioning system status
-        
-        public PositioningStatus Status { get; }
-
-        
-        # Latitude
-        
-        public double Latitude { get; }
-
-        
-        # Longitude
-        
-        public double Longitude { get; }
-
-        
-        # Time difference A
-        
-        public TimeSpan TimeDifferenceA { get; }
-
-        
-        # Time difference B
-        
-        public TimeSpan TimeDifferenceB { get; }
-
-        
-        # Speed over ground in knots.
-        
-        public double Speed { get; }
-
-        
-        # Course over ground in degrees from true north
-        
-        public double Course { get; }
-
-        
-        # Magnetic variation in degrees.
-        
-        public double MagneticVariation { get; }
-
-        
-        # Positioning system mode indicator
-        
-        public PositioningMode Mode { get; }
-    }
-}
+        return testsentence
