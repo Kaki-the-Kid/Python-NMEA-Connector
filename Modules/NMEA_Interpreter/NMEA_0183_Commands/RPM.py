@@ -1,46 +1,59 @@
 ﻿# ****************************************************************************//*
 # *   @project  Python NMEA Connector
-# *   @file     BWC.py
-# *   @brief    Cross Track Error, Measured
+# *   @file     RPM.py
+# *   @brief    RPM Command provides information on rpm of a vessel's propellers
 # *   @author   Karsten Reitan Sørensen
 # *   Date:     11-02-2023
 # *******************************************************************************
+# RPM (Revolutions) Command is a specific type of NMEA 0183 message that provides 
+# information on the revolutions per minute (RPM) of a vessel's propellers, which 
+# can be used to help other devices determine the vessel's speed and improve 
+# navigation accuracy. It can also be used to monitor the performance of the vessel's 
+# propulsion system and to detect faults or problems. The information contained in 
+# the RPM Command is critical for safe navigation, as it allows other devices on 
+# the network to determine the vessel's speed and respond accordingly.
+# 
+# The RPM Command contains the following attributes:
+#
+# - Message ID: 
+#   A two-letter identifier that indicates the type of message being sent. For the 
+#   RPM Command, the Message ID is "AP".
+# - Source ID:
+#   A single-letter identifier that indicates the source of the RPM data, either "P" 
+#   for port or "S" for starboard.
+# - Engine Speed:
+#   The speed of the engine, in revolutions per minute.
+# - Propulsion Flag:
+#   A single-letter identifier that indicates the propulsion status of the engine,
+#   either "F" for forward or "R" for reverse.
+# - Status:
+#   An indicator of the status of the RPM data, either "A" for valid or "V" for
+#   invalid.
+#
+# *******************************************************************************
 
 from NMEA0183_Commands import NMEA0183_Command
 
 
-class BWC(NMEA0183_Command):
-# *******************************************************************************
-# *                                                                             *
-# *   NMEA 0183 Parser                                                          *
-# *   Boat System Software                                                      *
-# *                                                                             *   
-# *   NmeaParser - NMEA 0183 Parser                                             *
-# *                                                                             *
-# *   NmeaParser is free software: you can redistribute it and/or modify        *
-# *   it under the terms of the GNU General Public License as published by      *
-# *   the Free Software Foundation, either version 3 of the License, or         *
-# *   (at your option) any later version.                                       *   
-# *                                                                             *   
-# *   NmeaParser is distributed in the hope that it will be useful,             *
-# *   but WITHOUT ANY WARRANTY; without even the implied warranty of            *
-# *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             *
-# *   GNU General Public License for more details.                              *
-# *                                                                             *
-# *   You should have received a copy of the GNU General Public License         *
-# *   along with NmeaParser.  If not, see <http://www.gnu.org/licenses/>.       *
-# *                                                                             *
-# *******************************************************************************
-
-from NMEA0183_Commands import NMEA0183_Command
-
-class RPM:
-    def init(self):
-    self.__source = None
-    self.__direction = None
-    self.__revolutions = None
-
-
+class RPM(NMEA0183_Command):
+    
+    def init(self, sentence):
+        self._datasentence = sentence.split(',')
+        
+        # - Message ID: 
+        if (self._datasentence.length < 5):
+            raise Exception("Invalid RPM sentence: {}".sentence)
+            
+        self._messageid = self._datasentence[0]
+        # - Source ID:
+        self._sourceid = self._datasentence[1]
+        # - Engine Speed:
+        self._enginespeed = self._datasentence[2]
+        # - Propulsion Flag:
+        self._propulsion = self._datasentence[3]        
+        # - Status:
+        self._status = self._datasentence[4]
+        
     # Getter function for source
     @property
     def source(self):
@@ -71,151 +84,3 @@ class RPM:
     def revolutions(self, revolutions):
         self.__revolutions = revolutions
 
-    # Recommended minimum specific Loran-C Data
-    
-    # <remarks>
-    # <para>Position, course and speed data provided by a Loran-C receiver. Time differences A and B are those used in computing latitude/longitude.
-    # This sentence is transmitted at intervals not exceeding 2-seconds and is always accompanied by <see cref="Rmb"/> when a destination waypoint is active.</para>
-    # </remarks>
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Gprmb")]
-    [NmeaMessageType("--RMA")]
-    public class Rma : NmeaMessage, IGeographicLocation
-    {
-        
-        # Positioning system status field
-        
-        public enum PositioningStatus
-        {
-            
-            # Data not valid
-            
-            Invalid = 0,
-            
-            # Autonomous
-            
-            Autonomous,
-            
-            # Differential
-            
-            Differential
-        }
-
-        
-        # Positioning system mode indicator
-        
-        public enum PositioningMode
-        {
-            
-            # Data not valid
-            
-            NotValid = 0,
-            
-            # Autonomous mode
-            
-            Autonomous,
-            
-            # Differential mode
-            
-            Differential,
-            
-            # Estimated (dead reckoning) mode
-            
-            Estimated,
-            
-            # Manual input mode
-            
-            Manual,
-            
-            # Simulator mode
-            
-            Simulator,
-        }
-        
-        # Initializes a new instance of the <see cref="Rma"/> class.
-        
-        # <param name="type">The message type</param>
-        # <param name="message">The NMEA message values.</param>
-        public Rma(string type, string[] message) : base(type, message)
-        {
-            if (message == null || message.Length < 12)
-                rasie Exception("Invalid RMA: {}".message)
-
-            Status = message[0] == "A" ? PositioningStatus.Autonomous : (message[0] == "D" ? PositioningStatus.Differential : PositioningStatus.Invalid);
-            Latitude = NmeaMessage.StringToLatitude(message[1], message[2]);
-            Longitude = NmeaMessage.StringToLongitude(message[3], message[4]);
-            if (double.TryParse(message[5], NumberStyles.Float, CultureInfo.InvariantCulture, out double tmp))
-                TimeDifferenceA = TimeSpan.FromMilliseconds(tmp / 1000);
-            if (double.TryParse(message[6], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                TimeDifferenceB = TimeSpan.FromMilliseconds(tmp / 1000);
-            if (double.TryParse(message[7], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                Speed = tmp;
-            else
-                Speed = double.NaN;
-            if (double.TryParse(message[8], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                Course = tmp;
-            else
-                Course = double.NaN;
-            if (double.TryParse(message[9], NumberStyles.Float, CultureInfo.InvariantCulture, out tmp))
-                MagneticVariation = tmp * (message[10] == "E" ? -1 : 1);
-            else
-                MagneticVariation = double.NaN;
-
-            switch (message[11])
-            {
-                case "A": Mode = PositioningMode.Autonomous; break;
-                case "D": Mode = PositioningMode.Autonomous; break;
-                case "E": Mode = PositioningMode.Estimated; break;
-                case "M": Mode = PositioningMode.Manual; break;
-                case "S": Mode = PositioningMode.Simulator; break;
-                case "N":
-                default:
-                    Mode = PositioningMode.Autonomous; break;
-            }
-        }
-
-        
-        # Positioning system status
-        
-        public PositioningStatus Status { get; }
-
-        
-        # Latitude
-        
-        public double Latitude { get; }
-
-        
-        # Longitude
-        
-        public double Longitude { get; }
-
-        
-        # Time difference A
-        
-        public TimeSpan TimeDifferenceA { get; }
-
-        
-        # Time difference B
-        
-        public TimeSpan TimeDifferenceB { get; }
-
-        
-        # Speed over ground in knots.
-        
-        public double Speed { get; }
-
-        
-        # Course over ground in degrees from true north
-        
-        public double Course { get; }
-
-        
-        # Magnetic variation in degrees.
-        
-        public double MagneticVariation { get; }
-
-        
-        # Positioning system mode indicator
-        
-        public PositioningMode Mode { get; }
-    }
-}
