@@ -45,3 +45,12 @@ Bibliotek opfylder NMEA 2000 obligatoriske funktioner og adfærd. Enheder, der b
 ## Referencer og kilder
 
 <https://github.com/ttlappalainen/NMEA2000>
+
+
+## Installation
+
+ ### Requirements
+
+- Python 3.6 or later
+- nmeaserver nmea-0.1.4 
+- numpy-1.24.2

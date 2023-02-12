@@ -1,3 +1,14 @@
+# ****************************************************************************//*
+# *   @project  Python NMEA Connector
+# *   @file     BWC.py
+# *   @brief    Cross Track Error, Measured
+# *   @author   Karsten Reitan Sørensen
+# *   Date:     11-02-2023
+# *******************************************************************************
+
+from NMEA0183_Commands import NMEA0183_Command as NMEAMessage
+
+
 '''
 # <summary>
 # Nmea message attribute type used on concrete <see cref="NmeaMessage"/> implementations.

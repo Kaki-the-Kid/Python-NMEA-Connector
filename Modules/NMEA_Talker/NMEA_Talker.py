@@ -1,3 +1,28 @@
+# ****************************************************************************//*
+# @project  Python NMEA Connector
+# @file     BWC.py
+# @brief    Cross Track Error, Measured
+# @author   Karsten Reitan Sørensen
+# @date:     11-02-2023
+# *******************************************************************************
+# The first two characters in an NMEA 0183 sentence identify the source of the data, 
+# also known as the talker.
+#
+# The characters 
+# "GP" are commonly used for GPS, 
+# "GN" for mixed GPS and GLONASS, 
+# "GL" for GLONASS only, 
+# "GA" for Galileo and 
+# "GB" for BeiDou. 
+# 
+# The "GP" talker is the most common type in NMEA 0183 and is used to indicate that the 
+# data is from a GPS receiver. Other talkers include "LC" for Loran-C, "II" for integrated 
+# instrument systems and "IN" for integrated navigation systems. The talker identifier 
+# allows multiple sources of data to be used and processed by the same device.
+# *******************************************************************************
+
+import staticclass
+
 @staticclass
 class TalkerHelper:
 
@@ -125,162 +150,160 @@ class TalkerHelper:
 
 
 	# Talker Identifier
-	enum Talker: int
-	# Multiple talker IDs sometimes seen in <see cref="IMultiSentenceMessage"/>
-	Multiple = -2,
-	# Unrecognized Talker ID
-	Unknown = -1,
-	# Independent AIS Base Station
-	IndependentAISBaseStation = "AB",
-	# Dependent AIS Base Station
-	DependentAISBaseStation = "AD", 
-	# Heading Track Controller (Autopilot) - General
-	HeadingTrackControllerGeneral = "AG",
-	# Heading Track Controller (Autopilot) - Magnetic
-	HeadingTrackControllerMagnetic = "AP", #
-	# Mobile Class A or B AIS Station
-	MobileClassAorBAISStation, # = AI
-	# AIS Aids to Navigation Station 
-	AISAidstoNavigationStation, # = AN
-	# AIS Receiving Station
-	AISReceivingStation, # = AR
-	# AIS Station (ITU_R M1371,  (“Limited Base Station’)
-	AISStation, # = AS
-	# AIS Transmitting Station
-	AISTransmittingStation, # = AT
-	# AIS Simplex Repeater Station
-	AISSimplexRepeaterStation, # = AX
-	# BeiDou Navigation Satellite System
-	BeiDouNavigationSatelliteSystem, # == GB
-	# Bilge Systems
-	BilgeSystems, # = BI
-	# 
-	DigitalSelectiveCalling, # = CD
-	# 
-	DataReceiver, # = CR
-	# 
-	Satellite, # = CS
-	# 
-	RadioTelephoneMFHF, # = CT
-	# 
-	RadioTelephoneVHF, # = CV
-	# 
-	ScanningReceiver, # = CX
-	# 
-	DECCANavigator, # = DE
-	# 
-	DirectionFinder, # = DF
-	# 
-	DuplexRepeaterStation, # = DU
-	# 
-	ElectronicChartSystem, # = EC
-	# 
-	ElectronicChartDisplayInformationSystem, # = EI
-	# 
-	EmergencyPositionIndicatingBeacon, # = EP
-	# 
-	EngineRoomMonitoringSystems, # = ER
-	# 
-	FireDoorControllerMonitoringPoint, # = FD
-	# 
-	FireExtinguisherSystem, # = FE
-	# 
-	FireDetectionPoint, # = FR
-	# 
-	FireSprinklerSystem, # = FS
-	# Galileo Positioning System
-	GalileoPositioningSystem, # = GA
-	# GLONASS Receiver
-	GlonassReceiver, # = GL
-	# Global Navigation Satellite System (GNSS)
-	GlobalNavigationSatelliteSystem, # = GN
-	# Global Positioning System (GPS)
-	GlobalPositioningSystem, # = GPS
-	# Heading Sensor - Compass, Magnetic
-	CompassMagnetic, # = HC
-	# Heading Sensor - Gyro, North Seeking
-	GyroNorthSeeking, # = HE
-	# Heading Sensor - Fluxgate
-	Fluxgate, # = HF
-	# Heading Sensor - Gyro, Non-North Seeking
-	GyroNonNorthSeeking, # = HN
-	# Hull Door Controller/Monitoring Panel
-	HullDoorControllerMonitoringPanel, # = HD
-	# Hull Stress Monitoring
-	HullStressMonitoring, # = HS
-	# Indian Regional Navigation Satellite System (IRNSS)
-	IndianRegionalNavigationSatelliteSystem, # = GI
-	# Integrated Instrumentation
-	IntegratedInstrumentation, # = II
-	# Integrated Navigation
-	IntegratedNavigation, # = IN
-	# Loran C
-	LoranC, # = LC
-	# 
-	ProprietaryCode, # = P
-	# 
-	RadarAndOrRadarPlotting, # = RA
-	# 
-	PropulsionMachineryIncludingRemoteControl, # = RC
-	# 
-	PhysicalShoreAISStation, # = SA
-	# 
-	SounderDepth, # = SD
-	# 
-	SteeringGearSteeringEngine, # = SG
-	# 
-	ElectronicPositioningSystem, # = SN
-	# 
-	SounderScanning, # = SS
-	# 
-	TurnRateIndicator, # = TI
-	# 
-	MicroprocessorController, # = UP
-	# User configured talker identifier
-	UserID0, # = U0
-	# User configured talker identifier
-	UserID1, # = U1
-	# User configured talker identifier
-	UserID2, # = U2
-	# User configured talker identifier
-	UserID3, # = U3
-	# User configured talker identifier
-	UserID4, # = U4
-	# User configured talker identifier
-	UserID5, # = U5
-	# User configured talker identifier
-	UserID6, # = U6
-	# User configured talker identifier
-	UserID7, # = U7
-	# User configured talker identifier
-	UserID8, # = U8
-	# User configured talker identifier
-	UserID9, # = U9
-	# Velocity sensor - Doppler
-	Doppler, # = VD
-	# Velocity sensor - Speed Log, Water, Magnetic
-	SpeedLogWaterMagnetic, # = VM
-	# Velocity sensor - Speed Log, Water Mechanical
-	SpeedLogWaterMechanical, # = VW
-	# Voyage Data Recorder
-	VoyageDataRecorder, # = VR
-	# Watertight Door Controller/Monitoring Panel
-	WatertightDoorControllerMonitoringPanel, # = WD
-	# Weather Instruments
-	WeatherInstruments, # = WI
-	# Water Level Detection Systems 
-	WaterLevelDetectionSystems, # = WL
-	# Transducer
-	Transducer, # = YX
-	# Time keeper - Atomics Clock
-	AtomicsClock, # = ZA
-	# Time keeper - Chronometer
-	Chronometer, # = ZC
-	# Time keeper - Quartz
-	Quartz, # = ZQ
-	# Quasi-Zenith Satellite System (QZSS)
-	QuasiZenithSatelliteSystem, 
-	# Time keeper - Radio Update
-	RadioUpdate, # = ZV
-
-}
+	def Talker(Enum):
+		# Multiple talker IDs sometimes seen in <see cref="IMultiSentenceMessage"/>
+		Multiple = -2,
+		# Unrecognized Talker ID
+		Unknown = -1,
+		# Independent AIS Base Station
+		IndependentAISBaseStation = "AB",
+		# Dependent AIS Base Station
+		DependentAISBaseStation = "AD", 
+		# Heading Track Controller (Autopilot) - General
+		HeadingTrackControllerGeneral = "AG",
+		# Heading Track Controller (Autopilot) - Magnetic
+		HeadingTrackControllerMagnetic = "AP", #
+		# Mobile Class A or B AIS Station
+		MobileClassAorBAISStation, # = AI
+		# AIS Aids to Navigation Station 
+		AISAidstoNavigationStation, # = AN
+		# AIS Receiving Station
+		AISReceivingStation, # = AR
+		# AIS Station (ITU_R M1371,  (“Limited Base Station’)
+		AISStation, # = AS
+		# AIS Transmitting Station
+		AISTransmittingStation, # = AT
+		# AIS Simplex Repeater Station
+		AISSimplexRepeaterStation, # = AX
+		# BeiDou Navigation Satellite System
+		BeiDouNavigationSatelliteSystem, # == GB
+		# Bilge Systems
+		BilgeSystems, # = BI
+		# 
+		DigitalSelectiveCalling, # = CD
+		# 
+		DataReceiver, # = CR
+		# 
+		Satellite, # = CS
+		# 
+		RadioTelephoneMFHF, # = CT
+		# 
+		RadioTelephoneVHF, # = CV
+		# 
+		ScanningReceiver, # = CX
+		# 
+		DECCANavigator, # = DE
+		# 
+		DirectionFinder, # = DF
+		# 
+		DuplexRepeaterStation, # = DU
+		# 
+		ElectronicChartSystem, # = EC
+		# 
+		ElectronicChartDisplayInformationSystem, # = EI
+		# 
+		EmergencyPositionIndicatingBeacon, # = EP
+		# 
+		EngineRoomMonitoringSystems, # = ER
+		# 
+		FireDoorControllerMonitoringPoint, # = FD
+		# 
+		FireExtinguisherSystem, # = FE
+		# 
+		FireDetectionPoint, # = FR
+		# 
+		FireSprinklerSystem, # = FS
+		# Galileo Positioning System
+		GalileoPositioningSystem, # = GA
+		# GLONASS Receiver
+		GlonassReceiver, # = GL
+		# Global Navigation Satellite System (GNSS)
+		GlobalNavigationSatelliteSystem, # = GN
+		# Global Positioning System (GPS)
+		GlobalPositioningSystem, # = GPS
+		# Heading Sensor - Compass, Magnetic
+		CompassMagnetic, # = HC
+		# Heading Sensor - Gyro, North Seeking
+		GyroNorthSeeking, # = HE
+		# Heading Sensor - Fluxgate
+		Fluxgate, # = HF
+		# Heading Sensor - Gyro, Non-North Seeking
+		GyroNonNorthSeeking, # = HN
+		# Hull Door Controller/Monitoring Panel
+		HullDoorControllerMonitoringPanel, # = HD
+		# Hull Stress Monitoring
+		HullStressMonitoring, # = HS
+		# Indian Regional Navigation Satellite System (IRNSS)
+		IndianRegionalNavigationSatelliteSystem, # = GI
+		# Integrated Instrumentation
+		IntegratedInstrumentation, # = II
+		# Integrated Navigation
+		IntegratedNavigation, # = IN
+		# Loran C
+		LoranC, # = LC
+		# 
+		ProprietaryCode, # = P
+		# 
+		RadarAndOrRadarPlotting, # = RA
+		# 
+		PropulsionMachineryIncludingRemoteControl, # = RC
+		# 
+		PhysicalShoreAISStation, # = SA
+		# 
+		SounderDepth, # = SD
+		# 
+		SteeringGearSteeringEngine, # = SG
+		# 
+		ElectronicPositioningSystem, # = SN
+		# 
+		SounderScanning, # = SS
+		# 
+		TurnRateIndicator, # = TI
+		# 
+		MicroprocessorController, # = UP
+		# User configured talker identifier
+		UserID0, # = U0
+		# User configured talker identifier
+		UserID1, # = U1
+		# User configured talker identifier
+		UserID2, # = U2
+		# User configured talker identifier
+		UserID3, # = U3
+		# User configured talker identifier
+		UserID4, # = U4
+		# User configured talker identifier
+		UserID5, # = U5
+		# User configured talker identifier
+		UserID6, # = U6
+		# User configured talker identifier
+		UserID7, # = U7
+		# User configured talker identifier
+		UserID8, # = U8
+		# User configured talker identifier
+		UserID9, # = U9
+		# Velocity sensor - Doppler
+		Doppler, # = VD
+		# Velocity sensor - Speed Log, Water, Magnetic
+		SpeedLogWaterMagnetic, # = VM
+		# Velocity sensor - Speed Log, Water Mechanical
+		SpeedLogWaterMechanical, # = VW
+		# Voyage Data Recorder
+		VoyageDataRecorder, # = VR
+		# Watertight Door Controller/Monitoring Panel
+		WatertightDoorControllerMonitoringPanel, # = WD
+		# Weather Instruments
+		WeatherInstruments, # = WI
+		# Water Level Detection Systems 
+		WaterLevelDetectionSystems, # = WL
+		# Transducer
+		Transducer, # = YX
+		# Time keeper - Atomics Clock
+		AtomicsClock, # = ZA
+		# Time keeper - Chronometer
+		Chronometer, # = ZC
+		# Time keeper - Quartz
+		Quartz, # = ZQ
+		# Quasi-Zenith Satellite System (QZSS)
+		QuasiZenithSatelliteSystem, 
+		# Time keeper - Radio Update
+		RadioUpdate, # = ZV

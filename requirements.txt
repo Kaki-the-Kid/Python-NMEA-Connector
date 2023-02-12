@@ -41,3 +41,7 @@ unicornhathd
 
 # Fundamental package for array computing in Python
 numpy
+
+
+nmea-parser == 0.5.0
+pyserial    == 3.5
