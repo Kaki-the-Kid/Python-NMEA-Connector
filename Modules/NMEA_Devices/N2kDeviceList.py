@@ -22,14 +22,6 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 
 
-#*************************************************************************#***
-#* \file  N2kDeviceList.h
-#* \brief This File contains a 
-#* 
-#* 
-#*/
-
-
 #include "NMEA2000.h"
 
 # Maximum allowed number of devices on the CAN BUS bus system is 254

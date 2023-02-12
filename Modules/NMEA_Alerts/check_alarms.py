@@ -15,19 +15,15 @@ def time_convert(time_stamp):
 
 
 def check_alarms():
-
     weather = Data().api_data
-
     alarms = {}
 
     try:
-
         alarm_weather = weather['alerts']
 
         Alarm = namedtuple('Alarm', ['severity', 'title', 'start_time', 'expires', 'duration', 'lasts', 'description'])
 
         for idx, alarm_obj in enumerate(alarm_weather):
-
             severity, title, time_start, expires, description = alarm_obj['severity'], alarm_obj['title'], \
                                                                 alarm_obj['time'], alarm_obj['expires'], \
                                                                 alarm_obj['description'].encode('UTF-8')
@@ -45,20 +41,14 @@ def check_alarms():
                           str(description))
 
             if alarm.severity == 'warning':
-
                 log_string('warning Alarm: {}'.format(alarm))
                 alarms[idx] = {'severity': alarm.severity, 'duration': alarm_lasts}
-
             elif alarm.severity == 'watch':
-
                 log_string('watch Alarm: {}'.format(alarm))
                 alarms[idx] = {'severity': alarm.severity, 'duration': alarm_lasts}
-
             elif alarm.severity == 'advisory':
-
                 log_string('watch Alarm: {}'.format(alarm))
                 alarms[idx] = {'severity': alarm.severity, 'duration': alarm_lasts}
-
             else:
                 alarms = None
 
@@ -66,11 +56,9 @@ def check_alarms():
         return alarms
 
     except KeyError:
-
         log_string('no weather alerts')
         return None
 
 
 if __name__ == '__main__':
-
     check_alarms()

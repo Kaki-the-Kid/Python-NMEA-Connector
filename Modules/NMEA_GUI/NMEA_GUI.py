@@ -4,7 +4,7 @@
 #   
 
 import tkinter as tk
-import NMEA
+#import NMEA
 
 class NMEA_GUI(tk.Frame):        
     def __init__(self, master=None):

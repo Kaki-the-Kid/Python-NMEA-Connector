@@ -34,9 +34,6 @@
 #* 
 '''
 
-#ifndef _ACTISENSE_READER_H_
-#define _ACTISENSE_READER_H_
-
 #include "N2kMsg.h"
 #include "N2kStream.h"
 
