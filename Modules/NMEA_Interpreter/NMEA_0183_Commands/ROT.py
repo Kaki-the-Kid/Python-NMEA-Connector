@@ -1,45 +1,35 @@
 ﻿# ****************************************************************************//*
 # *   @project  Python NMEA Connector
-# *   @file     BWC.py
-# *   @brief    Cross Track Error, Measured
+# *   @file     ROT.py
+# *   @brief    Rate of Turn
 # *   @author   Karsten Reitan Sørensen
 # *   Date:     11-02-2023
 # *******************************************************************************
-
-from NMEA0183_Commands import NMEA0183_Command
-
-
-class BWC(NMEA0183_Command):
+# The ROT Command is used to provide information on the rate of turn of a vessel, 
+# which can be used to help other devices determine the vessel's course and improve 
+# navigation accuracy. It can also be used to provide information on the vessel's 
+# stability and to detect the presence of rogue waves. The information contained in 
+# the ROT Command is critical for safe navigation, as it allows other devices on the 
+# network to determine the vessel's turn rate and respond accordingly.
+# 
+# The NMEA 0183 ROT (Rate of Turn) Command is a specific type of NMEA 0183 
+# message that provides information on the rate of turn of a vessel. The ROT 
+# Command contains the following attributes:
+#
+# - Message ID: 
+#   A two-letter identifier that indicates the type of message being sent. For the ROT Command, the Message ID is "AP".
+# - Rate of Turn: 
+#   The rate of turn of the vessel, in degrees per minute, where positive values indicate a turn to starboard and negative values indicate a turn to port.
+# - Status: 
+#   An indicator of the status of the rate of turn data, either "A" for valid or "V" for invalid.
+#
 # *******************************************************************************
-# *  Licensed under the Apache License, Version 2.0 (the "License")
-# *  you may not use this file except in compliance with the License.
-# *  You may obtain a copy of the License at
-# *
-# *  http://www.apache.org/licenses/LICENSE-2.0
-# *
-# *   Unless required by applicable law or agreed to in writing, software
-# *   distributed under the License is distributed on an "AS IS" BASIS,
-# *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# *   See the License for the specific language governing permissions and
-# *   limitations under the License.
-# ******************************************************************************
 
 from NMEA0183_Commands import NMEA0183_Command
+
+
+class ROT(NMEAMessage):
     
-# Routes
-
-# <remarks>
-# Waypoint identifiers, listed in order with starting waypoint first, for the identified route. Two modes of
-# transmission are provided: 'c' indicates that the complete list of waypoints in the route are being
-# transmitted 'w' indicates a working route where the first listed waypoint is always the last waypoint
-# that had been reached (FROM), while the second listed waypoint is always the waypoint that the vessel is
-# currently heading for (TO), the remaining list of waypoints represents the remainder of the route. 
-# </remarks>
-from Modules.NMEA_Interpreter.NMEA_0183_Commands.c_NMEA_Messages import NMEAMessage
-
-
-class RTE(NMEAMessage):
-    class ROT:
     def __init__(self):
         self.__rot = 0.0
     
@@ -49,13 +39,7 @@ class RTE(NMEAMessage):
     def get_rot(self):
         return self.__rot
     
-rot = ROT()
 
-# set the rate of turn value
-rot.set_rot(10.0)
-
-# get the rate of turn value
-print("Rate of Turn: ", rot.get_rot())
 
     
     list: _waypoints = []
@@ -112,3 +96,30 @@ print("Rate of Turn: ", rot.get_rot())
     # @returns An System.Collections.IEnumerator object that can be used to iterate through the collection.</returns>
     #def System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
     #    return self.GetEnumerator()
+
+    def test_code():
+        # create a new rate of turn object
+        rot = ROT()
+
+        # set the rate of turn value
+        rot.set_rot(10.0)
+
+        # get the rate of turn value
+        print("Rate of Turn: ", rot.get_rot())
+        
+    def test_command():
+        testsentence = []
+        # Here are three examples of NMEA 0183 ROT Command messages:
+        
+        testsentence.append("$APROT,0.03,A*29")
+        # This message indicates that the vessel is turning at a rate of 0.03 degrees 
+        # per minute to starboard, and the data is valid.
+
+        testsentence.append("$APROT,-0.02,A*2B")
+        # This message indicates that the vessel is turning at a rate of -0.02 degrees 
+        # per minute to port, and the data is valid.
+
+        testsentence.append("$APROT,0.00,V*3C")
+        # This message indicates that the vessel is not turning, and the data is invalid.
+        
+        return testsentence
