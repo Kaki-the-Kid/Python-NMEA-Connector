@@ -1,11 +1,17 @@
 # File for deploying the app to production server
-language: python
-python:
+#language: python
+#python:
   - "3.5"
 
-install: "pip install wheel"
-install: "pip install waitress"
+#install wheel
+  - pip install wheel
 
-install: "waitress-serve --call 'flaskr:create_app'"
-install: "python setup.py bdist_wheel"
+#install waitress:
+  - pip install waitress
+
+#install flaskr:
+  - waitress-serve --call 'flaskr:create_app'
+
+#install wheel:
+  - python setup.py bdist_wheel
 
