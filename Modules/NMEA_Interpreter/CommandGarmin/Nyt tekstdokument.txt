@@ -1,0 +1,6 @@
+
+PGRME	Garmin Proprietary Estimated Position Error
+PGRMF	Garmin Proprietary Position Fix Sentence
+PGRMM	Garmin Proprietary Map Datum Sentence
+PGRMV	Garmin Proprietary Velocity Sentence
+PGRMZ	Garmin Proprietary Altitude Information
