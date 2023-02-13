@@ -841,7 +841,7 @@ div.directory {
 }
 
 .icon {
-	font-family: Arial, Helvetica;
+	font-family: sans-serif, Arial, Helvetica;
 	font-weight: bold;
 	font-size: 12px;
 	height: 14px;

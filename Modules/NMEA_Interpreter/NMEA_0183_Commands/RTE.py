@@ -13,6 +13,45 @@
 # currently heading for (TO), the remaining list of waypoints represents the remainder of the route. 
 # </remarks>
 
+        /************************************************************************
+         * RTE - Routes
+         * RTE is sent to indicate the names of the waypoints used in an active route.
+         * There are two types of RTE sentences. This route sentence can list all of
+         * the waypoints in the entire route or it can list only those still ahead.
+         * Because an NMEA sentence is limited to 80 characters there may need to be
+         * multiple sentences to identify all of the waypoints. The data about the
+         * waypoints themselves will be sent in subsequent WPL sentences which will
+         * be sent in future cycles of the NMEA data.
+         *
+         *        1   2   3 4    5           x    n
+         *        |   |   | |    |           |    |
+         * $--RTE,x.x,x.x,a,c--c,c--c, ..... c--c*hh<CR><LF>
+         *
+         * Field Number:
+         *
+         * 1. Total number of RE sentences being transmitted
+         * 2. Sentence Number
+         * 3. Sentence mode
+         *      c = complete route, all waypoints
+         *      w = working route, the waypoint you just left, the waypoint
+         *          you’re heading to, then all the rest
+         * 4. Route ID
+         * 5. Waypoint ID
+         * x. Additiobal waypint IDs
+         * More waypoints follow. Last field is a checksum as usual.
+         *
+         * The Garmin 65 and possibly other units report a $GPR00 in the same format.
+         *
+         * Example: $GPRTE,1,1,c,0*07
+         *
+         ************************************************************************/
+        public void commandGarminRTE()
+        {
+            //
+        }
+
+
+
 from NMEA0183_Commands import NMEA0183_Command as  NMEAMessage
 
 

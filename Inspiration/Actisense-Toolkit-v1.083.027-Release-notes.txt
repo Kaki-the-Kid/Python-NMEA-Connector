@@ -522,7 +522,7 @@ Bug Fixes:
   - Fixed issue that could occasionally cause a crash when refreshing 'Device 
     List' with a NMEA 2000 bus load was above 25%.
   - Increased command timeout to better cope with a busy NMEA 2000 bus.
-  - Passive FTP mode now used to avoid trigging Windows firewall from 
+  - Passive FTP mode now used to avoid triggering Windows firewall from
     requesting user to confirm the first-time connection.
   - Fixed crash if temporary folder used for FTP does not exit. Now catches
     an exception and use Windows Temp folder.
