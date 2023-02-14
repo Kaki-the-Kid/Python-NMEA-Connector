@@ -180,7 +180,7 @@ class tActisenseReader():
 
 
 	'''
-	#*******************************************************************#\**
+	#*******************************************************************\\*
 
 	This is class for reading Actisense format messages from given stream.
 	*/
@@ -189,23 +189,23 @@ class tActisenseReader():
 	#include <string.h>
 	#include "N2kTimer.h"
 
-	#****************************************************************************
+	#*******************************************************************\\*
 	def tActisenseReader(tActisenseReader):
 		DefaultSource=65
 		ReadStream=0
 		ClearBuffer()
 
 
-	#****************************************************************************
+	#*******************************************************************\\*
 	def tActisenseReader(ClearBuffer):
-		MsgWritePos=0
-		byteSum=0
-		StartOfTextReceived=False
-		MsgIsComing=False
-		EscapeReceived=False
+		MsgWritePos         = 0
+		byteSum             = 0
+		StartOfTextReceived = False
+		MsgIsComing         = False
+		EscapeReceived      = False
 
 
-	#\*****************************************************************************
+	#*******************************************************************\\*
 	def tActisenseReader( AddByteToBuffer(NewByte) ):
 		if ( MsgWritePos >= MAX_STREAM_MSG_BUF_LEN ):
 			return False
@@ -214,7 +214,7 @@ class tActisenseReader():
 		MsgWritePos += 1
 
 		if ( MsgBuf[1]+3!=MsgWritePos ):
-			byteSum += NewByte # !Do not add CRC to byteSum
+			byteSum = byteSum + NewByte # !Do not add CRC to byteSum
 			return True
 
 
@@ -224,43 +224,43 @@ class tActisenseReader():
 	#define MsgTypeN2kData 0x93
 	#define MsgTypeN2kRequest 0x94
 
-		#\*****************************************************************************
-		def tActisenseReader(CheckMessage(tN2kMsg &N2kMsg)):  #bool 
+	#\*****************************************************************************
+	def tActisenseReader( CheckMessage(tN2kMsg &N2kMsg) ):  #bool 
+		N2kMsg.Clear()
+
+		if (MsgWritePos!=MsgBuf[1]+3):
+			return False # Length does not match. Add type, length and crc
+
+		CheckSum = ( (byteSum == 0) ? 0 : (256 - byteSum))
+
+		if ( CheckSum!=MsgBuf[MsgWritePos-1] ):
+			return False # Checksum does not match
+
+		i = 2
+		N2kMsg.Priority=MsgBuf[ i+=1 ]
+		N2kMsg.PGN=GetBuf3ByteUInt(i,MsgBuf)
+		N2kMsg.Destination=MsgBuf[ i+=1 ]
+
+		if ( MsgBuf[0]==MsgTypeN2kData ):
+			N2kMsg.Source=MsgBuf[i+=1]
+			N2kMsg.MsgTime=GetBuf4ByteUInt(i,MsgBuf)
+		else:
+			N2kMsg.Source=DefaultSource
+			N2kMsg.MsgTime=N2kMillis()
+
+		N2kMsg.DataLen=MsgBuf[i+=1]
+
+		if ( N2kMsg.DataLen>tN2kMsg::MaxDataLen ):
 			N2kMsg.Clear()
+			return False # Too long data
 
-			if (MsgWritePos!=MsgBuf[1]+3):
-				return False # Length does not match. Add type, length and crc
-
-			CheckSum = ( (byteSum == 0) ? 0 : (256 - byteSum))
-	
-			if ( CheckSum!=MsgBuf[MsgWritePos-1] ):
-				return False # Checksum does not match
-
-			i = 2
-			N2kMsg.Priority=MsgBuf[ i+=1 ]
-			N2kMsg.PGN=GetBuf3ByteUInt(i,MsgBuf)
-			N2kMsg.Destination=MsgBuf[ i+=1 ]
-	
-			if ( MsgBuf[0]==MsgTypeN2kData ):
-				N2kMsg.Source=MsgBuf[i+=1]
-				N2kMsg.MsgTime=GetBuf4ByteUInt(i,MsgBuf)
-			else:
-				N2kMsg.Source=DefaultSource
-				N2kMsg.MsgTime=N2kMillis()
-	
-			N2kMsg.DataLen=MsgBuf[i+=1]
-
-			if ( N2kMsg.DataLen>tN2kMsg::MaxDataLen ):
-				N2kMsg.Clear()
-				return False # Too long data
-
-			for ( j=0; i<MsgWritePos-1; i+=1, j+=1):
-				N2kMsg.Data[j]=MsgBuf[i]
-
-			return True
-
-
-
+		J=0
+		for i in range(MsgWritePos - 1):
+			N2kMsg.Data[j] = MsgBuf[i]
+			i = i+1
+			j = j+1
+   
+		return True
 
 
 	#\*****************************************************************************

@@ -260,7 +260,7 @@ class GNS(NMEAMessage):
         Unsafe = 1
 
     @staticmethod
-    def static ParseModeIndicator(c)
+    def ParseModeIndicator(c):
         match c:
             case 'A': return Mode.Autonomous
             case 'D': return Mode.Differential
@@ -270,11 +270,11 @@ class GNS(NMEAMessage):
             case 'E': return Mode.Estimated
             case 'M': return Mode.Manual
             case 'S': return Mode.Simulator
-            case 'N':
-            default: return Mode.NoFix
+            case 'N': return Mode.NoFix
+            case _:   return Mode.NoFix
 
 
-    def GNS(string type, string[] NMEAMessage):
+    def GNS(str type, str[] NMEAMessage): pass
     # Time of day fix was taken
     def TimeSpan FixTime { get }
     
