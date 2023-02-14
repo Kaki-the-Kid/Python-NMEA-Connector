@@ -3,13 +3,13 @@
 # Helper class for monitoring GNSS messages and combine them into a single useful location info
 class GnssMonitor():
 
-    bool: m_supportGGaMessages = False # If device support GGA, ignore RMC for location
+    m_supportGGaMessages = False # If device support GGA, ignore RMC for location
     m_allMessages = { str: key = "", str: NmeaMessage = None } # All messages received from the device
     
     object: m_lock = new object()
     bool: m_isLearning = True #Indicates that we still haven't seen a full round of location messages yet
 
-    def GnssMonitor( NmeaDevice: device = None):
+    def GnssMonitor( NmeaDevice: device = None ):
         if (device == None):
             raise Exception(device)
             
