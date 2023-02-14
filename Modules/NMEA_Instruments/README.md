@@ -1,4 +1,7 @@
-# PyQt/PySide with QML
+# NMEA Instruments
+
+
+## PyQt/PySide with QML
 Best for Raspberry Pi, microcontrollers, industrial and consumer electronics
 
 When using PyQt and PySide you actually have two options for building your GUIs. We've already introduced the Qt Widgets API which is well-suited for building desktop applications. But Qt also provides a declarative API in the form of Qt Quick/QML.
