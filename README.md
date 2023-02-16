@@ -46,11 +46,39 @@ Bibliotek opfylder NMEA 2000 obligatoriske funktioner og adfærd. Enheder, der b
 
 <https://github.com/ttlappalainen/NMEA2000>
 
-
 ## Installation
 
- ### Requirements
+### Requirements
 
 - Python 3.6 or later
 - nmeaserver nmea-0.1.4 
 - numpy-1.24.2
+
+# NMEA Server
+
+Using the NMEA Server, you can connect to a NMEA 0183 device and send the data to a NMEA 2000 network. The NMEA Server is a Python application that runs on a Raspberry Pi or other Linux computer. It uses the NMEA 2000 library to send the data to the NMEA 2000 network. The NMEA Server can be used to connect to a NMEA 0183 device that does not have a NMEA 2000 interface. The NMEA Server can also be used to connect to a NMEA 0183 device that has a NMEA 2000 interface, but does not support the NMEA 2000 network that you want to connect to.
+
+Reference: https://pypi.org/project/nmea/
+
+## Module Installation
+
+```bash 
+pip install nmea
+``` 
+
+## Usage
+
+```python
+from nmea import server, formatter
+
+# Creates a nmeaserver
+nmeaserver = server.NMEAServer()
+
+# Create a message handler that receives all messages with the sentence ID: 'RXTST'
+@nmeaserver.message('RXTST')
+def tst_handler(self, context, message):
+    return formatter.format('TXTST,Message Received!')
+
+# Starts the server
+nmeaserver.start()
+```
