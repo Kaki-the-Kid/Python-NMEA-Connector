@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from datetime import datetime
 
-from Modules.Data.Data import Data
+#from Modules.Data.Data import Data
 #from modules.update.init_blinkt import *
 from Modules.Update.init_logging import weather_logger
 

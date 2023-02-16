@@ -4,10 +4,17 @@
 
 # import tkinter as tk
 
-# class NMEA0183GUI:
-#     def __init__(self, master):
-#         self.master = master
-#         self.master.title("NMEA0183 GUI")
+class NMEA0183GUI:
+    def __init__(self, master):
+        self.master.title("NMEA0183 GUI")
+        
+        self.createWidgets()
+        #self.nmea = NMEA.NMEA()
+        
+
+    def sendData(self):
+        self.nmea.parse(self.text.get("1.0", tk.END))           # get the text from the text widget and send it to the NMEA class       
+
 
 #         self.nmea_input = tk.StringVar()
 
@@ -29,6 +36,18 @@
 #         # ...
 #         # Update the output text widget with the processed NMEA data
 #         self.output_text.insert(tk.END, nmea_data)
+
+    def createWidgets(self):
+        self.text = tk.Text(self, height=20, width=80)
+        self.text.pack()
+        self.text.insert(tk.END, "NMEA0183 data goes here")         # insert some text into the text widget
+        self.send = tk.Button(self) 
+        self.send["text"] = "Send"
+        self.send["command"] = self.sendData
+        self.send.pack(side="top")
+        self.quit = tk.Button(self, text="QUIT", fg="red",
+                                command=root.destroy)
+        self.quit.pack(side="bottom")
 
 # if __name__ == "__main__":
 #     root = tk.Tk()

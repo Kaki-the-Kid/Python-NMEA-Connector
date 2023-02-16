@@ -1,7 +1,8 @@
-# import tkinter as tk
+import tkinter as tk
 
-# class NMEA2000GUI(tk.Tk):
-#     def __init__(self, *args, **kwargs):
+class NMEA2000GUI(tk.Tk):
+    def __init__(self, *args, **kwargs):
+        pass
 #         tk.Tk.__init__(self, *args, **kwargs)
 #         self.title("NMEA 2000 Data")
 
