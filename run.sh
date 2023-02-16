@@ -1,3 +1,6 @@
+#bash
+# -*- coding: utf-8 -*-
+
 # File for running development server
 
 # The simplest and most widely available method to get user input at a 
