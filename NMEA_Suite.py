@@ -4,11 +4,26 @@ from multiprocessing import Process
 import os
 import argparse
 
+import NMEA_GUI
+
 import Modules.NMEA_Interpreter.NMEA_Interpreter as Interpreter
 #import NMEA2000_Receive
 #import NMEA2000_Send
 
-import Modules.Config.Config as Config
+# Config for the project
+import configparser
+
+config = configparser.ConfigParser()
+
+all_config_files = [
+    '/config/nmea0182.conf', 
+    '/config/nmea2000.conf', 
+    '/config/hardware.conf',
+    '/config/update.conf',
+    ]
+
+config.read(all_config_files)
+
        
 # Import NMEA2000 modules
 from Modules.Update.Update import Update

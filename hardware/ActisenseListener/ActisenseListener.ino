@@ -66,5 +66,3 @@ void UpdateLedState() {
 void HandleNMEA2000Msg(const tN2kMsg &/*N2kMsg*/) {
   LedOn(LedOnTime);
 }
-
-

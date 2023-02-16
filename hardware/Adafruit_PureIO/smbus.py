@@ -23,23 +23,23 @@ from ctypes import *
 from fcntl import ioctl
 
 # I2C C API constants (from linux kernel headers)
-I2C_M_TEN = 0x0010  # this is a ten bit chip address
-I2C_M_RD = 0x0001  # read data, from slave to master
-I2C_M_STOP = 0x8000  # if I2C_FUNC_PROTOCOL_MANGLING
-I2C_M_NOSTART = 0x4000  # if I2C_FUNC_NOSTART
+I2C_M_TEN          = 0x0010  # this is a ten bit chip address
+I2C_M_RD           = 0x0001  # read data, from slave to master
+I2C_M_STOP         = 0x8000  # if I2C_FUNC_PROTOCOL_MANGLING
+I2C_M_NOSTART      = 0x4000  # if I2C_FUNC_NOSTART
 I2C_M_REV_DIR_ADDR = 0x2000  # if I2C_FUNC_PROTOCOL_MANGLING
-I2C_M_IGNORE_NAK = 0x1000  # if I2C_FUNC_PROTOCOL_MANGLING
-I2C_M_NO_RD_ACK = 0x0800  # if I2C_FUNC_PROTOCOL_MANGLING
-I2C_M_RECV_LEN = 0x0400  # length will be first received byte
+I2C_M_IGNORE_NAK   = 0x1000  # if I2C_FUNC_PROTOCOL_MANGLING
+I2C_M_NO_RD_ACK    = 0x0800  # if I2C_FUNC_PROTOCOL_MANGLING
+I2C_M_RECV_LEN     = 0x0400  # length will be first received byte
 
-I2C_SLAVE = 0x0703  # Use this slave address
-I2C_SLAVE_FORCE = 0x0706  # Use this slave address, even if
+I2C_SLAVE          = 0x0703  # Use this slave address
+I2C_SLAVE_FORCE    = 0x0706  # Use this slave address, even if
 # is already in use by a driver!
-I2C_TENBIT = 0x0704  # 0 for 7 bit addrs, != 0 for 10 bit
-I2C_FUNCS = 0x0705  # Get the adapter functionality mask
-I2C_RDWR = 0x0707  # Combined R/W transfer (one STOP only)
-I2C_PEC = 0x0708  # != 0 to use PEC with SMBus
-I2C_SMBUS = 0x0720  # SMBus transfer
+I2C_TENBIT         = 0x0704  # 0 for 7 bit addrs, != 0 for 10 bit
+I2C_FUNCS          = 0x0705  # Get the adapter functionality mask
+I2C_RDWR           = 0x0707  # Combined R/W transfer (one STOP only)
+I2C_PEC            = 0x0708  # != 0 to use PEC with SMBus
+I2C_SMBUS          = 0x0720  # SMBus transfer
 
 
 # ctypes versions of I2C structs defined by kernel.
