@@ -10,7 +10,8 @@
 # @note     This is a prototype and not a finished product
 # ****************************************************************************//*
 
-import config.config as config
+import Config.config as config
+#import config.config as config
 import tkinter as tk
 from tkinter import ttk
 #from nmea_server import server, formatter
@@ -37,7 +38,7 @@ class NMEA_GUI(tk.Frame):
 # Create the main window
 root = tk.Tk()
 root.geometry("800x600")
-root.title("NMEA Connector - {}".WINDOW_NAME)
+root.title(config.WINDOW_NAME)
 
 # Next, we create the ttk.Notebook widget to hold the tabs, and two ttk.Frame widgets for 
 # the NMEA0183 and NMEA2000 tabs. We add the frames to the notebook using the add() method, 
@@ -45,6 +46,10 @@ root.title("NMEA Connector - {}".WINDOW_NAME)
 
 # Create a notebook with tabs
 notebook = ttk.Notebook(root)
+
+# Create the NMEA0183 tab
+device_frame = ttk.Frame(notebook)
+notebook.add(device_frame, text="Device")
 
 # Create the NMEA0183 tab
 nmea0183_frame = ttk.Frame(notebook)

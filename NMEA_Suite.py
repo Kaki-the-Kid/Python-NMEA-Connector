@@ -6,7 +6,7 @@ import sys
 import argparse
 
 # Config for the project
-import config.config as config
+import Config.config as config
        
 # Import NMEA2000 modules
 #from Modules.Update.Update import Update
@@ -16,8 +16,6 @@ import config.config as config
 #from Modules.RasPiShield_Matrix.update_matrix import update_bargraph, update_matrix
 
 import Modules.NMEA_GUI.NMEA_GUI as NMEA_GUI
-import Modules.NMEA_Interpreter.NMEA_Interpreter as Interpreter
-
 import Modules.NMEA_Interpreter.NMEA_Interpreter as Interpreter
 #import NMEA2000_Receive
 #import NMEA2000_Send
@@ -44,9 +42,8 @@ def main():
     argParser.add_argument("-n", "--name", help="your name")
 
     args = argParser.parse_args()
-    print("args=%s" % args)
-
-    print("args.name=%s" % args.name)
+    print("args=%s\n" % args)
+    print("args.name=%s\n" % args.name)
     
     main_thread = threading.Timer(THREADING_TIMER, main)
     main_thread.start()
