@@ -40,6 +40,18 @@ def main():
     # Check f or command line arguments
     argParser = argparse.ArgumentParser()
     argParser.add_argument("-n", "--name", help="your name")
+    
+    # Commes from the command line and 
+    # --help
+    # --console
+    # --gui
+    # --runserver
+    # --test
+    
+    # coverage run --source='.' manage.py test; break;;
+    # pylint --rcfile=.pylintrc --load-plugins pylint_django --django-settings-module=project.settings project; break;;
+    # exit
+    #
 
     args = argParser.parse_args()
     print("args=%s\n" % args)
