@@ -32,6 +32,25 @@ class ConsolUi():
 	
 
 	def ConsolInit():
+		"""
+		<value>GPS Menu</value>
+		<value>GPS_menu</value>
+		<value>1. Kør GPS kommando</value>
+		<value>1. Run GPS command</value>
+		<value>2. Vis GPS Tid</value>
+		<value>2. Show GPS Time</value>
+		<value>3. Vis GPS Longitude-Latitude</value>
+		<value>3. Show GPS Longitude-Latitude</value>
+		<value>4. Udskriv GPS data</value>
+		<value>4. Print out GPS data</value>
+		<value>5. NMEA og enheds konfiguration</value>
+		<value>5. NMEA og Device config</value>
+		<value>6. GPS enhed</value>
+		<value>6. GPS device</value>
+		<value>9. Afslut</value>
+		<value>9. Exit</value>
+		""" 
+     
 		keyPressed: int = 0
 
 		while keyPressed != 9:
@@ -106,3 +125,4 @@ class ConsolUi():
 
 		print("String: {0}", mystring)
 		print("Checksum: {0}", GpsChecksum(mystring))
+  
