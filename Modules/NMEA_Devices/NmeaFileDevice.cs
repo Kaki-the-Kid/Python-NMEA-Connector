@@ -21,8 +21,7 @@ using System.Threading.Tasks;
 
 namespace NmeaParser
 {
-    #     /// A file-based NMEA device reading from a NMEA log file.
-    /// </summary>
+    /// A file-based NMEA device reading from a NMEA log file.
     public class NmeaFileDevice : BufferedStreamDevice
     {
 #if NETFX_CORE
@@ -30,27 +29,22 @@ namespace NmeaParser
 #endif
         private string m_filename;
 
-
-        #         #         /// </summary>
-        /// <param name="fileName"></param>
         public NmeaFileDevice(string fileName) : this(fileName, 1000)
         {
         }
 
 #if NETFX_CORE
-        #         #         #         /// <param name="storageFile"></param>
         public NmeaFileDevice(Windows.Storage.IStorageFile storageFile) : this(storageFile, 1000)
         {
         }
 #endif
-        #         #         #         #         /// <param name="readSpeed">The time to wait between each group of lines being read in milliseconds</param>
         public NmeaFileDevice(string fileName, int readSpeed) : base(readSpeed)
         {
             m_filename = fileName;
         }
 
 #if NETFX_CORE
-        #         #         #         #         #         public NmeaFileDevice(Windows.Storage.IStorageFile storageFile, int readSpeed)
+        public NmeaFileDevice(Windows.Storage.IStorageFile storageFile, int readSpeed)
             : base(readSpeed)
         {
             m_storageFile = storageFile ?? throw new ArgumentNullException(nameof(storageFile));
@@ -58,13 +52,12 @@ namespace NmeaParser
         }
 #endif
 
-        #         #         #         public string FileName
-        #         #             {
+        public string FileName
+            {
                 return m_filename;
             }
         }
 
-        /// <inheritdoc />
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope")]
         protected override Task<Stream> GetStreamAsync()
         {
@@ -80,4 +73,4 @@ namespace NmeaParser
 #endif
         }
     }
-}
+};
